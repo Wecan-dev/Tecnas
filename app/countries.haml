@@ -1,0 +1,49 @@
+!!!
+:ruby
+  def render(partial, args = {})
+    engine = Haml::Engine.new(File.read(partial))
+    engine.render(Object.new, args)
+  end
+- addresses = [{name: "Itaguí", body: "Carrera 50G No. 12 sur 29 (Ver mapa). <br> <strong>PBX:</strong> (4)2854290. <br> <strong>Celular:</strong> (4)2553809. <br> <strong>E-mail:</strong> tecnas@tecnas.com.co. <br> <strong>Horario de atención:</strong> Lunes a viernes de 7:00 am a 05:30 pm", url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5043047648037!2d-75.58856113523102!3d6.196997445513781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46826fedd5f8fb%3A0x169fa94086106a8a!2sTecnas%20S.A!5e0!3m2!1sen!2sve!4v1607896622447!5m2!1sen!2sve"}, {name: "Bogotá", body: "Cl. 17a ###69-53, Bogotá, Cundinamarca, Colombia", url: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15907.089255876257!2d-74.1137743!3d4.6346642!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bf506de4e39%3A0x84080da6bb7e2083!2sTecnas%20S.%20A.!5e0!3m2!1sen!2sve!4v1607896818596!5m2!1sen!2sve"}, {name: "Cali", body: "Avenida 3ra B Norte #58 - 52, Cali, Valle del Cauca, Colombia", url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.4257899603176!2d-76.51429148524173!3d3.4883873974611252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a7f29fae6db7%3A0x86b3f0b8bdbf5157!2sTecnas%20Cali!5e0!3m2!1sen!2sve!4v1607896884753!5m2!1sen!2sve"}, {name: "Barranquilla", body: "Cra. 44 ## 76-94, Barranquilla, Atlántico, Colombia", url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.571004680863!2d-74.81378768519734!3d10.995717992172949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42d09370f40e1%3A0x758d4b3baec908a!2sTecnas%20Barranquilla!5e0!3m2!1sen!2sve!4v1607896922626!5m2!1sen!2sve"}, {name: "Bucaramanga", body: "Avenida la Rosita ## 24 - 68, Bucaramanga, Santander, Colombia", url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.064638178882!2d-73.12001048549214!3d7.118508194859527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e683fdf8688abf3%3A0x9a8b1ca2809ea336!2sTecnas%20Bucaramanga!5e0!3m2!1sen!2sve!4v1607897055289!5m2!1sen!2sve"}, {name: "Pereira", body: "Cra. 10 ##15 - 45, Dosquebradas, Risaralda, Colombia", url: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d381268.5088093184!2d-75.74110158040065!3d4.764002756671929!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e388742b07f5fed%3A0x18da23d8038ac6a!2sTecnas%20Pereira!5e0!3m2!1sen!2sve!4v1607897126673!5m2!1sen!2sve"}, {name: "Cucuta", body: "Avenida 0 # 2 Norte - 118, Cúcuta, Norte de Santander, Colombia", url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.9414393985194!2d-72.50322778522113!3d7.901187194308001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6645a92d0bb6c1%3A0x38cac7a40341f24!2sTecnas%20C%C3%BAcuta!5e0!3m2!1sen!2sve!4v1607897149610!5m2!1sen!2sve"}]
+%html{ lang: "en" }
+  %head
+    = render('app/partials/_head.haml')
+    %link{ rel: "stylesheet", href: "assets/css/page.css" }
+  %body
+    = render('app/partials/_navbar.haml')
+    .container.main-page
+      .row
+        .col-lg-5
+          .section-title.left
+            %h1 OTROS PAÍSES
+          .countries-info
+            %p Permítanos orientarlo sobre nuestro portafolio exportable y brindarle toda la asesoría técnica y comercial que tenemos para usted.
+            %p
+              %a{ href: "mailto:ventasinternacionales@tecnas.com.co" } ventasinternacionales@tecnas.com.co
+          .countries-list
+            %ul
+              %li
+                %h5 Centro América y el Caribe
+                %ul
+                  %li Belkis Soraya Lindarte
+                  %li
+                    %strong E-mail:
+                    blindarte@tecnas.com.co
+                  %li
+                    %strong Celular:
+                    (057) 3146827317
+              %li
+                %h5 Panamá, Ecuador, Perú
+                %ul
+                  %li Pedro Luis Granados
+                  %li
+                    %strong E-mail:
+                    pgranados@tecnas.com.co
+                  %li
+                    %strong Celular:
+                    (057) 3206950402
+        .col-lg-7
+          .countries-img
+            %img{ src: "assets/img/countries.png" }
+    = render('app/partials/_footer.haml')
+    = render('app/partials/_scripts.haml')

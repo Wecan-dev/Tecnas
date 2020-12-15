@@ -1,0 +1,14 @@
+!!!
+:ruby
+  def render(partial, args = {})
+    engine = Haml::Engine.new(File.read(partial))
+    engine.render(Object.new, args)
+  end
+%html{ lang: "en" }
+  %head
+    = render('app/partials/_head.haml')
+    %link{ rel: "stylesheet", href: "assets/css/services.css" }
+  %body
+    = render('app/partials/_navbar.haml')
+    = render('app/partials/_footer.haml')
+    = render('app/partials/_scripts.haml')

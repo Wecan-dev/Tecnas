@@ -1,0 +1,54 @@
+!!!
+:ruby
+  def render(partial)
+    Haml::Engine.new(File.read(partial)).render
+  end
+%html{ lang: "en" }
+  %head
+    = render('app/partials/_head.haml')
+    %link{ rel: "stylesheet", href: "assets/css/certifications.css" }
+  %body
+    = render('app/partials/_navbar.haml')
+    %section.page-container
+      .section-title
+        %h1 Certificaciones
+        %p Obtener un certificado de garantía de Calidad no es el final de un proceso, es la ratificación de un compromiso con la sociedad y con el medio ambiente.
+      .certifications-slider
+        .certification-item
+          %img{ src: "assets/img/certifications/iso.png" }
+          %h3 ISO 9001 - 2015
+        .certification-item
+          %img{ src: "assets/img/certifications/huellas_de_carbono.png" }
+            %h3
+              Compromiso Ambiental
+              %br/
+              Huella de Carbono
+        .certification-item
+          %img{ src: "assets/img/certifications/haccp.png" }
+            %h3 HACCP
+        .certification-item
+          %img{ src: "assets/img/certifications/responsabilidad_social.png" }
+            %h3
+              Responsabilidad
+              %br/
+              Social
+        .certification-item
+          %img{ src: "assets/img/certifications/iso.png" }
+          %h3 ISO 9001 - 2015
+        .certification-item
+          %img{ src: "assets/img/certifications/huellas_de_carbono.png" }
+            %h3
+              Compromiso Ambiental
+              %br/
+              Huella de Carbono
+        .certification-item
+          %img{ src: "assets/img/certifications/haccp.png" }
+            %h3 HACCP
+        .certification-item
+          %img{ src: "assets/img/certifications/responsabilidad_social.png" }
+            %h3
+              Responsabilidad
+              %br/
+              Social
+    = render('app/partials/_footer.haml')
+    = render('app/partials/_scripts.haml')

@@ -1,0 +1,97 @@
+!!!
+:ruby
+  def render(partial, args = {})
+    engine = Haml::Engine.new(File.read(partial))
+    engine.render(Object.new, args)
+  end
+%html{ lang: "en" }
+  %head
+    = render('app/partials/_head.haml')
+    %link{ rel: "stylesheet", href: "assets/css/form-contact-customer.css" }
+  %body
+    = render('app/partials/_navbar.haml')
+    .main-contact
+      .container
+        .row
+          .col-lg-7
+            .contact-form
+              .section-title.left
+                %h1 Contáctenos
+              %form
+                .form-group
+                  %label Nombre*
+                  .input-group
+                    %span
+                      %i.fa.fa-user
+                    %input.form-control{ placeholder: "Lorem ipsum", type: "text" }
+                .form-group
+                  %label Email*
+                  .input-group
+                    %span
+                      %i.fa.fa-envelope
+                    %input.form-control{ placeholder: "loremipsum@gmail.com", type: "email" }
+                .form-group
+                  %label Empresa*
+                  .input-group
+                    %span
+                      %i.fa.fa-building
+                    %input.form-control{ placeholder: "Loremipsum", type: "text" }
+                .form-group
+                  %label Celular*
+                  .input-group
+                    %span
+                      %i.fa.fa-phone
+                    %input.form-control{ placeholder: "Lorem ipsum", type: "tel" }
+                .form-group
+                  %label Ciudad*
+                  .input-group
+                    %span
+                      %i.fa.fa-map-marker
+                    %input.form-control{ placeholder: "Lorem ipsum" }
+                .form-group
+                  %label País*
+                  .input-group
+                    %span
+                      %i.fa.fa-flag
+                    %input.form-control{ placeholder: "Lorem ipsum" }
+                .form-group
+                  %label Mensaje
+                  .input-group
+                    %span
+                      %i.fa.fa-pencil
+                    %textarea.form-control
+                %center.mt-4
+                  %input.btn-custom{ type: "submit", value: "Enviar" }  
+          .col-lg-5
+            .contact-info
+              %ul.contact-info-vertical
+                %li
+                  %img{ src: "assets/img/icons/place.svg", alt: "Carrera 50G No. 12 sur 29"}
+                  %span
+                    Dirección
+                    %br/
+                    %a{href: "#"} Carrera 50G No. 12 sur 29
+                %li
+                  %img{ src: "assets/img/icons/phone-call.svg" }
+                  %span
+                    Teléfono
+                    %br/
+                    %a{ href:"tel:42854290" } (4) 2854290
+                %li
+                  %img{ src: "assets/img/icons/envelope.svg" }
+                  %span
+                    Correo
+                    %br/
+                    %a{ href:"mailto:tecnas@tecnas.com.co"} tecnas@tecnas.com.co
+              %ul.contact-info-horizontal
+                %li
+                  %a{ href: "#" }
+                    %img{ src: "assets/img/icons/fb.svg" }
+                %li
+                  %a{ href: "#" }
+                    %img{ src: "assets/img/icons/instagram.svg" }
+                %li
+                  %a{ href: "#" }
+                    %img{ src: "assets/img/icons/youtube.svg" }
+    = render('app/partials/_footer.haml')
+    = render('app/partials/_scripts.haml')

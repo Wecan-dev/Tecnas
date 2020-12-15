@@ -1,0 +1,23 @@
+!!!
+:ruby
+  def render(partial)
+    Haml::Engine.new(File.read(partial)).render
+  end
+%html{ lang: "en" }
+  %head
+    = render('app/partials/_head.haml')
+  %body
+    = render('app/partials/_navbar.haml')
+    %section.main-slider
+      .main-slider-item
+        %img{ src: "assets/img/slider_1.jpg", alt: "Slider 1"}
+        .main-slider-text
+          %h1 Lorem ipsum
+        %a.main-slider-btn{href: "#"}
+          Etiquetado limpio
+          %br/
+          %span VER MÁS
+      .main-slider-item
+        %img{ src: "assets/img/slider_1.jpg", alt: "Slider 2"}
+    = render('app/partials/_footer.haml')
+    = render('app/partials/_scripts.haml')

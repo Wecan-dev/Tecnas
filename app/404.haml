@@ -1,0 +1,19 @@
+!!!
+:ruby
+  def render(partial, args = {})
+    engine = Haml::Engine.new(File.read(partial))
+    engine.render(Object.new, args)
+  end
+%html{ lang: "en" }
+  %head
+    = render('app/partials/_head.haml')
+    %link{ rel: "stylesheet", href: "assets/css/page.css" }
+  %body
+    = render('app/partials/_navbar.haml')
+    %section.not-found
+      %h1 ¿No encuentras lo que buscas?
+      .not-found-text
+        %img{src: "assets/img/icons/pointer.svg"}
+        %p Click aquí para ir al portafolio y conocer nuestras alternativas
+    = render('app/partials/_footer.haml')
+    = render('app/partials/_scripts.haml')

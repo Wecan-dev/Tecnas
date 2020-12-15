@@ -1,0 +1,29 @@
+!!!
+:ruby
+  def render(partial, args = {})
+    engine = Haml::Engine.new(File.read(partial))
+    engine.render(Object.new, args)
+  end
+%html{ lang: "en" }
+  %head
+    = render('app/partials/_head.haml')
+    %link{ rel: "stylesheet", href: "assets/css/page.css" }
+  %body
+    = render('app/partials/_navbar.haml')
+    .main-page
+      .container
+        .row
+          .col-lg-6
+            .section-title.left
+              %h1
+                Colorante natural
+                %br/
+                Curcumina
+            .portfolio-detail-text
+              %p Colorante obtenido a partir de un vegetal (Cúrcuma), cuyo principio colorante ha sido aislado mediante un proceso tecnológico especializado que garantiza su excelente calidad.
+              %p En Tecnas contamos con alternativas puras o mezclas, que cubren el abanico de alternativas de color para los diferentes sistemas alimenticios.
+          .col-lg-6
+            .portfolio-detail-img
+              %img{ src: "assets/img/portfolio_detail.png", alt: "Curcumina" }
+    = render('app/partials/_footer.haml')
+    = render('app/partials/_scripts.haml')

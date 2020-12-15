@@ -1,0 +1,75 @@
+!!!
+:ruby
+  def render(partial)
+    Haml::Engine.new(File.read(partial)).render
+  end
+%html{ lang: "en" }
+  %head
+    = render('app/partials/_head.haml')
+    %link{ rel: "stylesheet", href: "assets/css/about.css" }
+  %body
+    = render('app/partials/_navbar.haml')
+    %section.page-container
+      .section-title
+        %h1 Nuestra empresa
+      .main-about.mb-5
+        .about-video
+          %img{ src: "assets/img/about_video.png", alt: "Nuestra empresa" }
+        .about-text
+          %p Somos una gran familia, comprometida con los sueños y la búsqueda de la excelencia a través del amor y la alegría en lo que hacemos.   Fundada en 1987,  para contribuir  con el crecimiento y el desarrollo de la industria de alimentos,   mediante la calidad de nuestros productos, la calidez de nuestro servicio, la investigación, innovación  y vigilancia de las tendencias del mercado en los sectores Cárnicos, Lácteos y Helados, Panadería, Repostería y Arepas, Bebidas, Galletas  y Snacks,  Hoteles, Restaurantes y  Casinos. Estamos comprometidos con la Salud, el bienestar y el cuidado del medio ambiente.  
+          %a.btn.btn-custom{ href: "#" } Ver más
+      .main-about.full-width.mb-5
+        .about-subtitle Por qué elegirnos
+        .about-text
+          %p Nuestros  clientes y proveedores son nuestros aliados, hacen parte de esta gran familia  y con ellos generamos soluciones a través del diseño, fabricación, maquila y comercialización de productos, ingredientes  y aditivos para el consumo humano y la división de Limpieza, Desinfección e Inocuidad; por medio de un servicio cálido y  un equipo humano  calificado, motivado y que encuentran en TECNAS un espacio para el desarrollo profesional, personal, espiritual.  Establecemos relaciones duraderas en el tiempo  y así logramos ser Socios en su progreso.
+          %p Pasión y amor por lo que hacemos, es el reflejo en la sonrisa de cada uno de nuestros empleados, sus familias, nuestros clientes y representados; nuestros aliados. Quienes han soñado, vibrado y construido con nosotros un crecimiento rentable y una propuesta de valor, que hoy nos consolida como líderes en soluciones efectivas para el mercado B2B de alimentos a nivel nacional
+      .main-support
+        .about-subtitle Nuestros Pilares
+        .row
+          .col-lg-3
+            .support-item
+              %img{ src: "assets/img/about_pillars_1.png" }
+              %h3 Talento humano
+          .col-lg-3
+            .support-item
+              %img{ src: "assets/img/about_pillars_2.png" }
+                %h3 Responsabilidad Social
+          .col-lg-3
+            .support-item
+              %img{ src: "assets/img/about_pillars_3.png" }
+                %h3 Investigación innovación y tecnología
+          .col-lg-3
+            .support-item
+              %img{ src: "assets/img/about_pillars_4.png" }
+                %h3 Satisfacción del cliente
+    .main-benefits
+      .benefit-item
+        %img{ src: "assets/img/icons/heart.png", alt: "Salud y Bienestar"}
+        .benefit-divider
+        %h4
+          Salud y
+          %br/
+          Bienestar
+      .benefit-item
+        %img{ src: "assets/img/icons/shaking_hands.png", alt: "Servicio con calidez"}
+        .benefit-divider
+        %h4
+          Servicio con
+          %br/
+          calidez
+      .benefit-item
+        %img{ src: "assets/img/icons/laboratory.png", alt: "Investigación, innovacion y Desarrollo"}
+        .benefit-divider
+        %h4
+          Investigación,
+          %br
+          innovación y Desarrollo
+      .benefit-item
+        %img{ src: "assets/img/icons/gear.png", alt: "Asesoría Integral"}
+        .benefit-divider
+        %h4
+          Asesoría
+          %br/
+          Integral
+    = render('app/partials/_footer.haml')
+    = render('app/partials/_scripts.haml')

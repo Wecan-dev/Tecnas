@@ -1,0 +1,79 @@
+- categories = [{name: "Cárnica", subcategories: [{name: "Saborización", menu: ["Preparados para elaborar derivados cárnicos", "Adobos, sazonadores y marinados", "Sabores/Aromas top note", "Sabores/Aromas naturales top note", "Humos y sabores parrila (naturales)", "Potenciadores de sabor naturales"]}, {name: "Salud y bienestar", menu: ["Colorantes Naturales y Alimentos Colorantes", "Plant-Based", "Paquetes para análogos cárnicos", "Salmueras para marinar sin alergenos adicionados", "Saborización Natural Cárnica", "Alternativas para apanar sin gluten adicionado", "Proteínas", "Fibras", "Antimicrobianos naturales", "Reducidos en sodio"]}, {name: "Funcionalidad", menu: ["Salmueras", "Sistemas de textura para cárnicos", "Sistemas para apanar", "Proteínas", "Plant-Base", "Paquetes para análogos cárnicos", "Fibras", "Conservantes", "Antioxidantes", "Fosfatos", "Almidones"]}]}, {name: "Lácteos"}, {name: "Panadería, repostería y arepas"}, {name: "Bebidas y vending"}, {name: "Galletas y snacks"}]
+%nav.navbar.navbar-expand-lg.navbar-top
+  %a.navbar-brand{href: "/"}
+    %img{src:"assets/img/logos/tecnas_logo.png"}
+  .search-bar
+    %form
+      .input-group
+        %input.search-input
+        .input-group-append
+          %span.input-group-text
+            %i.fa.fa-search
+  .pse-logo
+    %img{ src: "assets/img/logos/logo-pse.png", alt: "PSE"}
+  .languages
+    .switch-languages
+      %input{ id: "toggle", type: "checkbox" }
+      %label.toggle-item{ for: "toggle"}
+        .languages-label
+          %div{ style: "margin-left: 5px" } ESP
+          %div ENG
+%nav.navbar.navbar-expand-lg.navbar-bottom
+  %button.navbar-toggler{"aria-controls" => "navbar", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbar", "data-toggle" => "collapse", type: "button"}
+    %i.fa.fa-bars
+  #navbar.collapse.navbar-collapse
+    %ul.navbar-nav.margin-auto
+      %li.nav-item
+        %a.nav-link{href: "featured.html"} Destacados
+      %li.nav-item
+        %a.nav-link.dropdown-toggle{ href: "/", "data-toggle" => "dropdown" } Portafolio
+        %ul.dropdown-menu.multi-level
+          %li.multi-level-nav-item
+            %a{ "data-toggle" => "collapse", href: "#categoriesCollapse",  role: "button", "aria-expanded" => "false", "aria-controls" => "categoriesCollapse" } Categorías
+          .collapse{ id: "categoriesCollapse" }
+            %ul.collapse-list
+              - categories.each do |category|
+                - if category[:subcategories]
+                  %li.collapse-nav-item
+                    %a{"data-toggle" => "dropdown", href: "#"}= category[:name]
+                    .dropdown-menu.level-1
+                      - category[:subcategories].each do |subcategory|
+                        .level-2
+                          .menu-header
+                            = subcategory[:name]
+                          - subcategory[:menu].each do |menu|
+                            %ul
+                              %li
+                                %a{href: "portfolio-detail-right.html"}= menu
+                - else
+                  %li.collapse-nav-item
+                    %a{href: ""}= category[:name]
+          %li.multi-level-nav-item
+            %a{href: "#"} Productos
+          %li.multi-level-nav-item
+            %a{href: "#"} Productos para limpieza, desinsfección e inocuidad
+      %li.nav-item
+        %a.nav-link{href: "clients.html"} Representaciones
+      %li.nav-item
+        %a.nav-link.dropdown-toggle{ href: "#" } Quiénes somos
+        %ul.dropdown-menu.one-level
+          %li
+            %a{href: "about.html"} Nuestra empresa
+          %li
+            %a{href: "services.html"} Servicios
+          %li
+            %a{href: "certifications.html"} Certificaciones
+      %li.nav-item
+        %a.nav-link.dropdown-toggle{href: "contact.html"} Contacténos
+        %ul.dropdown-menu.one-level
+          %li
+            %a{href: "points-of-sale.html"} Punto de Venta
+          %li
+            %a{href: "customer-service.html"} Servicios al cliente
+          %li
+            %a{href: "countries.html"} Otros países
+          %li
+            %a{href: "work-with-us.html"} Trabaje para nosotros
+      %li.nav-item
+        %a.nav-link{href: "#"} Redes Sociales
+  

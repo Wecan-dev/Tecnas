@@ -1,0 +1,53 @@
+!!!
+:ruby
+  def render(partial)
+    Haml::Engine.new(File.read(partial)).render
+  end
+%html{ lang: "en" }
+  %head
+    = render('app/partials/_head.haml')
+    %link{ rel: "stylesheet", href: "assets/css/clients.css" }
+  %body
+    = render('app/partials/_navbar.haml')
+    %section.page-container
+      .section-title
+        %h1 Nuestros Aliados
+      .clients-slider
+        .client-item
+          %img{ src: "assets/img/logos/clients/image-2@2x.png" }
+          %h3 Colorantes Naturales Alimentos Colorantes
+        .client-item
+          %img{ src: "assets/img/logos/clients/image-5@2x.png" }
+            %h3 Carrageninas y Pectinas
+        .client-item
+          %img{ src: "assets/img/logos/clients/image-3@2x.png" }
+            %h3 Detergentes y desinfectantes
+        .client-item
+          %img{ src: "assets/img/logos/clients/image-6@2x.png" }
+            %h3 Proteínas de Soya
+        .client-item
+          %img{ src: "assets/img/logos/clients/image-1@2x.png" }
+            %h3 Proteínas Animales
+        .client-item
+          %img{ src: "assets/img/logos/clients/image-10@2x.png" }
+            %h3 Ingredientes Nutricionales y Funcionales
+        .client-item
+          %img{ src: "assets/img/logos/clients/image-4@2x.png" }
+            %h3 Soluciones en conservación
+        .client-item
+          %img{ src: "assets/img/logos/clients/image-7@2x.png" }
+            %h3 Humos y Doradores
+        .client-item
+          %img{ src: "assets/img/logos/clients/image-2@2x.png" }
+          %h3 Colorantes Naturales Alimentos Colorantes
+        .client-item
+          %img{ src: "assets/img/logos/clients/image-3@2x.png" }
+            %h3 Detergentes y desinfectantes
+        .client-item
+          %img{ src: "assets/img/logos/clients/image-1@2x.png" }
+            %h3 Proteínas Animales
+        .client-item
+          %img{ src: "assets/img/logos/clients/image-4@2x.png" }
+            %h3 Soluciones en conservación
+    = render('app/partials/_footer.haml')
+    = render('app/partials/_scripts.haml')

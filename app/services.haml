@@ -1,0 +1,33 @@
+!!!
+:ruby
+  def render(partial, args = {})
+    engine = Haml::Engine.new(File.read(partial))
+    engine.render(Object.new, args)
+  end
+%html{ lang: "en" }
+  %head
+    = render('app/partials/_head.haml')
+    %link{ rel: "stylesheet", href: "assets/css/services.css" }
+  %body
+    = render('app/partials/_navbar.haml')
+    %section.page-container
+      .section-title
+        %h1 Acompañamiento técnico integral
+      .row
+        .col-lg-6
+          .services-img
+            %img{ src: "assets/img/services.jpg" }
+        .col-lg-6
+          .services-text
+            %ul
+              %li Equipo de desarrollo especializado por líneas
+              %li Laboratorios indumentales con equipo de medición y análisis de alta gama
+              %li Plantas pilotos para aplicaciones cárnicas, de panadería y gastronomía
+              %li Apoyo en aplicaciones y presentación de productos panel sensorial entrenado
+              %li Actualización en las tendencias de consumo y nuevos lanzamientos de cada sector
+              %li Asesoría permanente de consultores externos de centros de investigación y Universidades
+              %li Diagnoóstico LDI y soluciones que contribuyen al cuidado del medio ambiente
+              %li Desarrollo y fabricación de productos con marca propia (maquila)
+              %li Orientación a nuestros clientes en procesos legales y normativos
+    = render('app/partials/_footer.haml')
+    = render('app/partials/_scripts.haml')

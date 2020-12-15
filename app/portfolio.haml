@@ -1,0 +1,73 @@
+!!!
+:ruby
+  def render(partial, args = {})
+    engine = Haml::Engine.new(File.read(partial))
+    engine.render(Object.new, args)
+  end
+%html{ lang: "en" }
+  %head
+    = render('app/partials/_head.haml')
+    %link{ rel: "stylesheet", href: "assets/css/page.css" }
+  %body
+    = render('app/partials/_navbar.haml')
+    .main-page
+      .container
+        .section-title
+          %h1 Colores naturales y alimentos colorantes
+        .row
+          .col-lg-4
+            .portfolio-card
+              %a{href: "#"}
+                %img{ src: "https://statics-cuidateplus.marca.com/sites/default/files/styles/natural/public/betacarotenos.jpg?itok=YMAHak64", alt: "Betacaroteno" }
+                .portfolio-text
+                  %h4 Betacaroteno
+          .col-lg-4
+            %a{href: "#"}
+              .portfolio-card
+                %img{ src: "https://media.istockphoto.com/photos/cancer-preventing-green-juice-picture-id943011840?k=6&m=943011840&s=612x612&w=0&h=KBWSpbba-H3N_OVIxJXwP4MGjT_eIMEKnS8oVaMy9rU=", alt: "Clorofilina" }
+                .portfolio-text
+                  %h4 Clorofilina
+          .col-lg-4
+            %a{href: "#"}
+              .portfolio-card
+                %img{ src: "https://as.com/deporteyvida/imagenes/2018/01/31/portada/1517396804_859147_1517396898_noticia_normal.jpg", alt: "Curcumina" }
+                .portfolio-text
+                  %h4 Curcumina
+          .col-lg-4
+            .portfolio-card
+              %a{href: "#"}
+                %img{ src: "https://statics-cuidateplus.marca.com/sites/default/files/styles/natural/public/betacarotenos.jpg?itok=YMAHak64", alt: "Betacaroteno" }
+                .portfolio-text
+                  %h4 Betacaroteno
+          .col-lg-4
+            %a{href: "#"}
+              .portfolio-card
+                %img{ src: "https://media.istockphoto.com/photos/cancer-preventing-green-juice-picture-id943011840?k=6&m=943011840&s=612x612&w=0&h=KBWSpbba-H3N_OVIxJXwP4MGjT_eIMEKnS8oVaMy9rU=", alt: "Clorofilina" }
+                .portfolio-text
+                  %h4 Clorofilina
+          .col-lg-4
+            %a{href: "#"}
+              .portfolio-card
+                %img{ src: "https://as.com/deporteyvida/imagenes/2018/01/31/portada/1517396804_859147_1517396898_noticia_normal.jpg", alt: "Curcumina" }
+                .portfolio-text
+                  %h4 Curcumina
+          .col-lg-4
+            .portfolio-card
+              %a{href: "#"}
+                %img{ src: "https://statics-cuidateplus.marca.com/sites/default/files/styles/natural/public/betacarotenos.jpg?itok=YMAHak64", alt: "Betacaroteno" }
+                .portfolio-text
+                  %h4 Betacaroteno
+          .col-lg-4
+            %a{href: "#"}
+              .portfolio-card
+                %img{ src: "https://media.istockphoto.com/photos/cancer-preventing-green-juice-picture-id943011840?k=6&m=943011840&s=612x612&w=0&h=KBWSpbba-H3N_OVIxJXwP4MGjT_eIMEKnS8oVaMy9rU=", alt: "Clorofilina" }
+                .portfolio-text
+                  %h4 Clorofilina
+          .col-lg-4
+            %a{href: "#"}
+              .portfolio-card
+                %img{ src: "https://as.com/deporteyvida/imagenes/2018/01/31/portada/1517396804_859147_1517396898_noticia_normal.jpg", alt: "Curcumina" }
+                .portfolio-text
+                  %h4 Curcumina
+    = render('app/partials/_footer.haml')
+    = render('app/partials/_scripts.haml')
