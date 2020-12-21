@@ -76,7 +76,7 @@ a:hover {
 
 .navbar-top {
   background-color: #fff;
-  padding: 15px 100px;
+  padding: 12px 108px;
   justify-content: space-between;
 }
 
@@ -108,7 +108,8 @@ a:hover {
 .navbar.navbar-bottom .nav-link {
   color: #fff;
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 20.3px;
+  font-weight: 500;
   font-family: "Cabin", sans-serif;
   padding: 20px;
   padding-right: 20px;
@@ -124,7 +125,7 @@ a:hover {
 }
 
 .search-bar {
-  width: 45%;
+  width: 47%;
 }
 
 .search-bar .input-group {
@@ -149,11 +150,17 @@ a:hover {
 .search-bar .input-group-append {
   position: absolute;
   right: 8px;
+  width: 60px;
+  height: 100%;
+}
+
+.pse-logo {
+  margin-left: 22px;
 }
 
 .languages {
   font-family: "Cabin", sans-serif;
-  margin-right: 23px;
+  margin-right: 10px;
 }
 
 .switch-languages {
@@ -186,6 +193,7 @@ a:hover {
   transform-origin: 20% center;
   cursor: pointer;
   z-index: 1;
+  margin-bottom: 0;
 }
 
 .switch-languages label.toggle-item:before {
@@ -245,10 +253,11 @@ footer ul {
   color: #717471;
   font-weight: bold;
   padding: 0;
+  font-size: 20px;
 }
 
 .footer-top img {
-  height: 65px;
+  height: 55px;
 }
 
 .footer-bottom {

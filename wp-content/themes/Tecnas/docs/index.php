@@ -12,7 +12,7 @@
       <a class="main-slider-btn" href="#">
         Etiquetado limpio
         <br>
-        <span>VER MÁS</span>
+        <span>VER MÁS »</span>
       </a>
     </div>
     <?php  endwhile; ?>

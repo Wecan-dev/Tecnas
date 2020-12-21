@@ -633,7 +633,7 @@ ul.share-social li a:hover {
 .not-found {
   background-image: url("../img/page-not-found.png");
   width: 100%;
-  height: 70vh;
+  height: 55vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -641,16 +641,17 @@ ul.share-social li a:hover {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  padding-left: 80px;
+  padding-left: 145px;
 }
 
 .not-found h1 {
   font-family: "Aller-Bold";
   font-size: 50px;
   color: #152b4e;
-  width: 50%;
+  width: 45%;
   margin-bottom: 30px;
   text-transform: uppercase;
+  margin-top: -15px;
 }
 
 .not-found .not-found-text {

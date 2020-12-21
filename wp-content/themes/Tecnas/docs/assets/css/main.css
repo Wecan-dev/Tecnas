@@ -539,15 +539,19 @@ ul.share-social li a:hover {
   background-color: #0071ba;
   color: #fff;
   border-radius: 47px;
-  padding: 20px 90px;
+  padding: 20px 98px;
   display: inline-block;
-  font-size: 25px;
+  font-size: 28px;
   font-family: "Aller-Bold";
   text-align: center;
   position: absolute;
   z-index: 1;
   bottom: 20%;
-  left: 150px;
+  left: 170px;
+}
+
+.main-slider .main-slider-item .main-slider-btn span {
+  font-size: 25px;
 }
 
 .main-slider .slick-next::before,

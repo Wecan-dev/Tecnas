@@ -168,8 +168,7 @@
             </li>
           </ul>
         </li>
-        <li class='nav-item'>
-          <a class='nav-link dropdown-toggle' href='contact.html'>Contacténos</a>
+        <li class='nav-item'><a class='nav-link dropdown-toggle' href='contact.html'>Contáctenos</a>
           <ul class='dropdown-menu one-level'>
             <li>
               <a href='<?php echo bloginfo('url').'/punto-de-venta';?>'>Punto de Venta</a>
