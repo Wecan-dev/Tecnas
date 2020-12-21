@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 
 <head>
   <meta charset='UTF-8'>
@@ -19,16 +19,16 @@
   <link href='<?php echo get_template_directory_uri(); ?>/assets/css/slick/slick-theme.css' rel='stylesheet'>
   <link href='<?php echo get_template_directory_uri(); ?>/assets/css/main.css' rel='stylesheet'>
 
-  <link href="<?php echo get_template_directory_uri(); ?>/assets/css/page.css" rel="stylesheet">
+<link href="<?php echo get_template_directory_uri(); ?>/assets/css/page.css" rel="stylesheet">
 
-   <link href="<?php echo get_template_directory_uri(); ?>/assets/css/clients.css" rel="stylesheet">
+ <link href="<?php echo get_template_directory_uri(); ?>/assets/css/clients.css" rel="stylesheet">
 
-    <link href="<?php echo get_template_directory_uri(); ?>/assets/css/featured.css" rel="stylesheet">
-     <link href="<?php echo get_template_directory_uri(); ?>/assets/css/services.css" rel="stylesheet">
-    <link href="<?php echo get_template_directory_uri(); ?>/assets/css/certifications.css" rel="stylesheet">
-     <link href="<?php echo get_template_directory_uri(); ?>/assets/css/about.css" rel="stylesheet">
-      <link href="<?php echo get_template_directory_uri(); ?>/assets/css/form-contact-customer.css" rel="stylesheet">
-       <link href="assets/css/form-contact-customer.css" rel="stylesheet">
+  <link href="<?php echo get_template_directory_uri(); ?>/assets/css/featured.css" rel="stylesheet">
+  <link href="<?php echo get_template_directory_uri(); ?>/assets/css/services.css" rel="stylesheet">
+  <link href="<?php echo get_template_directory_uri(); ?>/assets/css/certifications.css" rel="stylesheet">
+   <link href="<?php echo get_template_directory_uri(); ?>/assets/css/about.css" rel="stylesheet">
+  <link href="<?php echo get_template_directory_uri(); ?>/assets/css/form-contact-customer.css" rel="stylesheet">
+  <link href="<?php echo get_template_directory_uri(); ?>/assets/css/form-contact-customer.css" rel="stylesheet">
 </head>
  <?php wp_head(); ?>
 <body>
@@ -38,14 +38,7 @@
     </a>
     <div class='search-bar'>
       <form>
-        <div class='input-group'>
-          <input class='search-input'>
-          <div class='input-group-append'>
-            <span class='input-group-text'>
-              <i class='fa fa-search'></i>
-            </span>
-          </div>
-        </div>
+       <?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
       </form>
     </div>
     <div class='pse-logo'>
@@ -56,8 +49,7 @@
         <input id='toggle' type='checkbox'>
         <label class='toggle-item' for='toggle'>
           <div class='languages-label'>
-            <div style='margin-left: 5px'>ESP</div>
-            <div>ENG</div>
+            <?php dynamic_sidebar( 'sidebar-1' ); ?>
           </div>
         </label>
       </div>
@@ -70,7 +62,7 @@
     <div class='collapse navbar-collapse' id='navbar'>
       <ul class='navbar-nav margin-auto'>
         <li class='nav-item'>
-          <a class='nav-link' href='<?php echo bloginfo('url').'/featured';?>'>Destacados</a>
+          <a class='nav-link' href='<?php echo bloginfo('url').'/destacados';?>'>Destacados</a>
         </li>
         <li class='nav-item'>
           <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='/'>Portafolio</a>
@@ -158,7 +150,7 @@
           <a class='nav-link dropdown-toggle' href='#'>Quiénes somos</a>
           <ul class='dropdown-menu one-level'>
             <li>
-              <a href='<?php echo bloginfo('url').'/about';?>'>Nuestra empresa</a>
+              <a href='<?php echo bloginfo('url').'/nuestra-empresa';?>'>Nuestra empresa</a>
             </li>
             <li>
               <a href='<?php echo bloginfo('url').'/Servicios';?>'>Servicios</a>
@@ -168,7 +160,8 @@
             </li>
           </ul>
         </li>
-        <li class='nav-item'><a class='nav-link dropdown-toggle' href='contact.html'>Contáctenos</a>
+        <li class='nav-item'>
+          <a class='nav-link dropdown-toggle' href='<?php echo bloginfo('url').'/contacto';?>'>Contacténos</a>
           <ul class='dropdown-menu one-level'>
             <li>
               <a href='<?php echo bloginfo('url').'/punto-de-venta';?>'>Punto de Venta</a>

@@ -1,0 +1,24 @@
+<?php get_header() ?>
+
+  <div class="main-page">
+    <div class="container">
+      <div class="section-title">
+        <h1>Colores naturales y alimentos colorantes</h1>
+      </div>
+      <div class="row">
+        
+        <div class="col-lg-4">
+          <div class="portfolio-card">
+            <a href="#">
+              <img alt="Betacaroteno" src="https://statics-cuidateplus.marca.com/sites/default/files/styles/natural/public/betacarotenos.jpg?itok=YMAHak64">
+              <div class="portfolio-text">
+                <h4>Betacaroteno</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+ <?php get_footer() ?>

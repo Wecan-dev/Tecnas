@@ -73,7 +73,18 @@ body {
 a:hover {
   text-decoration: none;
 }
-
+#slick-slide00 > div.featured-card-info > p:nth-child(3) > a > span{
+  display: none !important;
+}
+.widget_polylang ul{
+      display: flex;
+    list-style: none;
+    margin-right: 40px;
+    margin-top: 1rem;
+}
+..widget_polylang a{
+  color: black;
+}
 .navbar-top {
   background-color: #fff;
   padding: 15px 100px;
@@ -401,15 +412,16 @@ footer ul {
 }
 
 .btn-custom {
-  border-radius: 24.5px;
-  background-color: #62cbf0;
-  color: #fff;
-  text-transform: uppercase;
-  font-family: "Aller-Bold";
-  font-size: 15px;
-  padding: 13px 40px;
-  transition: all ease-in-out 0.2s;
-  border-color: transparent;
+border-radius: 24.5px;
+    background-color: #62cbf0;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Aller-Bold";
+    font-size: 15px;
+    padding: 8px 20px;
+    transition: all ease-in-out 0.2s;
+    border-color: transparent;
+    width: 8rem;
 }
 
 .btn-custom:hover {

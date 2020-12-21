@@ -10,9 +10,9 @@
         <h1><?php the_title(); ?></h1>
       </div>
       <a class="main-slider-btn" href="#">
-        Etiquetado limpio
+       <?php echo get_field('banner_url_del_boton'); ?>
         <br>
-        <span>VER MÁS »</span>
+        <span> <?php echo get_field('banner_texto_del_boton'); ?> »</span>
       </a>
     </div>
     <?php  endwhile; ?>

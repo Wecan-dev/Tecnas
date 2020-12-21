@@ -14,54 +14,12 @@
         <div class="col-lg-8">
           <div class="customer-service-form">
             <form>
-              <div class="form-group">
-                <label>Nombre*</label>
-                <div class="input-group">
-                  <span>
-                    <i class="fa fa-user"></i>
-                  </span>
-                  <input class="form-control" placeholder="Lorem ipsum" type="text">
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Email*</label>
-                <div class="input-group">
-                  <span>
-                    <i class="fa fa-envelope"></i>
-                  </span>
-                  <input class="form-control" placeholder="loremipsum@gmail.com" type="email">
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Profesión*</label>
-                <div class="input-group">
-                  <span>
-                    <i class="fa fa-commenting-o"></i>
-                  </span>
-                  <input class="form-control" placeholder="Lorem ipsum" type="text">
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Mensaje</label>
-                <div class="input-group">
-                  <span>
-                    <i class="fa fa-pencil"></i>
-                  </span>
-                  <textarea class="form-control"></textarea>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Adjuntar hoja de vida*</label>
-                <div class="input-group">
-                  <span>
-                    <i class="fa fa-paperclip"></i>
-                  </span>
-                  <label class="form-control" disabled>
-                    <input class="file-input form-control" type="file">
-                  </label>
-                </div>
-              </div>
-              <input class="btn-custom" type="submit" value="Enviar">
+             
+              <?php echo FrmFormsController::get_form_shortcode( array( 'id' => 3, 'title' => false, 'description' => false ) ); ?>
+              
+             
+              
+            
             </form>
           </div>
         </div>
