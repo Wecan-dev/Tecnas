@@ -32,8 +32,6 @@ function twentynineteen_widgets_init() {
 }
 add_action( 'widgets_init', 'twentynineteen_widgets_init' );
 
-
-
 /***************** Funcion Lang ********************/
 function lang(){
     $currentlang = get_bloginfo('language');
@@ -91,7 +89,7 @@ if ( ! function_exists('Banner') ) {
             'show_ui'               => true,
             'show_in_menu'          => true,
             'menu_position'         => 5,
-            'menu_icon'             => 'dashicons-format-gallery',
+            'menu_icon'             => 'dashicons-admin-home',
             'show_in_admin_bar'     => true,
             'show_in_nav_menus'     => true,
             'can_export'            => true,
@@ -153,7 +151,7 @@ if ( ! function_exists('clientes') ) {
             'show_ui'               => true,
             'show_in_menu'          => true,
             'menu_position'         => 5,
-            'menu_icon'             => 'dashicons-format-gallery',
+            'menu_icon'             => 'dashicons-buddicons-buddypress-logo',
             'show_in_admin_bar'     => true,
             'show_in_nav_menus'     => true,
             'can_export'            => true,
@@ -178,8 +176,8 @@ if ( ! function_exists('destacados__') ) {
         $labels = array(
             'name'                  => _x( 'Destacados.', 'Post Type General Name', 'text_domain' ),
             'singular_name'         => _x( 'Destacados.', 'Post Type Singular Name', 'text_domain' ),
-            'menu_name'             => __( 'Destacados.', 'text_domain' ),
-            'name_admin_bar'        => __( 'Destacados.', 'text_domain' ),
+            'menu_name'             => __( 'Destacados', 'text_domain' ),
+            'name_admin_bar'        => __( 'Destacados', 'text_domain' ),
             'archives'              => __( 'Item Archives', 'text_domain' ),
             'attributes'            => __( 'Item Attributes', 'text_domain' ),
             'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
@@ -215,7 +213,7 @@ if ( ! function_exists('destacados__') ) {
             'show_ui'               => true,
             'show_in_menu'          => true,
             'menu_position'         => 5,
-            'menu_icon'             => 'dashicons-format-gallery',
+            'menu_icon'             => 'dashicons-star-filled',
             'show_in_admin_bar'     => true,
             'show_in_nav_menus'     => true,
             'can_export'            => true,
@@ -238,9 +236,9 @@ if ( ! function_exists('producto') ) {
     function producto() {
     
         $labels = array(
-            'name'                  => _x( 'Producto', 'Post Type General Name', 'text_domain' ),
-            'singular_name'         => _x( 'Producto', 'Post Type Singular Name', 'text_domain' ),
-            'menu_name'             => __( 'Producto', 'text_domain' ),
+            'name'                  => _x( 'productos', 'Post Type General Name', 'text_domain' ),
+            'singular_name'         => _x( 'producto', 'Post Type Singular Name', 'text_domain' ),
+            'menu_name'             => __( 'productos', 'text_domain' ),
             'name_admin_bar'        => __( 'Producto', 'text_domain' ),
             'archives'              => __( 'Item Archives', 'text_domain' ),
             'attributes'            => __( 'Item Attributes', 'text_domain' ),
@@ -277,7 +275,7 @@ if ( ! function_exists('producto') ) {
             'show_ui'               => true,
             'show_in_menu'          => true,
             'menu_position'         => 5,
-            'menu_icon'             => 'dashicons-format-gallery',
+            'menu_icon'             => 'dashicons-cart',
             'show_in_admin_bar'     => true,
             'show_in_nav_menus'     => true,
             'can_export'            => true,
@@ -377,7 +375,7 @@ if ( ! function_exists('servicios') ) {
             'show_ui'               => true,
             'show_in_menu'          => true,
             'menu_position'         => 5,
-            'menu_icon'             => 'dashicons-format-gallery',
+            'menu_icon'             => 'dashicons-admin-tools',
             'show_in_admin_bar'     => true,
             'show_in_nav_menus'     => true,
             'can_export'            => true,
@@ -438,7 +436,7 @@ if ( ! function_exists('certificaciones') ) {
             'show_ui'               => true,
             'show_in_menu'          => true,
             'menu_position'         => 5,
-            'menu_icon'             => 'dashicons-format-gallery',
+            'menu_icon'             => 'dashicons-format-aside',
             'show_in_admin_bar'     => true,
             'show_in_nav_menus'     => true,
             'can_export'            => true,
@@ -500,7 +498,7 @@ if ( ! function_exists('punto_de_venta') ) {
             'show_ui'               => true,
             'show_in_menu'          => true,
             'menu_position'         => 5,
-            'menu_icon'             => 'dashicons-format-gallery',
+            'menu_icon'             => 'dashicons-location-alt',
             'show_in_admin_bar'     => true,
             'show_in_nav_menus'     => true,
             'can_export'            => true,
@@ -513,46 +511,71 @@ if ( ! function_exists('punto_de_venta') ) {
     
     }
     add_action( 'init', 'punto_de_venta', 0 );
+    }
+
+// Register Custom Post Type
+if ( ! function_exists('paises') ) {
+  
+    // Register Custom Post Type
+    function paises() {
+    
+        $labels = array(
+            'name'                  => _x( 'Otros paises', 'Post Type General Name', 'text_domain' ),
+            'singular_name'         => _x( 'Otro país', 'Post Type Singular Name', 'text_domain' ),
+            'menu_name'             => __( 'Otros paises', 'text_domain' ),
+            'name_admin_bar'        => __( 'Otros paises', 'text_domain' ),
+            'archives'              => __( 'Item Archives', 'text_domain' ),
+            'attributes'            => __( 'Item Attributes', 'text_domain' ),
+            'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
+            'all_items'             => __( 'All Items', 'text_domain' ),
+            'add_new_item'          => __( 'Add New Item', 'text_domain' ),
+            'add_new'               => __( 'Add New', 'text_domain' ),
+            'new_item'              => __( 'New Item', 'text_domain' ),
+            'edit_item'             => __( 'Edit Item', 'text_domain' ),
+            'update_item'           => __( 'Update Item', 'text_domain' ),
+            'view_item'             => __( 'View Item', 'text_domain' ),
+            'view_items'            => __( 'View Items', 'text_domain' ),
+            'search_items'          => __( 'Search Item', 'text_domain' ),
+            'not_found'             => __( 'Not found', 'text_domain' ),
+            'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
+            'featured_image'        => __( 'Featured Image', 'text_domain' ),
+            'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
+            'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
+            'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
+            'insert_into_item'      => __( 'Insert into item', 'text_domain' ),
+            'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
+            'items_list'            => __( 'Items list', 'text_domain' ),
+            'items_list_navigation' => __( 'Items list navigation', 'text_domain' ),
+            'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
+        );
+        $args = array(
+            'label'                 => __( 'paises', 'text_domain' ),
+            'description'           => __( 'paises de trasnsporte', 'text_domain' ),
+            'labels'                => $labels,
+            'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+            'taxonomies'            => array( 'category', 'post_tag' ),
+            'hierarchical'          => false,
+            'public'                => true,
+            'show_ui'               => true,
+            'show_in_menu'          => true,
+            'menu_position'         => 5,
+            'menu_icon'             => 'dashicons-admin-site',
+            'show_in_admin_bar'     => true,
+            'show_in_nav_menus'     => true,
+            'can_export'            => true,
+            'has_archive'           => true,
+            'exclude_from_search'   => false,
+            'publicly_queryable'    => true,
+            'capability_type'       => 'page',
+        );
+        register_post_type( 'paises', $args );
+    
+    }
+    add_action( 'init', 'paises', 0 );
     
     }
 
-    // Register Collection Custom Taxonomy
-function ciudades_taxonomy() {
-
-  $labels = array(
-    'name'                       => _x( 'Ciudades', 'Taxonomy General Name', 'text_domain' ),
-    'singular_name'              => _x( 'Ciudades', 'Taxonomy Singular Name', 'text_domain' ),
-    'menu_name'                  => __( 'ciudades', 'text_domain' ),
-    'all_items'                  => __( 'All ciudadess', 'text_domain' ),
-    'parent_item'                => __( 'Parent ciudades', 'text_domain' ),
-    'parent_item_colon'          => __( 'Parent ciudades:', 'text_domain' ),
-    'new_item_name'              => __( 'New ciudades', 'text_domain' ),
-    'add_new_item'               => __( 'Add Nueva ciudades', 'text_domain' ),
-    'edit_item'                  => __( 'Edit| ciudades', 'text_domain' ),
-    'update_item'                => __( 'Update ciudades', 'text_domain' ),
-    'view_item'                  => __( 'See Item', 'text_domain' ),
-    'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
-    'add_or_remove_items'        => __( 'Add or remove items', 'text_domain' ),
-    'choose_from_most_used'      => __( 'Choose from the most used items', 'text_domain' ),
-    'popular_items'              => __( 'Popular Items', 'text_domain' ),
-    'search_items'               => __( 'Search ciudades', 'text_domain' ),
-    'not_found'                  => __( 'Not Found', 'text_domain' ),
-    'no_terms'                   => __( 'No items', 'text_domain' ),
-    'items_list'                 => __( 'Items list', 'text_domain' ),
-    'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
-  );
-  $args = array(
-    'labels'                     => $labels,
-    'hierarchical'               => true,
-    'public'                     => true,
-    'show_ui'                    => true,
-    'show_admin_column'          => true,
-    'show_in_nav_menus'          => true,
-    'show_tagcloud'              => true,
-  );
-  register_taxonomy( 'ciudades', array( 'punto_de_venta' ), $args );
-}
-add_action( 'init', 'ciudades_taxonomy', 0 );
+    
     /*****************FOOTER*************************************/
     function theme_customize_register($wp_customize){
 $wp_customize->add_panel('footer',
@@ -950,3 +973,5 @@ $wp_customize->add_section('pagina_nuestra_empresa_contenido', array (
     }
   /*********************************************************************/
 add_action('customize_register','theme_customize_register');
+
+

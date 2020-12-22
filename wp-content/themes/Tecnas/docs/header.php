@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="<?php bloginfo('language'); ?>">
 
 <head>
   <meta charset='UTF-8'>
@@ -12,7 +12,8 @@
   <meta content='' property='og:title'>
   <meta content='' property='og:description'>
   <meta content='' property='og:image'>
-  <title>Tecnas | Socios en su progreso</title>
+  <title>Tecnas |<?php if(lang() == 'es'){echo "Socios en su progreso";}if(lang() == 'en'){echo "
+Partners in your progress";} ?></title>
   <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' rel='stylesheet'>
   <link href='<?php echo get_template_directory_uri(); ?>/assets/css/animate/animate.css' rel='stylesheet'>
   <link href='<?php echo get_template_directory_uri(); ?>/assets/css/slick/slick.css' rel='stylesheet'>
@@ -49,7 +50,13 @@
         <input id='toggle' type='checkbox'>
         <label class='toggle-item' for='toggle'>
           <div class='languages-label'>
-            <?php dynamic_sidebar( 'sidebar-1' ); ?>
+            <?php $url = explode('?', $_SERVER['REQUEST_URI'], 2);
+                      if (lang() == 'es'){  "Idioma"; }else{  "Language"; $url = explode('en', $_SERVER['REQUEST_URI'], 2);}  ?>
+            <a title="Español"lang="es-CO" hreflang="es-CO" href="<?php echo $url[0]; ?>">
+             <div  style='margin-left: 5px; color: black;'>ESP</div>
+             </a>
+             <a title="English" lang="en-US" hreflang="en-US" href="<?php echo $url[0]; ?>en/">
+            <div style='color: black;'>ENG</div>
           </div>
         </label>
       </div>
@@ -62,16 +69,16 @@
     <div class='collapse navbar-collapse' id='navbar'>
       <ul class='navbar-nav margin-auto'>
         <li class='nav-item'>
-          <a class='nav-link' href='<?php echo bloginfo('url').'/destacados';?>'>Destacados</a>
+          <a class='nav-link' href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "destacados";}else{echo "featured";} ?>'><?php if(lang() == 'es'){echo "Destacados";}if(lang() == 'en'){echo "Featured";} ?></a>
         </li>
 
 
 
          <li class='nav-item'>
-          <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='/'>Portafolio</a>
+          <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='/'><?php if(lang() == 'es'){echo "Portafolio";}if(lang() == 'en'){echo "Briefcase";} ?></a>
           <ul class='dropdown-menu multi-level'>
             <li class='multi-level-nav-item'>
-              <a aria-controls='categoriesCollapse' aria-expanded='false' data-toggle='collapse' href='#categoriesCollapse' role='button'>Categorías</a>
+              <a aria-controls='categoriesCollapse' aria-expanded='false' data-toggle='collapse' href='#categoriesCollapse' role='button'><?php if(lang() == 'es'){echo "Categorías";}if(lang() == 'en'){echo "Category ";} ?></a>
             </li>
             <div class='collapse' id='categoriesCollapse'>
               <ul class='collapse-list'>
@@ -145,49 +152,57 @@
               </ul>
            </div>      
            <li class='multi-level-nav-item'>
-              <a href='#'>Productos</a>
+              <a href='#'><?php if(lang() == 'es'){echo "Productos";}if(lang() == 'en'){echo "Products";} ?></a>
             </li>
             <li class='multi-level-nav-item'>
-              <a href='#'>Productos para limpieza, desinsfección e inocuidad</a>
+              <a href='#'><?php if(lang() == 'es'){echo "Productos para limpieza, desinsfección e inocuidad";}if(lang() == 'en'){echo "
+Products for cleaning, disinfection and safety";} ?></a>
             </li>
           </ul>
         </li>
         <li class='nav-item'>
-          <a class='nav-link' href='<?php echo bloginfo('url').'/cliente';?>'>Representaciones</a>
+          <a class='nav-link' href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "cliente";}else{echo "customers";} ?>'><?php if(lang() == 'es'){echo "Representaciones";}if(lang() == 'en'){echo "
+Representations";} ?></a>
         </li>
         <li class='nav-item'>
-          <a class='nav-link dropdown-toggle' href='#'>Quiénes somos</a>
+          <a class='nav-link dropdown-toggle' href='#'><?php if(lang() == 'es'){echo "Quiénes somos";}if(lang() == 'en'){echo "
+About us";} ?></a>
           <ul class='dropdown-menu one-level'>
             <li>
-              <a href='<?php echo bloginfo('url').'/nuestra-empresa';?>'>Nuestra empresa</a>
+              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "nuestra-empresa";}else{echo "about";} ?>'><?php if(lang() == 'es'){echo "Nuestra empresa";}if(lang() == 'en'){echo "
+
+Our company";} ?></a>
             </li>
             <li>
-              <a href='<?php echo bloginfo('url').'/Servicios';?>'>Servicios</a>
+              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "servicios";}else{echo "service";} ?>'><?php if(lang() == 'es'){echo "servicios";}if(lang() == 'en'){echo "services";} ?></a>
             </li>
             <li>
-               <a href='<?php echo bloginfo('url').'/certificaciones';?>'>Certificaciones</a>
+               <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "certificacion";}else{echo "certification";} ?>'><?php if(lang() == 'es'){echo "certificaciones";}if(lang() == 'en'){echo "certifications";} ?></a>
             </li>
           </ul>
         </li>
         <li class='nav-item'>
-          <a class='nav-link dropdown-toggle' href='<?php echo bloginfo('url').'/contacto';?>'>Contacténos</a>
+          <a class='nav-link dropdown-toggle' href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "contacto";}else{echo "contact";} ?>'><?php if(lang() == 'es'){echo "Contacténos";}if(lang() == 'en'){echo "
+Contact Us";} ?></a>
           <ul class='dropdown-menu one-level'>
             <li>
-              <a href='<?php echo bloginfo('url').'/punto-de-venta';?>'>Punto de Venta</a>
+              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "punto-de-venta";}else{echo "point-of-sale";} ?>'><?php if(lang() == 'es'){echo "Punto de venta";}if(lang() == 'en'){echo "
+Point of sale";} ?></a>
             </li>
             <li>
-              <a href='<?php echo bloginfo('url').'/servicios-al-cliente';?>'>Servicios al cliente</a>
+              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "servicios-al-cliente";}else{echo "client-services";} ?>'><?php if(lang() == 'es'){echo "Servicios al cliente";}if(lang() == 'en'){echo "
+Client services";} ?></a>
             </li>
             <li>
-              <a href='<?php echo bloginfo('url').'/otros-paises';?>'>Otros países</a>
+              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "otros-paises";}else{echo "other-countries";} ?>'><?php if(lang() == 'es'){echo "Otros países";}if(lang() == 'en'){echo "Other countries";} ?></a>
             </li>
             <li>
-              <a href='<?php echo bloginfo('url').'/trabaje-para-nosotros';?>'>Trabaje para nosotros</a>
+              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "trabaje-para-nosotros";}else{echo "work-for-us";} ?>'><?php if(lang() == 'es'){echo "Trabaje para nosotros";}if(lang() == 'en'){echo "work for us";} ?></a>
             </li>
           </ul>
         </li>
         <li class='nav-item'>
-          <a class='nav-link' href='#'>Redes Sociales</a>
+          <a class='nav-link' href='#'><?php if(lang() == 'es'){echo "Redes Sociales";}if(lang() == 'en'){echo "Social networks";} ?></a>
         </li>
       </ul>
     </div>

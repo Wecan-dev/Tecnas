@@ -8,14 +8,14 @@
     <nav aria-label='breadcrumb'>
       <ol class='breadcrumb'>
         <li class='breadcrumb-item'>
-          <a href='<?php echo bloginfo('url').'/destacados';?>'>Destacados</a>
+          <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "destacados";}else{echo "featured";} ?>'><?php if(lang() == 'es'){echo "Destacados";}if(lang() == 'en'){echo "Featured";} ?></a>
         </li>
         <li aria-current='page' class='breadcrumb-item active'><?php the_title(); ?></li>
       </ol>
     </nav>
 
     <div class="section-title">
-      <h1>Alternativas Tecnas Plant Based</h1>
+      <h1><?php if(lang() == 'es'){echo "Alternativas Tecnas Plant Based";}if(lang() == 'en'){echo "Tecnas Plant Based Alternatives";} ?></h1>
     </div>
    
     <div class="featured-card">

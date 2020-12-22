@@ -22,7 +22,8 @@
 
   <section class="page-container">
     <div class="section-title">
-      <h1>Alternativas Tecnas Plant Based</h1>
+
+      <h1> <?php if(lang() == 'es'){echo "Alternativas Tecnas Plant Based";}if(lang() == 'en'){echo "Tecnas Plant Based Alternatives";} ?></h1>
     </div>
     <div class="featured-slider">
         <?php $args = array( 'post_type' => 'destacados__'); ?>
@@ -77,7 +78,14 @@
     <div class="main-about mb-5">
       <?php if (get_theme_mod('nuestra_empresa_video') != NULL){?>  
       <div class="about-video">
-        <img alt="Nuestra empresa" src="<?php echo get_theme_mod('nuestra_empresa_video') ?>">
+          <?php  $extension = pathinfo(get_theme_mod('nuestra_empresa_video'))['extension']; ?>
+             <?php if($extension=="jpg" || $extension == "jpeg" || $extension == "png"){ ?>
+                   <img src="<?php echo get_theme_mod('nuestra_empresa_video') ?>">
+              <?php } else { ?> 
+                    <video class="main-banner__img" id="mivideo" autoplay preload loop muted>
+                        <source src="<?php echo get_theme_mod('nuestra_empresa_video') ?>" type="video/mp4">
+                    </video>  
+         <?php } ?>
       </div>
        <?php }
          ?> 
@@ -378,40 +386,40 @@
 <?php }
          ?>
 <?php if(get_field('plantilla') == 'punto de venta'){ ?>  
-          <div class="container main-page">
+         <div class="container main-page">
     <div class="section-title left">
-      <h1>Punto de venta</h1>
+      <h1><?php if(lang() == 'es'){echo "Punto de Venta";}if(lang() == 'en'){echo "Point of Sale";} ?></h1>
     </div>
     <div class="row">
-      <div class="col-lg-4"> 
+      <div class="col-lg-4">
         <div class="points-of-sale-list" id="accordion">
            <?php $args = array( 'post_type' => 'punto_de_venta'); ?>
-              <?php $loop = new WP_Query( $args ); ?>
-                 <?php while  ( $loop->have_posts() ) : $loop->the_post(); ?>
+        <?php $loop = new WP_Query( $args ); ?>
+        <?php while ( $loop->have_posts() ) : $loop->the_post(); global $product;  ?>
           <div id="item-0">
             <div class="card-header" id="heading-0">
               <h5 class="mb-0">
-                <button aria-controls="collapse-0" aria-expanded="true" class="btn btn-link" data-target="#p<?php the_ID();?>" data-toggle="collapse">
+                <button aria-controls="collapse-0" aria-expanded="false" class="btn btn-link" data-target="#p<?php the_ID();?>" data-toggle="collapse">
                  <?php the_title(); ?>
                 </button>
               </h5>
             </div>
-            <div aria-labelledby="heading-0" class="collapse show" data-map="p<?php the_ID();?>" data-parent="#accordion" id="p<?php the_ID();?>">
-            <?php the_content(); ?>
+            <div aria-labelledby="heading-0" class="collapse" data-map="1<?php the_ID();?>" data-parent="#accordion" id="p<?php the_ID();?>">
+              <div class="card-body">
+               <?php the_content(); ?>
               </div>
             </div>
-              <?php 
-         endwhile; ?>  
           </div>
+          <?php endwhile; ?> 
         </div>
-     
-
+      </div>
       <div class="col-lg-8">
         <div class="points-of-sale-maps">
+           <?php while ( $loop->have_posts() ) : $loop->the_post(); global $product;  ?>
           <div class="map">
-            <iframe allowfullscreen="" aria-hidden="false" frameborder="0" height="310" id="<?php the_ID();?>" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5043047648037!2d-75.58856113523102!3d6.196997445513781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46826fedd5f8fb%3A0x169fa94086106a8a!2sTecnas%20S.A!5e0!3m2!1sen!2sve!4v1607896622447!5m2!1sen!2sve" style="border:0;" tabindex="0" width="100%"></iframe>
+            <iframe allowfullscreen="" aria-hidden="false" frameborder="0" height="310" id="1<?php the_ID();?>" src="<?php the_field( 'mapa' ); ?>" style="border:0;" tabindex="0" width="100%"></iframe>
           </div>
-        
+          <?php endwhile; ?> 
         </div>
       </div>
     </div>
@@ -450,46 +458,33 @@
          ?>
 
           <?php if(get_field('plantilla') == 'otros países'){ ?>  
+             <?php $args = array( 'post_type' => 'paises', 'post_per_page' => 1); ?>
+              <?php $loop = new WP_Query( $args ); ?>
+                 <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 <div class="container main-page">
     <div class="row">
       <div class="col-lg-5">
         <div class="section-title left">
-          <h1>OTROS PAÍSES</h1>
+          <h1><?php the_title(); ?></h1>
         </div>
         <div class="countries-info">
-          <p>Permítanos orientarlo sobre nuestro portafolio exportable y brindarle toda la asesoría técnica y comercial que tenemos para usted.</p>
+          <p><?php the_content(); ?></p>
           <p>
-            <a href="mailto:ventasinternacionales@tecnas.com.co">ventasinternacionales@tecnas.com.co</a>
+            <a href="mailto:ventasinternacionales@tecnas.com.co"><?php the_field( 'correo_internacional' ); ?></a>
           </p>
         </div>
         <div class="countries-list">
           <ul>
             <li>
-              <h5>Centro América y el Caribe</h5>
+              <h5><?php the_field( 'pais_o_continente' ); ?></h5>
               <ul>
-                <li>Belkis Soraya Lindarte</li>
-                <li>
-                  <strong>E-mail:</strong>
-                  blindarte@tecnas.com.co
-                </li>
-                <li>
-                  <strong>Celular:</strong>
-                  (057) 3146827317
-                </li>
+                <?php the_field( 'pais_o_continente_informacion' ); ?>
               </ul>
             </li>
             <li>
-              <h5>Panamá, Ecuador, Perú</h5>
+              <h5><?php the_field( 'pais_o_continente_2' ); ?></h5>
               <ul>
-                <li>Pedro Luis Granados</li>
-                <li>
-                  <strong>E-mail:</strong>
-                  pgranados@tecnas.com.co
-                </li>
-                <li>
-                  <strong>Celular:</strong>
-                  (057) 3206950402
-                </li>
+               <?php the_field( 'pais_o_continente_informacion_2' ); ?>
               </ul>
             </li>
           </ul>
@@ -497,11 +492,12 @@
       </div>
       <div class="col-lg-7">
         <div class="countries-img">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/countries.png">
+          <img src="<?php echo get_the_post_thumbnail_url(); ?>">
         </div>
       </div>
     </div>
   </div>
+     <?php endwhile; ?> 
             <?php }
          ?>
  <?php if(get_field('plantilla') == 'trabaja para nosotros'){ ?>  
