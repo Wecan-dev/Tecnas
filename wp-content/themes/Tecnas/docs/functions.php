@@ -297,9 +297,9 @@ if ( ! function_exists('producto') ) {
 function categorias_taxonomy() {
 
   $labels = array(
-    'name'                       => _x( 'Categoria de Productos', 'Taxonomy General Name', 'text_domain' ),
-    'singular_name'              => _x( 'Categoria de Productos', 'Taxonomy Singular Name', 'text_domain' ),
-    'menu_name'                  => __( 'categoria-deproductos', 'text_domain' ),
+    'name'                       => _x( 'Categoria', 'Taxonomy General Name', 'text_domain' ),
+    'singular_name'              => _x( 'Categoria', 'Taxonomy Singular Name', 'text_domain' ),
+    'menu_name'                  => __( 'categoria de productos', 'text_domain' ),
     'all_items'                  => __( 'All categoria-deproductoss', 'text_domain' ),
     'parent_item'                => __( 'Parent categoria-deproductos', 'text_domain' ),
     'parent_item_colon'          => __( 'Parent categoria-deproductos:', 'text_domain' ),
