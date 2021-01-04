@@ -1,15 +1,15 @@
  <footer>
     <div class='footer-top'>
       <ul class='footer-links'>
-         <?php if (get_theme_mod('footer_contacto') != NULL){?>  
+         <?php if (get_theme_mod('footer_contacto_'.lang().'') != NULL) { ?>         
         <li class='nav-item'>
-          <a class='nav-link' href='/'><?php echo get_theme_mod('footer_contacto') ?></a>
+          <a class='nav-link' href='/'><?php echo get_theme_mod('footer_contacto_'.lang().''); ?></a>
         </li>
          <?php }
          ?> 
-          <?php if (get_theme_mod('footer_politicas') != NULL){?>  
+         <?php if (get_theme_mod('footer_politicas_'.lang().'') != NULL) { ?>   
         <li class='nav-item'>
-          <a class='nav-link' href='#'><?php echo get_theme_mod('footer_politicas') ?></a>
+          <a class='nav-link' href='#'><?php echo get_theme_mod('footer_politicas_'.lang().'') ?></a>
         </li>
           <?php }
          ?> 

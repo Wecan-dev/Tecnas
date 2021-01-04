@@ -50,13 +50,14 @@ Partners in your progress";} ?></title>
         <input id='toggle' type='checkbox'>
         <label class='toggle-item' for='toggle'>
           <div class='languages-label'>
-            <?php $url = explode('?', $_SERVER['REQUEST_URI'], 2);
+          <!--  <?php $url = explode('?', $_SERVER['REQUEST_URI'], 2);
                       if (lang() == 'es'){  "Idioma"; }else{  "Language"; $url = explode('en', $_SERVER['REQUEST_URI'], 2);}  ?>
             <a title="Español"lang="es-CO" hreflang="es-CO" href="<?php echo $url[0]; ?>">
              <div  style='margin-left: 5px; color: black;'>ESP</div>
              </a>
              <a title="English" lang="en-US" hreflang="en-US" href="<?php echo $url[0]; ?>en/">
-            <div style='color: black;'>ENG</div>
+            <div style='color: black;'>ENG</div> -->
+           <?php dynamic_sidebar( 'sidebar-1' ); ?>
           </div>
         </label>
       </div>
@@ -152,7 +153,7 @@ Partners in your progress";} ?></title>
               </ul>
            </div>      
            <li class='multi-level-nav-item'>
-              <a href='#'><?php if(lang() == 'es'){echo "Productos";}if(lang() == 'en'){echo "Products";} ?></a>
+              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "productos";}else{echo "products";} ?>'><?php if(lang() == 'es'){echo "Productos";}if(lang() == 'en'){echo "Products";} ?></a>
             </li>
             <li class='multi-level-nav-item'>
               <a href='#'><?php if(lang() == 'es'){echo "Productos para limpieza, desinsfección e inocuidad";}if(lang() == 'en'){echo "
@@ -174,7 +175,7 @@ About us";} ?></a>
 Our company";} ?></a>
             </li>
             <li>
-              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "servicios";}else{echo "service";} ?>'><?php if(lang() == 'es'){echo "servicios";}if(lang() == 'en'){echo "services";} ?></a>
+              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "servicio";}else{echo "service";} ?>'><?php if(lang() == 'es'){echo "servicios";}if(lang() == 'en'){echo "services";} ?></a>
             </li>
             <li>
                <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "certificacion";}else{echo "certification";} ?>'><?php if(lang() == 'es'){echo "certificaciones";}if(lang() == 'en'){echo "certifications";} ?></a>

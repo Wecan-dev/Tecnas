@@ -44,12 +44,39 @@
   </section>
    <?php } ?> 
 
+   <?php if(get_field('plantilla') == 'productos'){ ?>  
+<div class="main-page">
+    <div class="container">
+     
+      <div class="row">
+        <?php $args =  array(
+          'post_type' => 'producto',
+          'post_status' => 'publish',
+          'posts_per_page' => 99999,
 
+          ); ?>
+              <?php $loop = new WP_Query( $args ); ?>
+                 <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+        <div class="col-lg-4">
+          <div class="portfolio-card">
+            <a href="<?php the_permalink(); ?>">
+              <img alt="Betacaroteno" src="<?php echo get_the_post_thumbnail_url(); ?>">
+              <div class="portfolio-text">
+                <h4> <?php the_title(); ?></h4>
+              </div>
+            </a>
+          </div>
+        </div>
+           <?php  endwhile; ?>  
+      </div>
+    </div>
+  </div>
+ <?php } ?> 
 
 <?php if(get_field('plantilla') == 'clientes'){ ?>  
 <section class="page-container">
     <div class="section-title">
-      <h1>Nuestros Aliados</h1>
+      <h1><?php if(lang() == 'es'){echo "Nuestros Aliados";}if(lang() == 'en'){echo "Our Allies";} ?></h1>
     </div>
     <div class="clients-slider">
        <?php $args = array( 'post_type' => 'clientes'); ?>
@@ -69,9 +96,9 @@
 
 <?php if(get_field('plantilla') == 'nuestra empresa'){ ?>  
 <section class="page-container">
-     <?php if (get_theme_mod('titulo_nuestra_empresa') != NULL){?>  
+     <?php if (get_theme_mod('titulo_nuestra_empresa_'.lang().'') != NULL){?>  
     <div class="section-title">
-      <h1><?php echo get_theme_mod('titulo_nuestra_empresa') ?></h1>
+      <h1><?php echo get_theme_mod('titulo_nuestra_empresa_'.lang().'') ?></h1>
     </div>
      <?php }
          ?> 
@@ -89,29 +116,32 @@
       </div>
        <?php }
          ?> 
-          <?php if (get_theme_mod('contenido_1_nuestra_empresa') != NULL){?>  
+          <?php if (get_theme_mod('contenido_1_nuestra_empresa_'.lang().'') != NULL){?>  
       <div class="about-text">
-        <p><?php echo get_theme_mod('contenido_1_nuestra_empresa') ?></p>
-        <a class="btn btn-custom" href="<?php echo get_theme_mod('url_del_boton_nuestra_empresa') ?>"><?php echo get_theme_mod('texto_del_boton_nuestra_empresa') ?></a>
+        <p><?php echo get_theme_mod('contenido_1_nuestra_empresa_'.lang().'') ?></p>
+          <?php if (get_theme_mod('texto_del_boton_nuestra_empresa_'.lang().'') != NULL){?>  
+        <a class="btn btn-custom" href="<?php echo get_theme_mod('url_del_boton_nuestra_empresa_'.lang().'') ?>"><?php echo get_theme_mod('texto_del_boton_nuestra_empresa_'.lang().'') ?></a>
+         <?php }
+         ?> 
       </div>
        <?php }
          ?> 
     </div>
     <div class="main-about full-width mb-5">
-        <?php if (get_theme_mod('titulo_2_nuestra_empresa') != NULL){?>  
-      <div class="about-subtitle"><?php echo get_theme_mod('titulo_2_nuestra_empresa') ?></div>
+        <?php if (get_theme_mod('titulo_2_nuestra_empresa_'.lang().'') != NULL){?>  
+      <div class="about-subtitle"><?php echo get_theme_mod('titulo_2_nuestra_empresa_'.lang().'') ?></div>
        <?php }
          ?> 
-           <?php if (get_theme_mod('contenido_2_nuestra_empresa') != NULL){?>  
+           <?php if (get_theme_mod('contenido_2_nuestra_empresa_'.lang().'') != NULL){?>  
       <div class="about-text">
-        <p><?php echo get_theme_mod('contenido_2_nuestra_empresa') ?></p>
+        <p><?php echo get_theme_mod('contenido_2_nuestra_empresa_'.lang().'') ?></p>
         <?php }
          ?> 
       </div>
     </div>
     <div class="main-support">
-       <?php if (get_theme_mod('titulo_nuestros_pilares_nuestra_empresa') != NULL){?>  
-      <div class="about-subtitle"><?php echo get_theme_mod('titulo_nuestros_pilares_nuestra_empresa') ?></div>
+       <?php if (get_theme_mod('titulo_nuestros_pilares_nuestra_empresa_'.lang().'') != NULL){?>  
+      <div class="about-subtitle"><?php echo get_theme_mod('titulo_nuestros_pilares_nuestra_empresa_'.lang().'') ?></div>
       <?php }
          ?> 
       <div class="row">
@@ -119,7 +149,7 @@
         <div class="col-lg-3">
           <div class="support-item">
             <img src="<?php echo get_theme_mod('nuestros_pilares_img_1') ?>">
-            <h3><?php echo get_theme_mod('nuestros_pilares_img_1_titulo') ?></h3>
+            <h3><?php echo get_theme_mod('nuestros_pilares_img_1_titulo_'.lang().'') ?></h3>
           </div>
         </div>
          <?php }
@@ -128,7 +158,7 @@
         <div class="col-lg-3">
           <div class="support-item">
             <img src="<?php echo get_theme_mod('nuestros_pilares_img_2') ?>">
-            <h3><?php echo get_theme_mod('nuestros_pilares_img_2_titulo') ?></h3>
+            <h3><?php echo get_theme_mod('nuestros_pilares_img_2_titulo_'.lang().'') ?></h3>
             </img>
           </div>
         </div>
@@ -138,7 +168,7 @@
         <div class="col-lg-3">
           <div class="support-item">
             <img src="<?php echo get_theme_mod('nuestros_pilares_img_3') ?>">
-            <h3><?php echo get_theme_mod('nuestros_pilares_img_3_titulo') ?></h3>
+            <h3><?php echo get_theme_mod('nuestros_pilares_img_3_titulo_'.lang().'') ?></h3>
             </img>
           </div>
         </div>
@@ -148,7 +178,7 @@
         <div class="col-lg-3">
           <div class="support-item">
             <img src="<?php echo get_theme_mod('nuestros_pilares_img_4') ?>">
-            <h3><?php echo get_theme_mod('nuestros_pilares_img_4_titulo') ?></h3>
+            <h3><?php echo get_theme_mod('nuestros_pilares_img_4_titulo_'.lang().'') ?></h3>
             </img>
           </div>
         </div>
@@ -163,7 +193,7 @@
       <img alt="Salud y Bienestar" src="<?php echo get_theme_mod('nuestros_pilares_sloga_img_1') ?>">
       <div class="benefit-divider"></div>
       <h4>
-       <?php echo get_theme_mod('nuestros_pilares_sloga_img_1_titulo') ?>
+       <?php echo get_theme_mod('nuestros_pilares_sloga_img_1_titulo_'.lang().'') ?>
       </h4>
     </div>
      <?php }
@@ -175,7 +205,7 @@
       <img alt="Salud y Bienestar" src="<?php echo get_theme_mod('nuestros_pilares_sloga_img_2') ?>">
       <div class="benefit-divider"></div>
       <h4>
-       <?php echo get_theme_mod('nuestros_pilares_sloga_img_2_titulo') ?>
+       <?php echo get_theme_mod('nuestros_pilares_sloga_img_2_titulo_'.lang().'') ?>
       </h4>
     </div>
      <?php }
@@ -185,7 +215,7 @@
       <img alt="Salud y Bienestar" src="<?php echo get_theme_mod('nuestros_pilares_sloga_img_3') ?>">
       <div class="benefit-divider"></div>
       <h4>
-       <?php echo get_theme_mod('nuestros_pilares_sloga_img_3_titulo') ?>
+       <?php echo get_theme_mod('nuestros_pilares_sloga_img_3_titulo_'.lang().'') ?>
       </h4>
     </div>
      <?php }
@@ -195,7 +225,7 @@
       <img alt="Salud y Bienestar" src="<?php echo get_theme_mod('nuestros_pilares_sloga_img_4') ?>">
       <div class="benefit-divider"></div>
       <h4>
-       <?php echo get_theme_mod('nuestros_pilares_sloga_img_4_titulo') ?>
+       <?php echo get_theme_mod('nuestros_pilares_sloga_img_4_titulo_'.lang().'') ?>
       </h4>
     </div>
      <?php }
@@ -242,68 +272,116 @@
       <p><?php the_content(); ?></p>
     </div>
     <div class="certifications-slider">
+
+       <?php if (get_field( 'certificado_imagen_1' ) != NULL){?>  
       <div class="certification-item">
-         <?php $image = get_field('certificado_imagen_1'); ?>
-      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-        <h3>ISO 9001 - 2015</h3>
+        <?php $certificado_imagen_1 = get_field( 'certificado_imagen_1' ); ?>
+<?php if ( $certificado_imagen_1 ) : ?>
+  <img src="<?php echo esc_url( $certificado_imagen_1['url'] ); ?>" alt="<?php echo esc_attr( $certificado_imagen_1['alt'] ); ?>" />
+     <h3><?php the_field( 'certificado_texto_1' ); ?></h3>
+<?php endif; ?>
       </div>
+ <?php }
+         ?> 
+
+<?php if (get_field( 'certificado_imagen_2' ) != NULL){?>  
       <div class="certification-item">
-         <?php $image = get_field('certificado_imagen_2'); ?>
-      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-        <h3>
-          Compromiso Ambiental
-          <br>
-          Huella de Carbono
+         <?php $certificado_imagen_2 = get_field( 'certificado_imagen_2' ); ?>
+<?php if ( $certificado_imagen_2 ) : ?>
+  <img src="<?php echo esc_url( $certificado_imagen_2['url'] ); ?>" alt="<?php echo esc_attr( $certificado_imagen_2['alt'] ); ?>" />
+  <h3>
+         <?php the_field( 'certificado_texto_2' ); ?>
         </h3>
-        </img>
+         </img>
+<?php endif; ?>
       </div>
-      <div class="certification-item">
-         <?php $image = get_field('certificado_imagen_3'); ?>
-      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-        <h3>HACCP</h3>
-        </img>
-      </div>
-      <div class="certification-item">
-  <?php $image = get_field('certificado_imagen_4'); ?>
-      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-        <h3>
-          Responsabilidad
-          <br>
-          Social
+       <?php }
+         ?>
+
+<?php if (get_field( 'certificado_imagen_3' ) != NULL){?>  
+       <div class="certification-item">
+         <?php $certificado_imagen_3 = get_field( 'certificado_imagen_3' ); ?>
+<?php if ( $certificado_imagen_3 ) : ?>
+  <img src="<?php echo esc_url( $certificado_imagen_3['url'] ); ?>" alt="<?php echo esc_attr( $certificado_imagen_3['alt'] ); ?>" />
+  <h3>
+         <?php the_field( 'certificado_texto_3' ); ?>
         </h3>
-        </img>
+         </img>
+<?php endif; ?>
       </div>
-      <div class="certification-item">
-        <?php $image = get_field('certificado_imagen_1'); ?>
-      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-        <h3>ISO 9001 - 2015</h3>
-      </div>
-      <div class="certification-item">
-         <?php $image = get_field('certificado_imagen_2'); ?>
-      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-        <h3>
-          Compromiso Ambiental
-          <br>
-          Huella de Carbono
+       <?php }
+         ?>
+
+<?php if (get_field( 'certificado_imagen_4' ) != NULL){?>  
+       <div class="certification-item">
+         <?php $certificado_imagen_4 = get_field( 'certificado_imagen_4' ); ?>
+<?php if ( $certificado_imagen_4 ) : ?>
+  <img src="<?php echo esc_url( $certificado_imagen_4['url'] ); ?>" alt="<?php echo esc_attr( $certificado_imagen_4['alt'] ); ?>" />
+  <h3>
+         <?php the_field( 'certificado_texto_4' ); ?>
         </h3>
-        </img>
+         </img>
+<?php endif; ?>
       </div>
+       <?php }
+         ?>
+
+<?php if (get_field( 'certificado_imagen_5' ) != NULL){?>  
       <div class="certification-item">
-        <?php $image = get_field('certificado_imagen_3'); ?>
-      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-        <h3>HACCP</h3>
-        </img>
-      </div>
-      <div class="certification-item">
-         <?php $image = get_field('certificado_imagen_4'); ?>
-      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-        <h3>
-          Responsabilidad
-          <br>
-          Social
+         <?php $certificado_imagen_5 = get_field( 'certificado_imagen_5' ); ?>
+<?php if ( $certificado_imagen_5 ) : ?>
+  <img src="<?php echo esc_url( $certificado_imagen_5['url'] ); ?>" alt="<?php echo esc_attr( $certificado_imagen_5['alt'] ); ?>" />
+  <h3>
+         <?php the_field( 'certificado_texto_5' ); ?>
         </h3>
-        </img>
+         </img>
+<?php endif; ?>
       </div>
+       <?php }
+         ?>
+
+<?php if (get_field( 'certificado_imagen_6' ) != NULL){?>  
+      <div class="certification-item">
+         <?php $certificado_imagen_6 = get_field( 'certificado_imagen_6' ); ?>
+<?php if ( $certificado_imagen_6 ) : ?>
+  <img src="<?php echo esc_url( $certificado_imagen_6['url'] ); ?>" alt="<?php echo esc_attr( $certificado_imagen_6['alt'] ); ?>" />
+  <h3>
+         <?php the_field( 'certificado_texto_6' ); ?>
+        </h3>
+         </img>
+<?php endif; ?>
+      </div>
+      <?php }
+         ?>
+
+<?php if (get_field( 'certificado_imagen_7' ) != NULL){?>  
+      <div class="certification-item">
+         <?php $certificado_imagen_7 = get_field( 'certificado_imagen_7' ); ?>
+<?php if ( $certificado_imagen_7 ) : ?>
+  <img src="<?php echo esc_url( $certificado_imagen_7['url'] ); ?>" alt="<?php echo esc_attr( $certificado_imagen_7['alt'] ); ?>" />
+  <h3>
+         <?php the_field( 'certificado_texto_7' ); ?>
+        </h3>
+         </img>
+<?php endif; ?>
+      </div>
+      <?php }
+         ?>
+
+ <?php if (get_field( 'certificado_imagen_8' ) != NULL){?>  
+        <div class="certification-item">
+         <?php $certificado_imagen_8 = get_field( 'certificado_imagen_8' ); ?>
+<?php if ( $certificado_imagen_8 ) : ?>
+  <img src="<?php echo esc_url( $certificado_imagen_8['url'] ); ?>" alt="<?php echo esc_attr( $certificado_imagen_8['alt'] ); ?>" />
+  <h3>
+         <?php the_field( 'certificado_texto_8' ); ?>
+        </h3>
+         </img>
+<?php endif; ?>
+      </div>
+<?php }
+         ?>
+
     </div>
      <?php  endwhile; ?>  
   </section>
@@ -318,16 +396,10 @@
         <div class="col-lg-7">
           <div class="contact-form">
             <div class="section-title left">
-              <h1>Contáctenos</h1>
+              <h1><?php if(lang() == 'es'){echo "Contáctenos";}if(lang() == 'en'){echo "Contact us";} ?></h1>
             </div>
             <form>
-              
-              
-             <?php echo FrmFormsController::get_form_shortcode( array( 'id' => 4, 'title' => false, 'description' => false ) ); ?>
-            
-             
-              
-              
+              <?php if(lang() == 'es'){echo FrmFormsController::get_form_shortcode( array( 'id' => 4, 'title' => false, 'description' => false ) );}if(lang() == 'en'){ echo FrmFormsController::get_form_shortcode( array( 'id' => 5, 'title' => false, 'description' => false ) );} ?>    
               
             </form>
           </div>
@@ -335,47 +407,65 @@
         <div class="col-lg-5">
           <div class="contact-info">
             <ul class="contact-info-vertical">
+                 <?php if (get_theme_mod('contactanos-direccion_tittulo_'.lang().'') != NULL) { ?> 
               <li>
-                <img alt="Carrera 50G No. 12 sur 29" src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/place.svg">
+                <img src="<?php echo get_theme_mod('direccion_img'); ?>">
                 <span>
-                  Dirección
+                <?php echo get_theme_mod('contactanos-direccion_tittulo_'.lang().''); ?>
                   <br>
-                  <a href="#">Carrera 50G No. 12 sur 29</a>
+                  <a href="#"><?php echo get_theme_mod('contactanos-direccion_'.lang().''); ?></a>
                 </span>
               </li>
+                <?php }
+         ?> 
+  <?php if (get_theme_mod('contactanos-telefono_tittulo_'.lang().'') != NULL) { ?> 
               <li>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/phone-call.svg">
+                <img src="<?php echo get_theme_mod('telefono_img'); ?>">
                 <span>
-                  Teléfono
+                  <?php echo get_theme_mod('contactanos-telefono_tittulo_'.lang().''); ?>
                   <br>
-                  <a href="tel:42854290">(4) 2854290</a>
+                  <a href="tel:"><?php echo get_theme_mod('contactanos-telefono_'.lang().''); ?></a>
                 </span>
               </li>
+                <?php }
+         ?> 
+            <?php if (get_theme_mod('contactanos-correo_tittulo_'.lang().'') != NULL) { ?> 
               <li>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/envelope.svg">
+                <img src="<?php echo get_theme_mod('correo_img'); ?>">
                 <span>
-                  Correo
+                   <?php echo get_theme_mod('contactanos-correo_tittulo_'.lang().''); ?>
                   <br>
-                  <a href="mailto:tecnas@tecnas.com.co">tecnas@tecnas.com.co</a>
+                  <a href="mailto:"><?php echo get_theme_mod('contactanos-correo_'.lang().''); ?></a>
                 </span>
               </li>
+                <?php }
+         ?> 
             </ul>
             <ul class="contact-info-horizontal">
+               <?php if (get_theme_mod('facebook_img') != NULL) { ?> 
               <li>
-                <a href="#">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/fb.svg">
+                <a href="<?php echo get_theme_mod('contactanos-redes_facebook'); ?>">
+                 <img src="<?php echo get_theme_mod('facebook_img'); ?>">
                 </a>
               </li>
+              <?php }
+         ?> 
+          <?php if (get_theme_mod('instagram_img') != NULL) { ?> 
               <li>
-                <a href="#">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/instagram.svg">
+                <a href="<?php echo get_theme_mod('contactanos-sociales_instagram'); ?>">
+                  <img src="<?php echo get_theme_mod('instagram_img'); ?>">
                 </a>
               </li>
+               <?php }
+         ?> 
+               <?php if (get_theme_mod('youtube_img') != NULL) { ?> 
               <li>
-                <a href="#">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/youtube.svg">
+                <a href="<?php echo get_theme_mod('contactanos-social-youtube'); ?>">
+                  <img src="<?php echo get_theme_mod('youtube_img'); ?>">
                 </a>
               </li>
+               <?php }
+         ?> 
             </ul>
           </div>
         </div>
@@ -432,20 +522,25 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="customer-service-text">
+             <?php if (get_theme_mod('servicio_al_cliente_titulo_'.lang().'') != NULL) { ?>  
             <div class="section-title left">
-              <h1>Servicio al cliente</h1>
+              <h1><?php echo get_theme_mod('servicio_al_cliente_titulo_'.lang().'') ?></h1>
             </div>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.</p>
+              <?php }
+         ?> 
+            <?php if (get_theme_mod('servicio_al_cliente_subtitulo_'.lang().'') != NULL) { ?>  
+            <p><?php echo get_theme_mod('servicio_al_cliente_subtitulo_'.lang().'') ?></p>
+             <?php }
+         ?> 
           </div>
         </div>
         <div class="col-lg-8">
           <div class="customer-service-form">
             <form>
-            
+              <?php if(lang() == 'es'){echo FrmFormsController::get_form_shortcode( array( 'id' => 2, 'title' => false, 'description' => false ) );}if(lang() == 'en'){ echo FrmFormsController::get_form_shortcode( array( 'id' => 6, 'title' => false, 'description' => false ) );} ?>    
              
              
-                <?php echo FrmFormsController::get_form_shortcode( array( 'id' => 2, 'title' => false, 'description' => false ) ); ?>
-             
+                
        
              
             </form>
@@ -470,7 +565,7 @@
         <div class="countries-info">
           <p><?php the_content(); ?></p>
           <p>
-            <a href="mailto:ventasinternacionales@tecnas.com.co"><?php the_field( 'correo_internacional' ); ?></a>
+            <a href="mailto:"><?php the_field( 'correo_internacional' ); ?></a>
           </p>
         </div>
         <div class="countries-list">
@@ -506,20 +601,22 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="customer-service-text">
+               <?php if (get_theme_mod('trabaja_co_nosotros_titulo_'.lang().'') != NULL) { ?> 
             <div class="section-title left">
-              <h1>Trabaje para nosotros</h1>
+              <h1><?php echo get_theme_mod('trabaja_co_nosotros_titulo_'.lang().'') ?></h1>
             </div>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.</p>
+             <?php }
+         ?>
+           <?php if (get_theme_mod('trabaja_co_nosotros_subtitulo_'.lang().'') != NULL) { ?> 
+            <p><?php echo get_theme_mod('trabaja_co_nosotros_subtitulo_'.lang().'') ?></p>
           </div>
+           <?php }
+         ?>
         </div>
         <div class="col-lg-8">
           <div class="customer-service-form">
             <form>
-             
-              <?php echo FrmFormsController::get_form_shortcode( array( 'id' => 3, 'title' => false, 'description' => false ) ); ?>
-              
-             
-              
+              <?php if(lang() == 'es'){echo FrmFormsController::get_form_shortcode( array( 'id' => 3, 'title' => false, 'description' => false ) );}if(lang() == 'en'){ echo FrmFormsController::get_form_shortcode( array( 'id' => 7, 'title' => false, 'description' => false ) ); } ?>      
             
             </form>
           </div>

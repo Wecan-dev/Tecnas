@@ -1,3 +1,12 @@
+function addActiveNavLink() {
+  const href = window.location.href;
+  const links = $(".lang-item-first .lang-item-5").get();
+  const activeLink = links.find((link) => link.href === href);
+  if (activeLink) {
+    activeLink.classList.add("hola");
+  }
+}
+
 new WOW().init();
 
 function addActiveNavLink() {

@@ -646,14 +646,25 @@ $wp_customize->add_panel('footer',
     'panel' => 'footer'
   ));
        // texto de red
-    $wp_customize->add_setting('footer_politicas', array(
+    $wp_customize->add_setting('footer_politicas_es', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_footer_politicas', array (
-      'description' => 'Políticas de privacidad',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_footer_politicas_es', array (
+      'description' => 'Políticas de privacidad (Español)',
       'section' => 'politicas',
-      'settings' => 'footer_politicas'
+      'settings' => 'footer_politicas_es'
+    )));  
+
+    // texto de red
+    $wp_customize->add_setting('footer_politicas_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_footer_politicas_en', array (
+      'description' => 'Privacy policies (Ingles)',
+      'section' => 'politicas',
+      'settings' => 'footer_politicas_en'
     )));  
 
       $wp_customize->add_section('contacto', array (
@@ -661,14 +672,24 @@ $wp_customize->add_panel('footer',
     'panel' => 'footer'
   ));
        // texto de red
-    $wp_customize->add_setting('footer_contacto', array(
+    $wp_customize->add_setting('footer_contacto_es', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_footer_contacto', array (
-      'description' => 'Contacto',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_footer_contacto_es', array (
+      'description' => 'Contacto (Español)',
       'section' => 'contacto',
-      'settings' => 'footer_contacto'
+      'settings' => 'footer_contacto_es'
+    )));  
+     // texto de red
+    $wp_customize->add_setting('footer_contacto_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_footer_contacto_en', array (
+      'description' => 'Contact (Ingles)',
+      'section' => 'contacto',
+      'settings' => 'footer_contacto_en'
     )));  
 
 
@@ -687,15 +708,25 @@ $wp_customize->add_panel('pagina_nuestra_empresa',
     'panel' => 'pagina_nuestra_empresa'
   ));
   // texto de red
-    $wp_customize->add_setting('titulo_nuestra_empresa', array(
+    $wp_customize->add_setting('titulo_nuestra_empresa_es', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_titulo_nuestra_empresa', array (
-      'description' => 'Titulo',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_titulo_nuestra_empresa_es', array (
+      'description' => 'Titulo (Español)',
       'section' => 'pagina_nuestra_empresa_titulo',
-      'settings' => 'titulo_nuestra_empresa'
+      'settings' => 'titulo_nuestra_empresa_es'
     )));  
+      // texto de red
+    $wp_customize->add_setting('titulo_nuestra_empresa_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_titulo_nuestra_empresa_en', array (
+      'description' => 'Titulo (English)',
+      'section' => 'pagina_nuestra_empresa_titulo',
+      'settings' => 'titulo_nuestra_empresa_en'
+    ))); 
 
 
  $wp_customize->add_section('pagina_nuestra_empresa_video', array (
@@ -717,38 +748,72 @@ $wp_customize->add_section('pagina_nuestra_empresa_contenido', array (
     'panel' => 'pagina_nuestra_empresa'
   ));
    // texto de red
-    $wp_customize->add_setting('contenido_1_nuestra_empresa', array(
+    $wp_customize->add_setting('contenido_1_nuestra_empresa_es', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contenido_1_nuestra_empresa', array (
-      'description' => 'Texto',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contenido_1_nuestra_empresa_es', array (
+      'description' => 'Texto (Español)',
       'section' => 'pagina_nuestra_empresa_contenido',
-      'settings' => 'contenido_1_nuestra_empresa',
+      'settings' => 'contenido_1_nuestra_empresa_es',
       'type' => 'textarea'
     )));  
-    // texto de red
-    $wp_customize->add_setting('texto_del_boton_nuestra_empresa', array(
+     // texto de red
+    $wp_customize->add_setting('contenido_1_nuestra_empresa_en', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_texto_del_boton_nuestra_empresa', array (
-      'description' => 'Texto del Boton',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contenido_1_nuestra_empresa_en', array (
+      'description' => 'Texto (English)',
       'section' => 'pagina_nuestra_empresa_contenido',
-      'settings' => 'texto_del_boton_nuestra_empresa'
+      'settings' => 'contenido_1_nuestra_empresa_en',
+      'type' => 'textarea'
     )));  
 
+
+
     // texto de red
-    $wp_customize->add_setting('url_del_boton_nuestra_empresa', array(
+    $wp_customize->add_setting('texto_del_boton_nuestra_empresa_es', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_url_del_boton_nuestra_empresa', array (
-      'description' => 'Url del Boton',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_texto_del_boton_nuestra_empresa_es', array (
+      'description' => 'Texto del Boton (Español)',
       'section' => 'pagina_nuestra_empresa_contenido',
-      'settings' => 'url_del_boton_nuestra_empresa'
+      'settings' => 'texto_del_boton_nuestra_empresa_es'
     )));  
 
+     // texto de red
+    $wp_customize->add_setting('texto_del_boton_nuestra_empresa_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_texto_del_boton_nuestra_empresa_en', array (
+      'description' => 'Texto del Boton (English)',
+      'section' => 'pagina_nuestra_empresa_contenido',
+      'settings' => 'texto_del_boton_nuestra_empresa_en'
+    )));  
+
+    // texto de red
+    $wp_customize->add_setting('url_del_boton_nuestra_empresa_es', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_url_del_boton_nuestra_empresa_es', array (
+      'description' => 'Url del Boton (Español)',
+      'section' => 'pagina_nuestra_empresa_contenido',
+      'settings' => 'url_del_boton_nuestra_empresa_es'
+    )));  
+   // texto de red
+    $wp_customize->add_setting('url_del_boton_nuestra_empresa_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_url_del_boton_nuestra_empresa_en', array (
+      'description' => 'Url del Boton (English)',
+      'section' => 'pagina_nuestra_empresa_contenido',
+      'settings' => 'url_del_boton_nuestra_empresa_en'
+    )));  
 
 
     $wp_customize->add_section('pagina_nuestra_empresa_contenido_2', array (
@@ -756,24 +821,46 @@ $wp_customize->add_section('pagina_nuestra_empresa_contenido', array (
     'panel' => 'pagina_nuestra_empresa'
   ));
      // texto de red
-    $wp_customize->add_setting('titulo_2_nuestra_empresa', array(
+    $wp_customize->add_setting('titulo_2_nuestra_empresa_es', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_titulo_2_nuestra_empresa', array (
-      'description' => 'Título',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_titulo_2_nuestra_empresa_es', array (
+      'description' => 'Título (Español)',
       'section' => 'pagina_nuestra_empresa_contenido_2',
-      'settings' => 'titulo_2_nuestra_empresa'
+      'settings' => 'titulo_2_nuestra_empresa_es'
     )));  
-   // texto de red
-    $wp_customize->add_setting('contenido_2_nuestra_empresa', array(
+     // texto de red
+    $wp_customize->add_setting('titulo_2_nuestra_empresa_en', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contenido_2_nuestra_empresa', array (
-      'description' => 'Texto',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_titulo_2_nuestra_empresa_en', array (
+      'description' => 'Título (English)',
       'section' => 'pagina_nuestra_empresa_contenido_2',
-      'settings' => 'contenido_2_nuestra_empresa',
+      'settings' => 'titulo_2_nuestra_empresa_en'
+    )));  
+
+   // texto de red
+    $wp_customize->add_setting('contenido_2_nuestra_empresa_es', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contenido_2_nuestra_empresa_es', array (
+      'description' => 'Texto (Español)',
+      'section' => 'pagina_nuestra_empresa_contenido_2',
+      'settings' => 'contenido_2_nuestra_empresa_es',
+      'type' => 'textarea'
+    )));
+    // texto de red
+    $wp_customize->add_setting('contenido_2_nuestra_empresa_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contenido_2_nuestra_empresa_en', array (
+      'description' => 'Texto (English)',
+      'section' => 'pagina_nuestra_empresa_contenido_2',
+      'settings' => 'contenido_2_nuestra_empresa_en',
       'type' => 'textarea'
     )));
 
@@ -783,14 +870,24 @@ $wp_customize->add_section('pagina_nuestra_empresa_contenido', array (
     'panel' => 'pagina_nuestra_empresa'
   ));
      // texto de red
-    $wp_customize->add_setting('titulo_nuestros_pilares_nuestra_empresa', array(
+    $wp_customize->add_setting('titulo_nuestros_pilares_nuestra_empresa_es', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_titulo_nuestros_pilares_nuestra_empresa', array (
-      'description' => 'Título Principal',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_titulo_nuestros_pilares_nuestra_empresa_es', array (
+      'description' => 'Título Principal (Español)',
       'section' => 'pagina_nuestra_empresa_pilares',
-      'settings' => 'titulo_nuestros_pilares_nuestra_empresa'
+      'settings' => 'titulo_nuestros_pilares_nuestra_empresa_es'
+    )));   
+    // texto de red
+    $wp_customize->add_setting('titulo_nuestros_pilares_nuestra_empresa_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_titulo_nuestros_pilares_nuestra_empresa_en', array (
+      'description' => 'Título Principal (English)',
+      'section' => 'pagina_nuestra_empresa_pilares',
+      'settings' => 'titulo_nuestros_pilares_nuestra_empresa_en'
     )));    
     
      //image
@@ -804,14 +901,24 @@ $wp_customize->add_section('pagina_nuestra_empresa_contenido', array (
   )));
 
    // texto de red
-    $wp_customize->add_setting('nuestros_pilares_img_1_titulo', array(
+    $wp_customize->add_setting('nuestros_pilares_img_1_titulo_es', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_img_1_titulo', array (
-      'description' => 'Título',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_img_1_titulo_es', array (
+      'description' => 'Título (Español)',
       'section' => 'pagina_nuestra_empresa_pilares',
-      'settings' => 'nuestros_pilares_img_1_titulo'
+      'settings' => 'nuestros_pilares_img_1_titulo_es'
+    ))); 
+    // texto de red
+    $wp_customize->add_setting('nuestros_pilares_img_1_titulo_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_img_1_titulo_en', array (
+      'description' => 'Título (English)',
+      'section' => 'pagina_nuestra_empresa_pilares',
+      'settings' => 'nuestros_pilares_img_1_titulo_en'
     ))); 
 
     //image
@@ -825,14 +932,24 @@ $wp_customize->add_section('pagina_nuestra_empresa_contenido', array (
   )));
 
    // texto de red
-    $wp_customize->add_setting('nuestros_pilares_img_2_titulo', array(
+    $wp_customize->add_setting('nuestros_pilares_img_2_titulo_es', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_img_2_titulo', array (
-      'description' => 'Título',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_img_2_titulo_es', array (
+      'description' => 'Título (Español)',
       'section' => 'pagina_nuestra_empresa_pilares',
-      'settings' => 'nuestros_pilares_img_2_titulo'
+      'settings' => 'nuestros_pilares_img_2_titulo_es'
+    ))); 
+    // texto de red
+    $wp_customize->add_setting('nuestros_pilares_img_2_titulo_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_img_2_titulo_en', array (
+      'description' => 'Título (English)',
+      'section' => 'pagina_nuestra_empresa_pilares',
+      'settings' => 'nuestros_pilares_img_2_titulo_en'
     ))); 
 
     //image
@@ -846,14 +963,24 @@ $wp_customize->add_section('pagina_nuestra_empresa_contenido', array (
   )));
 
    // texto de red
-    $wp_customize->add_setting('nuestros_pilares_img_3_titulo', array(
+    $wp_customize->add_setting('nuestros_pilares_img_3_titulo_es', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_img_3_titulo', array (
-      'description' => 'Título',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_img_3_titulo_es', array (
+      'description' => 'Título (Español)',
       'section' => 'pagina_nuestra_empresa_pilares',
-      'settings' => 'nuestros_pilares_img_3_titulo'
+      'settings' => 'nuestros_pilares_img_3_titulo_es'
+    ))); 
+     // texto de red
+    $wp_customize->add_setting('nuestros_pilares_img_3_titulo_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_img_3_titulo_en', array (
+      'description' => 'Título (English)',
+      'section' => 'pagina_nuestra_empresa_pilares',
+      'settings' => 'nuestros_pilares_img_3_titulo_en'
     ))); 
 
     //image
@@ -867,16 +994,25 @@ $wp_customize->add_section('pagina_nuestra_empresa_contenido', array (
   )));
 
    // texto de red
-    $wp_customize->add_setting('nuestros_pilares_img_4_titulo', array(
+    $wp_customize->add_setting('nuestros_pilares_img_4_titulo_es', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_img_4_titulo', array (
-      'description' => 'Título',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_img_4_titulo_es', array (
+      'description' => 'Título (Español)',
       'section' => 'pagina_nuestra_empresa_pilares',
-      'settings' => 'nuestros_pilares_img_4_titulo'
+      'settings' => 'nuestros_pilares_img_4_titulo_es'
     ))); 
-
+ // texto de red
+    $wp_customize->add_setting('nuestros_pilares_img_4_titulo_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_img_4_titulo_en', array (
+      'description' => 'Título (English)',
+      'section' => 'pagina_nuestra_empresa_pilares',
+      'settings' => 'nuestros_pilares_img_4_titulo_en'
+    ))); 
 
 
 
@@ -898,15 +1034,26 @@ $wp_customize->add_section('pagina_nuestra_empresa_contenido', array (
   )));
 
    // texto de red
-    $wp_customize->add_setting('nuestros_pilares_sloga_img_1_titulo', array(
+    $wp_customize->add_setting('nuestros_pilares_sloga_img_1_titulo_es', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_sloga_img_1_titulo', array (
-      'description' => 'Título',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_sloga_img_1_titulo_es', array (
+      'description' => 'Título (Español)',
       'section' => 'pagina_nuestra_empresa_slogan',
-      'settings' => 'nuestros_pilares_sloga_img_1_titulo'
+      'settings' => 'nuestros_pilares_sloga_img_1_titulo_es'
     ))); 
+    // texto de red
+    $wp_customize->add_setting('nuestros_pilares_sloga_img_1_titulo_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_sloga_img_1_titulo_en', array (
+      'description' => 'Título (English)',
+      'section' => 'pagina_nuestra_empresa_slogan',
+      'settings' => 'nuestros_pilares_sloga_img_1_titulo_en'
+    ))); 
+
 
     //image
   $wp_customize->add_setting('nuestros_pilares_sloga_img_2');
@@ -919,14 +1066,24 @@ $wp_customize->add_section('pagina_nuestra_empresa_contenido', array (
   )));
 
    // texto de red
-    $wp_customize->add_setting('nuestros_pilares_sloga_img_2_titulo', array(
+    $wp_customize->add_setting('nuestros_pilares_sloga_img_2_titulo_es', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_sloga_img_2_titulo', array (
-      'description' => 'Título',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_sloga_img_2_titulo_es', array (
+      'description' => 'Título (Español)',
       'section' => 'pagina_nuestra_empresa_slogan',
-      'settings' => 'nuestros_pilares_sloga_img_2_titulo'
+      'settings' => 'nuestros_pilares_sloga_img_2_titulo_es'
+    ))); 
+     // texto de red
+    $wp_customize->add_setting('nuestros_pilares_sloga_img_2_titulo_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_sloga_img_2_titulo_en', array (
+      'description' => 'Título (English)',
+      'section' => 'pagina_nuestra_empresa_slogan',
+      'settings' => 'nuestros_pilares_sloga_img_2_titulo_en'
     ))); 
 
     //image
@@ -940,14 +1097,24 @@ $wp_customize->add_section('pagina_nuestra_empresa_contenido', array (
   )));
 
    // texto de red
-    $wp_customize->add_setting('nuestros_pilares_sloga_img_3_titulo', array(
+    $wp_customize->add_setting('nuestros_pilares_sloga_img_3_titulo_es', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_sloga_img_3_titulo', array (
-      'description' => 'Título',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_sloga_img_3_titulo_es', array (
+      'description' => 'Título (Español)',
       'section' => 'pagina_nuestra_empresa_slogan',
-      'settings' => 'nuestros_pilares_sloga_img_3_titulo'
+      'settings' => 'nuestros_pilares_sloga_img_3_titulo_es'
+    )));
+     // texto de red
+    $wp_customize->add_setting('nuestros_pilares_sloga_img_3_titulo_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_sloga_img_3_titulo_en', array (
+      'description' => 'Título (English)',
+      'section' => 'pagina_nuestra_empresa_slogan',
+      'settings' => 'nuestros_pilares_sloga_img_3_titulo_en'
     ))); 
 
     //image
@@ -961,14 +1128,391 @@ $wp_customize->add_section('pagina_nuestra_empresa_contenido', array (
   )));
 
    // texto de red
-    $wp_customize->add_setting('nuestros_pilares_sloga_img_4_titulo', array(
+    $wp_customize->add_setting('nuestros_pilares_sloga_img_4_titulo_es', array(
       'default' => ''
     ));
     
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_sloga_img_4_titulo', array (
-      'description' => 'Título',
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_sloga_img_4_titulo_es', array (
+      'description' => 'Título (Español)',
       'section' => 'pagina_nuestra_empresa_slogan',
-      'settings' => 'nuestros_pilares_sloga_img_4_titulo'
+      'settings' => 'nuestros_pilares_sloga_img_4_titulo_es'
+    ))); 
+    // texto de red
+    $wp_customize->add_setting('nuestros_pilares_sloga_img_4_titulo_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_nuestros_pilares_sloga_img_4_titulo_en', array (
+      'description' => 'Título (English)',
+      'section' => 'pagina_nuestra_empresa_slogan',
+      'settings' => 'nuestros_pilares_sloga_img_4_titulo_en'
+    ))); 
+
+    /**************Contáctanos********************************/
+    $wp_customize->add_panel('Contactanos',
+        array(
+            'title' => 'Contáctanos',
+            'priority' => 1,
+            )
+        );
+  $wp_customize->add_section('Contactanos_direccion', array (
+    'title' => 'Dirección',
+    'panel' => 'Contactanos'
+  ));
+
+   //image
+  $wp_customize->add_setting('direccion_img');
+  
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'direccion_img', array (
+    'label' => 'Logo',
+    'description' => 'Imagen',
+    'section' => 'Contactanos_direccion',
+    'settings' => 'direccion_img'
+  )));
+
+  // texto de red
+    $wp_customize->add_setting('contactanos-direccion_tittulo_es', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contactanos-direccion_tittulo_es', array (
+      'description' => 'Título (Español)',
+      'section' => 'Contactanos_direccion',
+      'settings' => 'contactanos-direccion_tittulo_es'
+    ))); 
+     // texto de red
+    $wp_customize->add_setting('contactanos-direccion_tittulo_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contactanos-direccion_tittulo_en', array (
+      'description' => 'Título (English)',
+      'section' => 'Contactanos_direccion',
+      'settings' => 'contactanos-direccion_tittulo_en'
+    ))); 
+
+    // texto de red
+    $wp_customize->add_setting('contactanos-direccion_es', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contactanos-direccion_es', array (
+      'description' => 'Dirección (Español)',
+      'section' => 'Contactanos_direccion',
+      'settings' => 'contactanos-direccion_es'
+    ))); 
+    // texto de red
+    $wp_customize->add_setting('contactanos-direccion_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contactanos-direccion_en', array (
+      'description' => 'Dirección (English)',
+      'section' => 'Contactanos_direccion',
+      'settings' => 'contactanos-direccion_en'
+    ))); 
+
+////////////////Télefono////////////////////////////////////////////////
+
+    $wp_customize->add_section('Contactanos_telefono', array (
+    'title' => 'Teléfono',
+    'panel' => 'Contactanos'
+  ));
+
+ //image
+  $wp_customize->add_setting('telefono_img');
+  
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'telefono_img', array (
+    'label' => 'Logo',
+    'description' => 'Imagen',
+    'section' => 'Contactanos_telefono',
+    'settings' => 'telefono_img'
+  )));
+  // texto de red
+    $wp_customize->add_setting('contactanos-telefono_tittulo_es', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contactanos-telefono_tittulo_es', array (
+      'description' => 'Título (Español)',
+      'section' => 'Contactanos_telefono',
+      'settings' => 'contactanos-telefono_tittulo_es'
+    ))); 
+     // texto de red
+    $wp_customize->add_setting('contactanos-telefono_tittulo_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contactanos-telefono_tittulo_en', array (
+      'description' => 'Título (English)',
+      'section' => 'Contactanos_telefono',
+      'settings' => 'contactanos-telefono_tittulo_en'
+    ))); 
+
+    // texto de red
+    $wp_customize->add_setting('contactanos-telefono_es', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contactanos-telefono_es', array (
+      'description' => 'Nº (Español)',
+      'section' => 'Contactanos_telefono',
+      'settings' => 'contactanos-telefono_es'
+    ))); 
+    // texto de red
+    $wp_customize->add_setting('contactanos-telefono_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contactanos-telefono_en', array (
+      'description' => 'Nº (English)',
+      'section' => 'Contactanos_telefono',
+      'settings' => 'contactanos-telefono_en'
+    ))); 
+    ////////////////Correo////////////////////////////////////////////////
+
+    $wp_customize->add_section('Contactanos_correo', array (
+    'title' => 'Correo',
+    'panel' => 'Contactanos'
+  ));
+
+     //image
+  $wp_customize->add_setting('correo_img');
+  
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'correo_img', array (
+    'label' => 'Logo',
+    'description' => 'Imagen',
+    'section' => 'Contactanos_correo',
+    'settings' => 'correo_img'
+  )));
+
+  // texto de red
+    $wp_customize->add_setting('contactanos-correo_tittulo_es', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contactanos-correo_tittulo_es', array (
+      'description' => 'Título (Español)',
+      'section' => 'Contactanos_correo',
+      'settings' => 'contactanos-correo_tittulo_es'
+    ))); 
+     // texto de red
+    $wp_customize->add_setting('contactanos-correo_tittulo_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contactanos-correo_tittulo_en', array (
+      'description' => 'Título (English)',
+      'section' => 'Contactanos_correo',
+      'settings' => 'contactanos-correo_tittulo_en'
+    ))); 
+
+    // texto de red
+    $wp_customize->add_setting('contactanos-correo_es', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contactanos-correo_es', array (
+      'description' => 'Nº (Español)',
+      'section' => 'Contactanos_correo',
+      'settings' => 'contactanos-correo_es'
+    ))); 
+    // texto de red
+    $wp_customize->add_setting('contactanos-correo_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contactanos-correo_en', array (
+      'description' => 'Nº (English)',
+      'section' => 'Contactanos_correo',
+      'settings' => 'contactanos-correo_en'
+    ))); 
+
+     ////////////////Redes Sociales////////////////////////////////////////////////
+
+    $wp_customize->add_section('Contactanos_redes_sociales', array (
+    'title' => 'Redes Sociales',
+    'panel' => 'Contactanos'
+  ));
+         //image
+  $wp_customize->add_setting('facebook_img');
+  
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'facebook_img', array (
+    'label' => 'Logo',
+    'description' => 'Imagen',
+    'section' => 'Contactanos_redes_sociales',
+    'settings' => 'facebook_img'
+  )));
+
+  // texto de red
+    $wp_customize->add_setting('contactanos-redes_facebook', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contactanos-redes_facebook_es', array (
+      'description' => 'Facebook URL',
+      'section' => 'Contactanos_redes_sociales',
+      'settings' => 'contactanos-redes_facebook'
+    ))); 
+
+     //image
+  $wp_customize->add_setting('instagram_img');
+  
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'instagram_img', array (
+    'label' => 'Logo',
+    'description' => 'Imagen',
+    'section' => 'Contactanos_redes_sociales',
+    'settings' => 'instagram_img'
+  )));
+     // texto de red
+    $wp_customize->add_setting('contactanos-sociales_instagram', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contactanos-sociales_instagram_en', array (
+      'description' => 'Instagram URL',
+      'section' => 'Contactanos_redes_sociales',
+      'settings' => 'contactanos-sociales_instagram'
+    ))); 
+
+     //image
+  $wp_customize->add_setting('youtube_img');
+  
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'youtube_img', array (
+    'label' => 'Logo',
+    'description' => 'Imagen',
+    'section' => 'Contactanos_redes_sociales',
+    'settings' => 'youtube_img'
+  )));
+
+    // texto de red
+    $wp_customize->add_setting('contactanos-social-youtube', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_contactanos-social-youtube_es', array (
+      'description' => 'Youtube URL',
+      'section' => 'Contactanos_redes_sociales',
+      'settings' => 'contactanos-social-youtube'
+    ))); 
+
+     ////////////////Servicio al Cliente////////////////////////////////////////////////
+       $wp_customize->add_panel('servicio_cliente',
+        array(
+            'title' => 'Servicio al Cliente',
+            'priority' => 1,
+            )
+        );
+
+    $wp_customize->add_section('servicio_cliente_titulo', array (
+    'title' => 'Título',
+    'panel' => 'servicio_cliente'
+  ));
+
+  // texto de red
+    $wp_customize->add_setting('servicio_al_cliente_titulo_es', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_servicio_al_cliente_titulo_es', array (
+      'description' => 'Título (Español)',
+      'section' => 'servicio_cliente_titulo',
+      'settings' => 'servicio_al_cliente_titulo_es'
+    ))); 
+     // texto de red
+    $wp_customize->add_setting('servicio_al_cliente_titulo_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_servicio_al_cliente_titulo_en', array (
+      'description' => 'Título (English)',
+      'section' => 'servicio_cliente_titulo',
+      'settings' => 'servicio_al_cliente_titulo_en'
+    ))); 
+
+     $wp_customize->add_section('servicio_cliente_subtitulo', array (
+    'title' => 'Descripción',
+    'panel' => 'servicio_cliente'
+  ));
+
+  // texto de red
+    $wp_customize->add_setting('servicio_al_cliente_subtitulo_es', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_servicio_al_cliente_subtitulo_es', array (
+      'description' => 'Descripción (Español)',
+      'section' => 'servicio_cliente_subtitulo',
+      'settings' => 'servicio_al_cliente_subtitulo_es'
+    ))); 
+     // texto de red
+    $wp_customize->add_setting('servicio_al_cliente_subtitulo_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_servicio_al_cliente_subtitulo_en', array (
+      'description' => 'Descripción (English)',
+      'section' => 'servicio_cliente_subtitulo',
+      'settings' => 'servicio_al_cliente_subtitulo_en'
+    ))); 
+         ////////////////Trabaja para nosotros////////////////////////////////////////////////
+       $wp_customize->add_panel('trabaja_con_nosotros',
+        array(
+            'title' => 'Trabaja con Nosotros',
+            'priority' => 1,
+            )
+        );
+
+    $wp_customize->add_section('trabaja_con_nosotros_titulo', array (
+    'title' => 'Título',
+    'panel' => 'trabaja_con_nosotros'
+  ));
+
+  // texto de red
+    $wp_customize->add_setting('trabaja_co_nosotros_titulo_es', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_trabaja_co_nosotros_titulo_es', array (
+      'description' => 'Título (Español)',
+      'section' => 'trabaja_con_nosotros_titulo',
+      'settings' => 'trabaja_co_nosotros_titulo_es'
+    ))); 
+     // texto de red
+    $wp_customize->add_setting('trabaja_co_nosotros_titulo_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_trabaja_co_nosotros_titulo_en', array (
+      'description' => 'Título (English)',
+      'section' => 'trabaja_con_nosotros_titulo',
+      'settings' => 'trabaja_co_nosotros_titulo_en'
+    ))); 
+
+     $wp_customize->add_section('trabaja_con_nosotros_subtitulo', array (
+    'title' => 'Descripción',
+    'panel' => 'trabaja_con_nosotros'
+  ));
+
+  // texto de red
+    $wp_customize->add_setting('trabaja_co_nosotros_subtitulo_es', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_trabaja_co_nosotros_subtitulo_es', array (
+      'description' => 'Descripción (Español)',
+      'section' => 'trabaja_con_nosotros_subtitulo',
+      'settings' => 'trabaja_co_nosotros_subtitulo_es'
+    ))); 
+     // texto de red
+    $wp_customize->add_setting('trabaja_co_nosotros_subtitulo_en', array(
+      'default' => ''
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'texto_control_trabaja_co_nosotros_subtitulo_en', array (
+      'description' => 'Descripción (English)',
+      'section' => 'trabaja_con_nosotros_subtitulo',
+      'settings' => 'trabaja_co_nosotros_subtitulo_en'
     ))); 
     }
   /*********************************************************************/

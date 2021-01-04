@@ -82,8 +82,17 @@ a:hover {
     margin-right: 40px;
     margin-top: 1rem;
 }
-..widget_polylang a{
-  color: black;
+li.lang-item.lang-item-2.lang-item-en.lang-item-first {
+    margin-right: 1.3rem !important;
+}
+li.lang-item.lang-item-2.lang-item-en.current-lang.lang-item-first {
+    margin-right: 1.3rem;
+}
+li.lang-item.lang-item-2.lang-item-en.lang-item-first a, li.lang-item.lang-item-5.lang-item-es.current-lang a{
+  color: black !important;
+}
+li.lang-item.lang-item-5.lang-item-es a{
+  color: black !important;
 }
 .navbar-top {
   background-color: #fff;
@@ -181,9 +190,7 @@ a:hover {
   width: 40px;
 }
 
-.switch-languages input:checked + label:before {
-  transform: translateX(58px) translateY(-50%);
-}
+
 
 .switch-languages label.toggle-item {
   width: 140px;
@@ -199,7 +206,7 @@ a:hover {
   z-index: 1;
 }
 
-.switch-languages label.toggle-item:before {
+li.lang-item.lang-item-2.lang-item-en.current-lang.lang-item-first:lang(en):before {
   content: "";
   display: block;
   transition: all 0.2s ease;
@@ -207,6 +214,21 @@ a:hover {
   height: 36px;
   top: 50%;
   left: 7px;
+  border-radius: 18px;
+  background: #a3bc2d;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: -1;
+}
+
+li.lang-item.lang-item-5.lang-item-es:lang(es):before {
+  content: "";
+  display: block;
+  transition: all 0.2s ease;
+  width: 65px;
+  height: 36px;
+  top: 50%;
+    left: 65px;
   border-radius: 18px;
   background: #a3bc2d;
   transform: translateY(-50%);
