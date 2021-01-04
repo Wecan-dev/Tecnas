@@ -517,25 +517,35 @@ ul.share-social li a:hover {
 }
 
 .services-text {
-  width: 90%;
+  width: 100%;
+  padding-left: 32px;
 }
 
 .services-text li {
   list-style: none;
-  position: relative;
-  font-family: "Helvetica";
-  margin: 15px 0;
+    position: relative;
+    font-family: "Helvetica";
+    margin: 17px 0;
+    font-size: 18px;
+    line-height: 23px;
 }
 
 .services-text li::before {
   content: "";
   position: absolute;
   background-image: url("../img/icons/check.svg");
-  left: -25px;
+  left: -30px;
   width: 14px;
   height: 11px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   top: 5px;
+}
+
+.main-services {
+    display: grid;
+    grid-template-columns: calc(54% - 30px) calc(46% - 30px);
+    gap: 30px;
+    padding-left: 25px;
 }

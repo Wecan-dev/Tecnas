@@ -512,6 +512,10 @@ ul.share-social li a:hover {
   margin-bottom: 80px;
 }
 
+.clients-slider .slick-slider {
+	height: auto;
+}
+
 .clients-slider .slick-next,
 .clients-slider .slick-prev {
   background-color: #fff;

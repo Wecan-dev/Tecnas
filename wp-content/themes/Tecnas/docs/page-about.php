@@ -10,15 +10,12 @@
       </div>
       <div class="about-text">
         <p>Somos una gran familia, comprometida con los sueños y la búsqueda de la excelencia a través del amor y la alegría en lo que hacemos. Fundada en 1987, para contribuir con el crecimiento y el desarrollo de la industria de alimentos, mediante la calidad de nuestros productos, la calidez de nuestro servicio, la investigación, innovación y vigilancia de las tendencias del mercado en los sectores Cárnicos, Lácteos y Helados, Panadería, Repostería y Arepas, Bebidas, Galletas y Snacks, Hoteles, Restaurantes y Casinos. Estamos comprometidos con la Salud, el bienestar y el cuidado del medio ambiente.</p>
-        <a class="btn btn-custom" href="#">Ver más</a>
+        <a class="btn btn-custom large" href="#" style="margin-bottom: 5px;">Ver más</a>
       </div>
     </div>
     <div class="main-about full-width mb-5">
       <div class="about-subtitle">Por qué elegirnos</div>
-      <div class="about-text">
-        <p>Nuestros clientes y proveedores son nuestros aliados, hacen parte de esta gran familia y con ellos generamos soluciones a través del diseño, fabricación, maquila y comercialización de productos, ingredientes y aditivos para el consumo humano y la división de Limpieza, Desinfección e Inocuidad; por medio de un servicio cálido y un equipo humano calificado, motivado y que encuentran en TECNAS un espacio para el desarrollo profesional, personal, espiritual. Establecemos relaciones duraderas en el tiempo y así logramos ser Socios en su progreso.</p>
-        <p>Pasión y amor por lo que hacemos, es el reflejo en la sonrisa de cada uno de nuestros empleados, sus familias, nuestros clientes y representados; nuestros aliados. Quienes han soñado, vibrado y construido con nosotros un crecimiento rentable y una propuesta de valor, que hoy nos consolida como líderes en soluciones efectivas para el mercado B2B de alimentos a nivel nacional</p>
-      </div>
+      <div class="about-text"><p>Nuestros clientes y proveedores son nuestros aliados, hacen parte de esta gran familia y con ellos generamos soluciones a través del diseño, fabricación, maquila y comercialización de productos, ingredientes y aditivos para el consumo humano y la división de Limpieza, Desinfección e Inocuidad; por medio de un servicio cálido y un equipo humano calificado, motivado y que encuentran en TECNAS un espacio para el desarrollo profesional, personal, espiritual. Establecemos relaciones duraderas en el tiempo y así logramos ser Socios en su progreso.</p><p>Pasión y amor por lo que hacemos, es el reflejo en la sonrisa de cada uno de nuestros empleados, sus familias, nuestros clientes y representados; nuestros aliados. Quienes han soñado, vibrado y construido con nosotros un crecimiento rentable y una propuesta de valor, que hoy nos consolida como líderes en soluciones efectivas para el mercado B2B de alimentos a nivel nacional</p></div>
     </div>
     <div class="main-support">
       <div class="about-subtitle">Nuestros Pilares</div>

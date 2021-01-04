@@ -7,19 +7,13 @@
     <div class="section-title">
       <h1><?php the_title(); ?></h1>
     </div>
-    <div class="row">
-      <div class="col-lg-6">
+    <div class="main-services">
         <div class="services-img">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/services.jpg">
         </div>
-      </div>
-      <div class="col-lg-6">
         <div class="services-text">
-          <ul>
-           <?php the_content(); ?>
-          </ul>
+          <?php the_content(); ?>
         </div>
-      </div>
     </div>
     <?php  endwhile; ?>  
   </section>

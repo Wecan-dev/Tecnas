@@ -1,3 +1,5 @@
+html.fa-events-icons-ready {margin-top: 0!important;}
+#wpadminbar {display:none !important;}
 @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
@@ -222,6 +224,34 @@ a:hover {
   font-size: 20px;
 }
 
+@media screen and (min-width: 0) and (max-width: 767px) {
+	.navbar-brand {
+		order: 1;
+	}
+	
+	.navbar-top .navbar-brand img {
+		width: 70px;
+	}
+	
+	.search-bar {
+		order: 3;
+		width: 100%;
+	}
+	
+	.pse-logo {
+		display: none;
+	}
+	
+	.languages {
+		order: 2;
+    	margin-right: 0;
+	}
+	
+	.navbar-top {
+		padding: 20px;
+	}
+}
+
 footer ul {
   display: inline-flex;
   margin-bottom: 0;
@@ -247,6 +277,7 @@ footer ul {
 .footer-top .footer-images li {
   padding: 0 20px;
   list-style: none;
+  width: 25%;
 }
 
 .footer-top .nav-link {
@@ -257,7 +288,9 @@ footer ul {
 }
 
 .footer-top img {
-  height: 55px;
+  height: 65px;
+  width: 100%;
+  object-fit: contain;
 }
 
 .footer-bottom {
@@ -270,6 +303,29 @@ footer ul {
   color: #202c3a;
   font-weight: 500;
   font-size: 14px;
+}
+
+@media screen and (min-width: 0) and (max-width: 767px) {
+	.footer-top {
+		padding: 40px 20px;
+		flex-direction: column;
+	}
+	
+	.footer-links {
+		flex-direction: column;
+	}
+	
+	.footer-top .footer-links .nav-item {
+		border-right: none;
+	}
+	
+	.footer-top .nav-link {
+		font-size: 15px;
+	}
+	
+	footer ul {
+		width: 100%;
+	}
 }
 
 .collapse li {
@@ -382,7 +438,7 @@ footer ul {
 }
 
 .page-container {
-  padding: 100px;
+  padding: 110px;
 }
 
 .section-title {
@@ -419,6 +475,13 @@ footer ul {
   padding: 13px 40px;
   transition: all ease-in-out 0.2s;
   border-color: transparent;
+}
+
+.btn-custom.large {
+  font-size: 20px;
+  width: auto;
+  border-radius: 32px;
+  padding: 13px 59px;
 }
 
 .btn-custom:hover {
@@ -494,8 +557,8 @@ ul.share-social li a:hover {
 
 .dropdown-menu.one-level li {
   font-family: "Helvetica-Bold";
-  font-size: 14px;
-  padding: 14px;
+  font-size: 13.5px;
+  padding: 8px 10px 8px 20px;
 }
 
 .dropdown-menu.one-level li:hover {
@@ -546,8 +609,10 @@ label {
   border-radius: 4px;
 }
 
-.input-group span i {
-  color: #48bbef;
+.input-group span img {
+      width: 20px;
+    height: 16px;
+  object-fit: contain;
 }
 
 .input-group .form-control {
@@ -588,11 +653,12 @@ label {
 }
 
 .contact-form {
-  padding-right: 50px;
+    padding-right: 85px;
+    padding-left: 50px;
 }
 
 .contact-info {
-  padding-left: 50px;
+  padding-left: 40px;
   border-left: solid 2px #e8e8e8;
 }
 
@@ -602,21 +668,28 @@ label {
 }
 
 .contact-info-vertical li {
-  margin: 40px 0;
+  margin: 65px 0;
   display: flex;
   align-items: center;
 }
 
-.contact-info-vertical span {
+.contact-info-vertical div {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info-vertical div span {
   font-family: "Aller-Bold";
   color: #000;
   font-size: 22px;
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
-.contact-info-vertical span a {
+.contact-info-vertical div a {
   color: #303030;
   font-size: 18px;
+	font-family: "Aller-Bold";
+	margin-left: 25px;
 }
 
 .contact-info-horizontal {
@@ -654,4 +727,12 @@ label {
   top: 0;
   opacity: 0;
   z-index: 100;
+}
+
+div.asl_w .probox .promagnifier {
+	margin-right: 12px;
+}
+
+div.asl_m .probox .promagnifier .innericon {
+	width: 25px !important;
 }

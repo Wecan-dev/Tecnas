@@ -329,27 +329,24 @@
             <ul class="contact-info-vertical">
               <li>
                 <img alt="Carrera 50G No. 12 sur 29" src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/place.svg">
-                <span>
-                  Dirección
-                  <br>
+                <div>
+                  <span>Dirección</span>
                   <a href="#">Carrera 50G No. 12 sur 29</a>
-                </span>
+                </div>
               </li>
               <li>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/phone-call.svg">
-                <span>
-                  Teléfono
-                  <br>
+                <div>
+                  <span>Teléfono</span>
                   <a href="tel:42854290">(4) 2854290</a>
-                </span>
+                </div>
               </li>
               <li>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/envelope.svg">
-                <span>
-                  Correo
-                  <br>
+                <div>
+				  <span>Correo</span>
                   <a href="mailto:tecnas@tecnas.com.co">tecnas@tecnas.com.co</a>
-                </span>
+                </div>
               </li>
             </ul>
             <ul class="contact-info-horizontal">

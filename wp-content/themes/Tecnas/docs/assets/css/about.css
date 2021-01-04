@@ -514,14 +514,17 @@ ul.share-social li a:hover {
 
 .main-about {
   display: grid;
-  grid-template-columns: repeat(2, calc(50% - 30px));
-  gap: 0 60px;
+  grid-template-columns: calc(54% - 30px) calc(47% - 30px);
+  gap: 0 50px;
+  padding: 0 10px;
 }
 
 .main-about.full-width {
   display: block;
   grid-template-columns: unset;
   gap: unset;
+  margin-top: 85px;
+  margin-bottom: 10px;
 }
 
 .about-video img {
@@ -533,25 +536,35 @@ ul.share-social li a:hover {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+  padding: 0 12px;
 }
 
 .about-text p {
   color: #303030;
-  font-size: 18px;
+  font-size: 18.4px;
   font-family: "Helvetica";
   line-height: 28px;
   text-align: justify;
+  margin-bottom: 25px;
 }
 
 .about-subtitle {
   font-family: "Aller-Bold";
   font-size: 30px;
   color: #033255;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  padding: 0 12px;
+}
+
+.support-item {
+  text-align: center;
 }
 
 .support-item img {
-  width: 100%;
+  width: 85%;
+  border: 10px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 15px 0px rgba(0,0,0,.1);
 }
 
 .support-item h3 {
@@ -560,13 +573,13 @@ ul.share-social li a:hover {
   color: #47546c;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 55px;
+  margin: 55px auto 0 auto;
 }
 
 .main-benefits {
   background-color: #0071ba;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: space-between;
   padding: 50px 50px 25px 50px;
 }
 
@@ -591,9 +604,13 @@ ul.share-social li a:hover {
 }
 
 .main-benefits .benefit-divider {
-  width: 5px;
-  height: 45px;
-  border-radius: 3px;
-  background-color: #fff;
-  margin: 0 10px;
+  width: 3px;
+	height: 45px;
+	border-radius: 3px;
+	background-color: #fff;
+	margin: 0 22px;
+}
+
+.main-support {
+  padding-left: 12px;
 }
