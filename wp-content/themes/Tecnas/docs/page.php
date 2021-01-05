@@ -409,34 +409,58 @@
             <ul class="contact-info-vertical">
                  <?php if (get_theme_mod('contactanos-direccion_tittulo_'.lang().'') != NULL) { ?> 
               <li>
+<<<<<<< HEAD
                 <img src="<?php echo get_theme_mod('direccion_img'); ?>">
                 <span>
                 <?php echo get_theme_mod('contactanos-direccion_tittulo_'.lang().''); ?>
                   <br>
                   <a href="#"><?php echo get_theme_mod('contactanos-direccion_'.lang().''); ?></a>
                 </span>
+=======
+                <img alt="Carrera 50G No. 12 sur 29" src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/place.svg">
+                <div>
+                  <span>Dirección</span>
+                  <a href="#">Carrera 50G No. 12 sur 29</a>
+                </div>
+>>>>>>> 42121954969e398f503e608a3d269f306e59bc6c
               </li>
                 <?php }
          ?> 
   <?php if (get_theme_mod('contactanos-telefono_tittulo_'.lang().'') != NULL) { ?> 
               <li>
+<<<<<<< HEAD
                 <img src="<?php echo get_theme_mod('telefono_img'); ?>">
                 <span>
                   <?php echo get_theme_mod('contactanos-telefono_tittulo_'.lang().''); ?>
                   <br>
                   <a href="tel:"><?php echo get_theme_mod('contactanos-telefono_'.lang().''); ?></a>
                 </span>
+=======
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/phone-call.svg">
+                <div>
+                  <span>Teléfono</span>
+                  <a href="tel:42854290">(4) 2854290</a>
+                </div>
+>>>>>>> 42121954969e398f503e608a3d269f306e59bc6c
               </li>
                 <?php }
          ?> 
             <?php if (get_theme_mod('contactanos-correo_tittulo_'.lang().'') != NULL) { ?> 
               <li>
+<<<<<<< HEAD
                 <img src="<?php echo get_theme_mod('correo_img'); ?>">
                 <span>
                    <?php echo get_theme_mod('contactanos-correo_tittulo_'.lang().''); ?>
                   <br>
                   <a href="mailto:"><?php echo get_theme_mod('contactanos-correo_'.lang().''); ?></a>
                 </span>
+=======
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/envelope.svg">
+                <div>
+				  <span>Correo</span>
+                  <a href="mailto:tecnas@tecnas.com.co">tecnas@tecnas.com.co</a>
+                </div>
+>>>>>>> 42121954969e398f503e608a3d269f306e59bc6c
               </li>
                 <?php }
          ?> 
