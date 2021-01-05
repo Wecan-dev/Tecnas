@@ -182,13 +182,9 @@ Our company";} ?></a>
             </li>
           </ul>
         </li>
-<<<<<<< HEAD
         <li class='nav-item'>
           <a class='nav-link dropdown-toggle' href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "contacto";}else{echo "contact";} ?>'><?php if(lang() == 'es'){echo "Contacténos";}if(lang() == 'en'){echo "
 Contact Us";} ?></a>
-=======
-        <li class='nav-item'><a class='nav-link dropdown-toggle' href='<?php echo bloginfo('url').'/contacto';?>'>Contáctenos</a>
->>>>>>> 42121954969e398f503e608a3d269f306e59bc6c
           <ul class='dropdown-menu one-level'>
             <li>
               <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "punto-de-venta";}else{echo "point-of-sale";} ?>'><?php if(lang() == 'es'){echo "Punto de venta";}if(lang() == 'en'){echo "
@@ -206,7 +202,7 @@ Client services";} ?></a>
             </li>
           </ul>
         </li>
-        <li class='nav-item'>
+       <li class='nav-item'>
           <a class='nav-link' href='#'><?php if(lang() == 'es'){echo "Redes Sociales";}if(lang() == 'en'){echo "Social networks";} ?></a>
         </li>
       </ul>
