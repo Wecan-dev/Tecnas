@@ -57,17 +57,21 @@ $(".main-slider").slick({
   arrows: true,
   dots: false,
   prevArrow:
-    "<button class='slick-prev slick-arrow' aria-label='Previous' type='button'><img class='slick-prev' src='assets/img/icons/arrow_left.svg'></button>",
+    "<button class='slick-prev slick-arrow' aria-label='Previous' type='button'><img class='slick-prev' src='http://159.89.229.55/Tecnas/wp-content/themes/Tecnas/docs/assets/img/icons/arrow_left.svg'></button>",
   nextArrow:
-    "<button class='slick-next slick-arrow' aria-label='Next' type='button'><img class='slick-next' src='assets/img/icons/arrow_right.svg'></button>",
+    "<button class='slick-next slick-arrow' aria-label='Next' type='button'><img class='slick-next' src='http://159.89.229.55/Tecnas/wp-content/themes/Tecnas/docs/assets/img/icons/arrow_right.svg'></button>",
 });
 
 $(".featured-slider").slick({
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
-  arrows: false,
+  arrows: true,
   dots: true,
+  prevArrow:
+    "<button class='slick-prev slick-arrow' aria-label='Previous' type='button'><img class='slick-prev' src='http://159.89.229.55/Tecnas/wp-content/themes/Tecnas/docs/assets/img/icons/arrow_left.svg'></button>",
+  nextArrow:
+    "<button class='slick-next slick-arrow' aria-label='Next' type='button'><img class='slick-next' src='http://159.89.229.55/Tecnas/wp-content/themes/Tecnas/docs/assets/img/icons/arrow_right.svg'></button>",
   responsive: [
     {
       breakpoint: 991,

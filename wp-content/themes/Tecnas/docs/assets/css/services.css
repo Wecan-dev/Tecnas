@@ -533,3 +533,21 @@ ul.share-social li a:hover {
     gap: 30px;
     padding-left: 25px;
 }
+
+@media screen and (min-width: 0) and (max-width: 991px) {
+	.main-services {
+		grid-template-columns: 100%;
+		gap: 30px 0;
+		padding-left: 0;
+	}
+	
+	.services-text {
+		padding-left: 0;
+	}
+}
+
+@media screen and (min-width: 0) and (max-width: 767px) {
+	.services-text li {
+		font-size: 15px;
+	}
+}

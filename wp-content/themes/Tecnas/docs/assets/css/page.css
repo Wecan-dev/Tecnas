@@ -520,10 +520,19 @@ ul.share-social li a:hover {
   color: #0071ba;
 }
 
+.card-header button:hover, .card-header button:focus, .card-header button:active {
+  text-decoration: none;
+}
+
+
 .card-body {
   font-family: "Helvetica";
   font-size: 18px;
   color: #303030;
+}
+
+.card-body p {
+	margin-bottom: 0;
 }
 
 .points-of-sale-maps .map iframe {
@@ -538,6 +547,13 @@ ul.share-social li a:hover {
   font-size: 18px;
   color: #303030;
   font-family: "Helvetica";
+	margin-bottom: 20px;
+}
+
+.countries-info p {
+	font-size: 18px;
+	line-height: 22px;
+	margin-right: 20px;
 }
 
 .countries-info a {
@@ -559,6 +575,7 @@ ul.share-social li a:hover {
 
 .countries-list li h5 {
   margin-bottom: 20px;
+  color: #48bbef;
 }
 
 .countries-list li li {
@@ -597,6 +614,7 @@ ul.share-social li a:hover {
   font-family: "Aller-Bold";
   color: #033255;
   font-size: 30px;
+  text-transform: capitalize;
 }
 
 .portfolio-detail-text {
@@ -653,4 +671,14 @@ ul.share-social li a:hover {
   margin-bottom: 0;
   color: #303030;
   font-family: "Aller-Regular";
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+	.main-page {
+		padding: 50px 20px;
+	}
+	
+	.countries-info a {
+		font-size: 15px;
+	}
 }

@@ -11,10 +11,10 @@
             while(have_posts()){
                 the_post();
             ?>
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-6">
           <div class="portfolio-card">
             <a href="<?php the_permalink(); ?>">
-              <img alt="Betacaroteno" src="<?php echo get_the_post_thumbnail_url(); ?>">
+              <img alt="<?php the_title(); ?>" src="<?php echo get_the_post_thumbnail_url(); ?>">
               <div class="portfolio-text">
                 <h4> <?php the_title(); ?></h4>
               </div>

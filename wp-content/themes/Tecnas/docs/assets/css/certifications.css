@@ -373,7 +373,7 @@ footer ul {
 }
 
 .section-title p {
-  width: 60%;
+  width: 57%;
   margin: 0 auto;
   font-size: 18px;
   line-height: 1.56;
@@ -518,6 +518,12 @@ ul.share-social li a:hover {
   left: 43%;
 }
 
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.certifications-slider .slick-prev {
+		left: 40%;
+	}
+}
+
 .certifications-slider .slick-next:before,
 .certifications-slider .slick-prev:before {
   font-family: "FontAwesome";
@@ -539,10 +545,10 @@ ul.share-social li a:hover {
 
 .certification-item img {
   width: 100%;
-  height: 120px;
+  height: 200px;
   object-fit: contain;
   padding-bottom: 20px;
-  border-bottom: solid 1.6px #cbcbcb;
+  border-bottom: solid 2px #cbcbcb;
 }
 
 .certification-item h3 {

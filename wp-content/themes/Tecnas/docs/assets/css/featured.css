@@ -492,12 +492,15 @@ ul.share-social li a:hover {
   object-fit: contain;
 }
 
-.page-container {
+.page-container.featured-page-container {
   padding-bottom: 150px;
+	padding-top: 100px;
+	padding-right: 110px;
+	padding-left: 110px;
 }
 
 .page-container.detail {
-  padding: 65px 100px 70px 100px;
+  padding: 65px 140px 70px 140px;
 }
 
 .page-container.detail .section-title {
@@ -508,12 +511,12 @@ ul.share-social li a:hover {
   text-align: left;
 }
 
-.section-title {
+.featured-page-container .section-title {
   margin-bottom: 55px;
 }
 
 .featured-slider {
-  width: 70%;
+  width: 75%;
   margin: 0 auto;
 }
 
@@ -551,10 +554,24 @@ ul.share-social li a:hover {
 
 .featured-card {
   border: solid 1px #dee2e6;
+	margin: 0 2px;
 }
+
+.featured-card-img {
+	height: 250px;
+}
+.page-container.detail .featured-card-img {
+		height: auto;
+	}
 
 .featured-card-img img {
   width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.featured-page-container {
+	padding-bottom: 150px;
 }
 
 .featured-card-info {
@@ -614,4 +631,89 @@ ul.share-social li a:hover {
 
 .featured-card-info.detail p {
   line-height: 1.56;
+}
+
+.featured-card-info .btn-custom {
+	font-size: 20px;
+    width: 180px;
+    padding: 10px 40px;
+    border-radius: 28px;
+}
+
+@media screen and (min-width: 0) and (max-width: 767px) {
+	.featured-slider {
+		width: 100%;
+	}
+	
+	.featured-card-info h3 {
+		font-size: 20px;
+	}
+	
+	.featured-card-info p {
+		font-size: 15px;
+		line-height: 23px;
+	}
+	
+	.featured-card-info {
+		padding: 55px 20px 20px 20px;
+	}
+	
+	.page-container.detail {
+		padding: 50px 20px;
+		padding-bottom: 50px;
+	}
+	
+	.page-container.featured-page-container {
+		padding: 50px 20px 100px 20px;
+     }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.featured-slider {
+		width: 100%;
+	}
+	
+	.featured-card {
+		margin: 0 10px;
+	}
+	
+	.featured-card-info h3 {
+		font-size: 20px;
+	}
+	
+	.featured-card-info p {
+		font-size: 15px;
+		line-height: 23px;
+	}
+	
+	.featured-card-info {
+		padding: 55px 20px 20px 20px;
+	}
+	
+	.page-container.detail {
+		padding: 50px 20px;
+		padding-bottom: 50px;
+	}
+	
+	.page-container.featured-page-container {
+		padding: 50px 20px 100px 20px;
+     }
+}
+
+@media screen and (min-width: 1199px) and (max-width: 1440px) {
+	.featured-card-img {
+		height: 470px;
+	}
+}
+
+.featured-slider .slick-prev {
+	right: unset;
+	left: -25px;
+	object-fit: contain;
+	top: 30%;
+}
+
+.featured-slider .slick-next {
+	object-fit: contain;
+	top: 30%;
 }

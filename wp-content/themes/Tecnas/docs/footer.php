@@ -3,19 +3,19 @@
       <ul class='footer-links'>
          <?php if (get_theme_mod('footer_contacto_'.lang().'') != NULL) { ?>         
         <li class='nav-item'>
-          <a class='nav-link' href='/'><?php echo get_theme_mod('footer_contacto_'.lang().''); ?></a>
+          <a class='nav-link' href='<?php echo get_theme_mod('footer_contacto_url_'.lang().''); ?>'><?php echo get_theme_mod('footer_contacto_'.lang().''); ?></a>
         </li>
          <?php }
          ?> 
          <?php if (get_theme_mod('footer_politicas_'.lang().'') != NULL) { ?>   
         <li class='nav-item'>
-          <a class='nav-link' href='#'><?php echo get_theme_mod('footer_politicas_'.lang().'') ?></a>
+          <a class='nav-link' href='<?php echo get_theme_mod('footer_politicas_url_'.lang().'') ?>'><?php echo get_theme_mod('footer_politicas_'.lang().'') ?></a>
         </li>
           <?php }
          ?> 
           <?php if (get_theme_mod('footer_email') != NULL){?> 
         <li class='nav-item'>
-          <a class='nav-link' href='mailto:'><?php echo get_theme_mod('footer_email') ?></a>
+          <a class='nav-link' href='mailto:<?php echo get_theme_mod('footer_email') ?>'><?php echo get_theme_mod('footer_email') ?></a>
         </li>
         <?php }
          ?> 
@@ -23,7 +23,7 @@
       <ul class='footer-images'>
           <?php if (get_theme_mod('aliados_item_1') != NULL){?> 
         <li>
-          <a class='nav-link' href='/'>
+          <a class='nav-link' href='<?php echo get_theme_mod('aliados_item_1_url') ?>'>
             <img src='<?php echo get_theme_mod('aliados_item_1') ?>'>
           </a>
         </li>
@@ -31,7 +31,7 @@
          ?> 
         <?php if (get_theme_mod('aliados_item_2') != NULL){?> 
         <li>
-          <a class='nav-link' href='/'>
+          <a class='nav-link' href='<?php echo get_theme_mod('aliados_item_2_url') ?>'>
             <img src='<?php echo get_theme_mod('aliados_item_2') ?>'>
           </a>
         </li>
@@ -39,7 +39,7 @@
          ?> 
         <?php if (get_theme_mod('aliados_item_3') != NULL){?> 
         <li>
-          <a class='nav-link' href='/'>
+          <a class='nav-link' href='<?php echo get_theme_mod('aliados_item_3_url') ?>'>
             <img src='<?php echo get_theme_mod('aliados_item_3') ?>'>
           </a>
         </li>
@@ -47,7 +47,7 @@
          ?> 
         <?php if (get_theme_mod('aliados_item_4') != NULL){?> 
         <li>
-          <a class='nav-link' href='/'>
+          <a class='nav-link' href='<?php echo get_theme_mod('aliados_item_4_url') ?>'>
             <img src='<?php echo get_theme_mod('aliados_item_4') ?>'>
           </a>
         </li>

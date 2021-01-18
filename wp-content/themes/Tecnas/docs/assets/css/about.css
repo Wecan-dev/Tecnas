@@ -531,6 +531,13 @@ ul.share-social li a:hover {
   margin-bottom: 25px;
 }
 
+.about-text a.btn {
+	width: 190px;
+    font-size: 18px;
+    padding: 15px 50px;
+    border-radius: 30px;
+}
+
 .about-subtitle {
   font-family: "Aller-Bold";
   font-size: 30px;
@@ -547,7 +554,7 @@ ul.share-social li a:hover {
   width: 85%;
   border: 10px solid #fff;
   border-radius: 50%;
-  box-shadow: 0 1px 15px 0px rgba(0,0,0,.1);
+
 }
 
 .support-item h3 {
@@ -557,6 +564,7 @@ ul.share-social li a:hover {
   text-transform: uppercase;
   text-align: center;
   margin: 55px auto 0 auto;
+	width: 60%;
 }
 
 .main-benefits {
@@ -596,4 +604,92 @@ ul.share-social li a:hover {
 
 .main-support {
   padding-left: 12px;
+}
+
+.map-mobile {
+	display: none;
+}
+
+@media screen and (min-width: 0) and (max-width: 767px) {
+	.about-text p {
+		font-size: 15px;
+		line-height: 23px;
+	}
+	
+	.main-benefits {
+		flex-wrap: wrap;
+		padding: 30px 20px;
+	}
+	
+	.main-benefits .benefit-item {
+		flex-direction: column;
+		margin-bottom: 20px;
+		width: 100%;
+	}
+	
+	.main-benefits .benefit-item h4 {
+		text-align: center;
+		margin-top: 10px;
+		margin-bottom: 0;
+	}
+	
+	.main-benefits .benefit-divider {
+		display: none;
+	}
+	
+	.support-item h3 {
+		margin: 0px 0 25px 0;
+	}
+	
+	.points-of-sale-list {
+		margin-bottom: 50px;
+	}
+	
+	.points-of-sale-list .card-body p {
+		word-break: break-word;
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 991px) {
+	.map-mobile {
+		display: block;
+	}
+
+	.main-about {
+		grid-template-columns: 100%;
+       	gap: 50px 0;
+		padding: 0;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.main-benefits {
+		padding: 30px 20px;
+	}
+	
+	.main-benefits .benefit-item {
+		flex-direction: column;
+		margin-bottom: 20px;
+		width: 100%;
+	}
+	
+	.main-benefits .benefit-item h4 {
+		text-align: center;
+		margin-top: 10px;
+		margin-bottom: 0;
+	}
+	
+	.main-benefits .benefit-divider {
+		display: none;
+	}
+	
+	.support-item h3 {
+		margin: 10px auto 40px auto;
+	}
+}
+
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+	.main-benefits {
+		padding: 50px 0 25px 0;
+	}
 }

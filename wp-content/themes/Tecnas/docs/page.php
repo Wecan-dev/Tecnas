@@ -20,10 +20,10 @@
 
 <?php if(get_field('plantilla') == 'destacados'){ ?>  
 
-  <section class="page-container">
+  <section class="page-container featured-page-container">
     <div class="section-title">
-
-      <h1> <?php if(lang() == 'es'){echo "Alternativas Tecnas Plant Based";}if(lang() == 'en'){echo "Tecnas Plant Based Alternatives";} ?></h1>
+	<?php $posDestacadotitle = lang() == "es" ? "Alternativas Tecnas Plant Based" : "Tecnas Plant Based Alternatives"; ?>
+      <h1><?php echo $posDestacadotitle; ?></h1>
     </div>
     <div class="featured-slider">
         <?php $args = array( 'post_type' => 'destacados__'); ?>
@@ -31,12 +31,18 @@
                  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
       <div class="featured-card">
         <div class="featured-card-img">
-          <img src="<?php echo get_the_post_thumbnail_url(); ?>">
+          <img src="<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : 'http://159.89.229.55/Tecnas/wp-content/uploads/2021/01/default_img_tecnas.png' ?>">
         </div>
         <div class="featured-card-info">
           <h3><?php the_title(); ?></h3>
-          <p><?php the_content(); ?></p>
-          <a class="btn btn-custom" href="<?php the_permalink(); ?>">Leer más</a>
+          <p><?php the_excerpt(); ?></p>
+			
+		<?php $posDestacadoBoton = lang() == "es" ? "Ver Más" : "see more"; ?>
+				<?php if(lang() == 'es'){ ?>
+          <a class="btn btn-custom" href="<?php if(get_field( 'url_producto_espanol' ) != null) : the_field( 'url_producto_espanol' );  else : the_permalink();  endif; ?> "><?php echo $posDestacadoBoton; ?></a>
+			<?php }else { ?>
+	  <a class="btn btn-custom" href="<?php if(get_field( 'url_product_english' ) != null) : the_field( 'url_product_english' );  else : the_permalink();  endif; ?> "><?php echo $posDestacadoBoton; ?></a>
+				<?php } ?>   
         </div>
       </div>
        <?php  endwhile; ?>  
@@ -49,6 +55,7 @@
     <div class="container">
      
       <div class="row">
+		
         <?php $args =  array(
           'post_type' => 'producto',
           'post_status' => 'publish',
@@ -57,17 +64,19 @@
           ); ?>
               <?php $loop = new WP_Query( $args ); ?>
                  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-6">
           <div class="portfolio-card">
             <a href="<?php the_permalink(); ?>">
-              <img alt="Betacaroteno" src="<?php echo get_the_post_thumbnail_url(); ?>">
+              <img alt="<?php the_title(); ?>" src="<?php echo get_the_post_thumbnail_url(); ?>">
               <div class="portfolio-text">
                 <h4> <?php the_title(); ?></h4>
               </div>
             </a>
           </div>
         </div>
+		  
            <?php  endwhile; ?>  
+		   
       </div>
     </div>
   </div>
@@ -76,10 +85,11 @@
 <?php if(get_field('plantilla') == 'clientes'){ ?>  
 <section class="page-container">
     <div class="section-title">
-      <h1><?php if(lang() == 'es'){echo "Nuestros Aliados";}if(lang() == 'en'){echo "Our Allies";} ?></h1>
+			<?php $posOurAlliesTitle = lang() == "es" ? "Nuestros Aliados" : "Our Allies"; ?>
+      <h1><?php echo $posOurAlliesTitle; ?></h1>
     </div>
     <div class="clients-slider">
-       <?php $args = array( 'post_type' => 'clientes'); ?>
+       <?php $args = array( 'post_type' => 'clientes', 'post_per_page' => 999); ?>
               <?php $loop = new WP_Query( $args ); ?>
                  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
       <div class="client-item">
@@ -120,7 +130,7 @@
       <div class="about-text">
         <p><?php echo get_theme_mod('contenido_1_nuestra_empresa_'.lang().'') ?></p>
           <?php if (get_theme_mod('texto_del_boton_nuestra_empresa_'.lang().'') != NULL){?>  
-        <a class="btn btn-custom" href="<?php echo get_theme_mod('url_del_boton_nuestra_empresa_'.lang().'') ?>"><?php echo get_theme_mod('texto_del_boton_nuestra_empresa_'.lang().'') ?></a>
+        <!--<a class="btn btn-custom" href="<?php echo get_theme_mod('url_del_boton_nuestra_empresa_'.lang().'') ?>"><?php echo get_theme_mod('texto_del_boton_nuestra_empresa_'.lang().'') ?></a>-->
          <?php }
          ?> 
       </div>
@@ -146,7 +156,7 @@
          ?> 
       <div class="row">
           <?php if (get_theme_mod('nuestros_pilares_img_1') != NULL){?>  
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-6">
           <div class="support-item">
             <img src="<?php echo get_theme_mod('nuestros_pilares_img_1') ?>">
             <h3><?php echo get_theme_mod('nuestros_pilares_img_1_titulo_'.lang().'') ?></h3>
@@ -155,31 +165,31 @@
          <?php }
          ?> 
            <?php if (get_theme_mod('nuestros_pilares_img_2') != NULL){?>  
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-6">
           <div class="support-item">
             <img src="<?php echo get_theme_mod('nuestros_pilares_img_2') ?>">
             <h3><?php echo get_theme_mod('nuestros_pilares_img_2_titulo_'.lang().'') ?></h3>
-            </img>
+            
           </div>
         </div>
          <?php }
          ?> 
           <?php if (get_theme_mod('nuestros_pilares_img_3') != NULL){?>  
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-6">
           <div class="support-item">
             <img src="<?php echo get_theme_mod('nuestros_pilares_img_3') ?>">
             <h3><?php echo get_theme_mod('nuestros_pilares_img_3_titulo_'.lang().'') ?></h3>
-            </img>
+           
           </div>
         </div>
          <?php }
          ?> 
           <?php if (get_theme_mod('nuestros_pilares_img_4') != NULL){?>  
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-6">
           <div class="support-item">
             <img src="<?php echo get_theme_mod('nuestros_pilares_img_4') ?>">
             <h3><?php echo get_theme_mod('nuestros_pilares_img_4_titulo_'.lang().'') ?></h3>
-            </img>
+           
           </div>
         </div>
          <?php }
@@ -244,7 +254,7 @@
     </div>
     <div class="main-services">
         <div class="services-img">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/services.jpg">
+          <img alt="<?php the_title(); ?>" src="<?php echo get_the_post_thumbnail_url(); ?>">
         </div>
         <div class="services-text">
          
@@ -259,127 +269,21 @@
 
 
 <?php if(get_field('plantilla') == 'certificaciones'){ ?>  
-       <section class="page-container">
-     <?php $args = array( 'post_type' => 'Certificaciones', 'post_per_page' => 1); ?>
-              <?php $loop = new WP_Query( $args ); ?>
-                 <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+   <section class="page-container">
     <div class="section-title">
-      <h1><?php the_title(); ?></h1>
-      <p><?php the_content(); ?></p>
+      <h1> <?php echo get_theme_mod('certificaciones_titulo_'.lang().'') ?></h1>
+      <p> <?php echo get_theme_mod('certificaciones_descripcion_'.lang().'') ?></p>
     </div>
     <div class="certifications-slider">
-
-       <?php if (get_field( 'certificado_imagen_1' ) != NULL){?>  
+		    <?php $args = array( 'post_type' => 'Certificaciones',); ?>
+              <?php $loop = new WP_Query( $args ); ?>
+                 <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
       <div class="certification-item">
-        <?php $certificado_imagen_1 = get_field( 'certificado_imagen_1' ); ?>
-<?php if ( $certificado_imagen_1 ) : ?>
-  <img src="<?php echo esc_url( $certificado_imagen_1['url'] ); ?>" alt="<?php echo esc_attr( $certificado_imagen_1['alt'] ); ?>" />
-     <h3><?php the_field( 'certificado_texto_1' ); ?></h3>
-<?php endif; ?>
+       <img src="<?php echo get_the_post_thumbnail_url(); ?>">
+        <h3><?php the_title(); ?></h3>
       </div>
- <?php }
-         ?> 
-
-<?php if (get_field( 'certificado_imagen_2' ) != NULL){?>  
-      <div class="certification-item">
-         <?php $certificado_imagen_2 = get_field( 'certificado_imagen_2' ); ?>
-<?php if ( $certificado_imagen_2 ) : ?>
-  <img src="<?php echo esc_url( $certificado_imagen_2['url'] ); ?>" alt="<?php echo esc_attr( $certificado_imagen_2['alt'] ); ?>" />
-  <h3>
-         <?php the_field( 'certificado_texto_2' ); ?>
-        </h3>
-         </img>
-<?php endif; ?>
-      </div>
-       <?php }
-         ?>
-
-<?php if (get_field( 'certificado_imagen_3' ) != NULL){?>  
-       <div class="certification-item">
-         <?php $certificado_imagen_3 = get_field( 'certificado_imagen_3' ); ?>
-<?php if ( $certificado_imagen_3 ) : ?>
-  <img src="<?php echo esc_url( $certificado_imagen_3['url'] ); ?>" alt="<?php echo esc_attr( $certificado_imagen_3['alt'] ); ?>" />
-  <h3>
-         <?php the_field( 'certificado_texto_3' ); ?>
-        </h3>
-         </img>
-<?php endif; ?>
-      </div>
-       <?php }
-         ?>
-
-<?php if (get_field( 'certificado_imagen_4' ) != NULL){?>  
-       <div class="certification-item">
-         <?php $certificado_imagen_4 = get_field( 'certificado_imagen_4' ); ?>
-<?php if ( $certificado_imagen_4 ) : ?>
-  <img src="<?php echo esc_url( $certificado_imagen_4['url'] ); ?>" alt="<?php echo esc_attr( $certificado_imagen_4['alt'] ); ?>" />
-  <h3>
-         <?php the_field( 'certificado_texto_4' ); ?>
-        </h3>
-         </img>
-<?php endif; ?>
-      </div>
-       <?php }
-         ?>
-
-<?php if (get_field( 'certificado_imagen_5' ) != NULL){?>  
-      <div class="certification-item">
-         <?php $certificado_imagen_5 = get_field( 'certificado_imagen_5' ); ?>
-<?php if ( $certificado_imagen_5 ) : ?>
-  <img src="<?php echo esc_url( $certificado_imagen_5['url'] ); ?>" alt="<?php echo esc_attr( $certificado_imagen_5['alt'] ); ?>" />
-  <h3>
-         <?php the_field( 'certificado_texto_5' ); ?>
-        </h3>
-         </img>
-<?php endif; ?>
-      </div>
-       <?php }
-         ?>
-
-<?php if (get_field( 'certificado_imagen_6' ) != NULL){?>  
-      <div class="certification-item">
-         <?php $certificado_imagen_6 = get_field( 'certificado_imagen_6' ); ?>
-<?php if ( $certificado_imagen_6 ) : ?>
-  <img src="<?php echo esc_url( $certificado_imagen_6['url'] ); ?>" alt="<?php echo esc_attr( $certificado_imagen_6['alt'] ); ?>" />
-  <h3>
-         <?php the_field( 'certificado_texto_6' ); ?>
-        </h3>
-         </img>
-<?php endif; ?>
-      </div>
-      <?php }
-         ?>
-
-<?php if (get_field( 'certificado_imagen_7' ) != NULL){?>  
-      <div class="certification-item">
-         <?php $certificado_imagen_7 = get_field( 'certificado_imagen_7' ); ?>
-<?php if ( $certificado_imagen_7 ) : ?>
-  <img src="<?php echo esc_url( $certificado_imagen_7['url'] ); ?>" alt="<?php echo esc_attr( $certificado_imagen_7['alt'] ); ?>" />
-  <h3>
-         <?php the_field( 'certificado_texto_7' ); ?>
-        </h3>
-         </img>
-<?php endif; ?>
-      </div>
-      <?php }
-         ?>
-
- <?php if (get_field( 'certificado_imagen_8' ) != NULL){?>  
-        <div class="certification-item">
-         <?php $certificado_imagen_8 = get_field( 'certificado_imagen_8' ); ?>
-<?php if ( $certificado_imagen_8 ) : ?>
-  <img src="<?php echo esc_url( $certificado_imagen_8['url'] ); ?>" alt="<?php echo esc_attr( $certificado_imagen_8['alt'] ); ?>" />
-  <h3>
-         <?php the_field( 'certificado_texto_8' ); ?>
-        </h3>
-         </img>
-<?php endif; ?>
-      </div>
-<?php }
-         ?>
-
+       <?php  endwhile; ?>  
     </div>
-     <?php  endwhile; ?>  
   </section>
 <?php }
          ?>
@@ -392,7 +296,8 @@
         <div class="col-lg-7">
           <div class="contact-form">
             <div class="section-title left">
-              <h1><?php if(lang() == 'es'){echo "Contáctenos";}if(lang() == 'en'){echo "Contact us";} ?></h1>
+				<?php $postcontactTitle = lang() == "es" ? "Contáctenos" : "Contact us"; ?>
+              <h1><?php echo $postcontactTitle ?></h1>
             </div>
             <form>
               <?php if(lang() == 'es'){echo FrmFormsController::get_form_shortcode( array( 'id' => 4, 'title' => false, 'description' => false ) );}if(lang() == 'en'){ echo FrmFormsController::get_form_shortcode( array( 'id' => 5, 'title' => false, 'description' => false ) );} ?>    
@@ -405,33 +310,33 @@
             <ul class="contact-info-vertical">
                  <?php if (get_theme_mod('contactanos-direccion_tittulo_'.lang().'') != NULL) { ?> 
               <li>
-                <img src="<?php echo get_theme_mod('direccion_img'); ?>">
-                <span>
+                <img class="main-contact__img" src="<?php echo get_theme_mod('direccion_img'); ?>">
+                <span class="main-contact__text">
                 <?php echo get_theme_mod('contactanos-direccion_tittulo_'.lang().''); ?>
                   <br>
-                  <a href="#"><?php echo get_theme_mod('contactanos-direccion_'.lang().''); ?></a>
+                  <a target="_blank" href="<?php echo get_theme_mod('contactanos-direccion_url'); ?>"><?php echo get_theme_mod('contactanos-direccion'); ?></a>
                 </span>
               </li>
                 <?php }
          ?> 
   <?php if (get_theme_mod('contactanos-telefono_tittulo_'.lang().'') != NULL) { ?> 
               <li>
-                <img src="<?php echo get_theme_mod('telefono_img'); ?>">
-                <span>
+                <img class="main-contact__img" src="<?php echo get_theme_mod('telefono_img'); ?>">
+                <span class="main-contact__text">
                   <?php echo get_theme_mod('contactanos-telefono_tittulo_'.lang().''); ?>
                   <br>
-                  <a href="tel:"><?php echo get_theme_mod('contactanos-telefono_'.lang().''); ?></a>
+                  <a  target="_blank" href="tel:<?php echo get_theme_mod('contactanos-telefono_url'); ?>"><?php echo get_theme_mod('contactanos-telefono'); ?></a>
                 </span>
               </li>
                 <?php }
          ?> 
             <?php if (get_theme_mod('contactanos-correo_tittulo_'.lang().'') != NULL) { ?> 
               <li>
-                <img src="<?php echo get_theme_mod('correo_img'); ?>">
-                <span>
+                <img class="main-contact__img" src="<?php echo get_theme_mod('correo_img'); ?>">
+                <span class="main-contact__text">
                    <?php echo get_theme_mod('contactanos-correo_tittulo_'.lang().''); ?>
                   <br>
-                  <a href="mailto:"><?php echo get_theme_mod('contactanos-correo_'.lang().''); ?></a>
+                  <a target="_blank" href="mailto:"><?php echo get_theme_mod('contactanos-correo'); ?></a>
                 </span>
               </li>
                 <?php }
@@ -440,7 +345,7 @@
             <ul class="contact-info-horizontal">
                <?php if (get_theme_mod('facebook_img') != NULL) { ?> 
               <li>
-                <a href="<?php echo get_theme_mod('contactanos-redes_facebook'); ?>">
+                <a  target="_blank" href="<?php echo get_theme_mod('contactanos-social-facebook'); ?>">
                  <img src="<?php echo get_theme_mod('facebook_img'); ?>">
                 </a>
               </li>
@@ -448,7 +353,7 @@
          ?> 
           <?php if (get_theme_mod('instagram_img') != NULL) { ?> 
               <li>
-                <a href="<?php echo get_theme_mod('contactanos-sociales_instagram'); ?>">
+             <a target="_blank" href="<?php echo get_theme_mod('contactanos-sociales_instagram'); ?>">
                   <img src="<?php echo get_theme_mod('instagram_img'); ?>">
                 </a>
               </li>
@@ -456,7 +361,7 @@
          ?> 
                <?php if (get_theme_mod('youtube_img') != NULL) { ?> 
               <li>
-                <a href="<?php echo get_theme_mod('contactanos-social-youtube'); ?>">
+                <a  target="_blank" href="<?php echo get_theme_mod('contactanos-social-youtube'); ?>">
                   <img src="<?php echo get_theme_mod('youtube_img'); ?>">
                 </a>
               </li>
@@ -474,36 +379,44 @@
 <?php if(get_field('plantilla') == 'punto de venta'){ ?>  
          <div class="container main-page">
     <div class="section-title left">
-      <h1><?php if(lang() == 'es'){echo "Punto de Venta";}if(lang() == 'en'){echo "Point of Sale";} ?></h1>
+		<?php $posTitle = lang() == "es" ? "Punto de Venta" : "Trading Shops"; ?>
+		<h1><?php echo $posTitle; ?></h1>
     </div>
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-5 col-xs-12 col-sm-12">
         <div class="points-of-sale-list" id="accordion">
            <?php $args = array( 'post_type' => 'punto_de_venta'); ?>
         <?php $loop = new WP_Query( $args ); ?>
         <?php while ( $loop->have_posts() ) : $loop->the_post(); global $product;  ?>
+		  <?php $index = $loop->current_post ?>
           <div id="item-0">
-            <div class="card-header" id="heading-0">
+            <div class="card-header" id="heading-<?php the_ID();?>">
               <h5 class="mb-0">
-                <button aria-controls="collapse-0" aria-expanded="false" class="btn btn-link" data-target="#p<?php the_ID();?>" data-toggle="collapse">
+                <button aria-controls="p<?php the_ID();?>" aria-expanded="<?php echo $index === 0 ? "true" : "false" ?>" class="btn btn-link" data-target="#p<?php the_ID();?>" data-toggle="collapse">
                  <?php the_title(); ?>
                 </button>
               </h5>
             </div>
-            <div aria-labelledby="heading-0" class="collapse" data-map="1<?php the_ID();?>" data-parent="#accordion" id="p<?php the_ID();?>">
+              <div aria-labelledby="heading-<?php the_ID();?>" class="collapse <?php echo $index === 0 ? "show" : null ?>" data-map="map-<?php the_ID();?>" data-parent="#accordion" id="p<?php the_ID();?>">
               <div class="card-body">
                <?php the_content(); ?>
+				<div class="map map-mobile">
+			
+					<iframe allowfullscreen="" aria-hidden="false" frameborder="0" height="310" id="2<?php the_ID();?>" src="<?php the_field( 'url_embed_mapa' ); ?>" style="border:0;" tabindex="0" width="100%"></iframe>
+					
+			  </div>
               </div>
             </div>
           </div>
           <?php endwhile; ?> 
         </div>
       </div>
-      <div class="col-lg-8">
+      <div class="col-lg-7 d-none d-lg-block">
         <div class="points-of-sale-maps">
            <?php while ( $loop->have_posts() ) : $loop->the_post(); global $product;  ?>
           <div class="map">
-            <iframe allowfullscreen="" aria-hidden="false" frameborder="0" height="310" id="1<?php the_ID();?>" src="<?php the_field( 'mapa' ); ?>" style="border:0;" tabindex="0" width="100%"></iframe>
+			 <iframe allowfullscreen="" aria-hidden="false" frameborder="0" height="310" id="map-<?php the_ID();?>" src="<?php the_field( 'url_embed_mapa' ); ?>" style="border:0;" tabindex="0" width="100%"></iframe>
+			 
           </div>
           <?php endwhile; ?> 
         </div>
@@ -532,14 +445,8 @@
         </div>
         <div class="col-lg-8">
           <div class="customer-service-form">
-            <form>
+            
               <?php if(lang() == 'es'){echo FrmFormsController::get_form_shortcode( array( 'id' => 2, 'title' => false, 'description' => false ) );}if(lang() == 'en'){ echo FrmFormsController::get_form_shortcode( array( 'id' => 6, 'title' => false, 'description' => false ) );} ?>    
-             
-             
-                
-       
-             
-            </form>
           </div>
         </div>
       </div>
@@ -549,46 +456,55 @@
          ?>
 
           <?php if(get_field('plantilla') == 'otros países'){ ?>  
-             <?php $args = array( 'post_type' => 'paises', 'post_per_page' => 1); ?>
-              <?php $loop = new WP_Query( $args ); ?>
-                 <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-<div class="container main-page">
+         
+  <div class="container main-page">
     <div class="row">
       <div class="col-lg-5">
+		   <?php if (get_theme_mod('paises_continente_titulo_'.lang().'') != NULL) { ?> 
         <div class="section-title left">
-          <h1><?php the_title(); ?></h1>
+          <h1><?php echo get_theme_mod('paises_continente_titulo_'.lang().'') ?></h1>
         </div>
+		   <?php }
+         ?>
+
         <div class="countries-info">
-          <p><?php the_content(); ?></p>
+			 <?php if (get_theme_mod('paises_descripcion_'.lang().'') != NULL) { ?> 
+          <p><?php echo get_theme_mod('paises_descripcion_'.lang().'') ?></p>
           <p>
-            <a href="mailto:"><?php the_field( 'correo_internacional' ); ?></a>
+			  <?php }
+         ?>
+			   <?php if (get_theme_mod('paises_continente_correo_direccion') != NULL) { ?> 
+            <a href="mailto:"><?php echo get_theme_mod('paises_continente_correo_direccion') ?></a>
+			  <?php }
+         ?>
           </p>
         </div>
         <div class="countries-list">
-          <ul>
+			    <?php $args = array( 'post_type' => 'paises', 'post_per_page' => 1); ?>
+              <?php $loop = new WP_Query( $args ); ?>
+                 <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+         <ul>
             <li>
-              <h5><?php the_field( 'pais_o_continente' ); ?></h5>
+              <h5><?php the_title(); ?></h5>
               <ul>
-                <?php the_field( 'pais_o_continente_informacion' ); ?>
-              </ul>
-            </li>
-            <li>
-              <h5><?php the_field( 'pais_o_continente_2' ); ?></h5>
-              <ul>
-               <?php the_field( 'pais_o_continente_informacion_2' ); ?>
+                <?php the_content(); ?>
               </ul>
             </li>
           </ul>
+			 <?php endwhile; ?> 
         </div>
       </div>
       <div class="col-lg-7">
+		   <?php if (get_theme_mod('paises__img') != NULL) { ?> 
         <div class="countries-img">
-          <img src="<?php echo get_the_post_thumbnail_url(); ?>">
+          <img src="<?php echo get_theme_mod('paises__img') ?>">
         </div>
+		    <?php }
+         ?>
       </div>
     </div>
   </div>
-     <?php endwhile; ?> 
+    
             <?php }
          ?>
  <?php if(get_field('plantilla') == 'trabaja para nosotros'){ ?>  
@@ -611,10 +527,7 @@
         </div>
         <div class="col-lg-8">
           <div class="customer-service-form">
-            <form>
-              <?php if(lang() == 'es'){echo FrmFormsController::get_form_shortcode( array( 'id' => 3, 'title' => false, 'description' => false ) );}if(lang() == 'en'){ echo FrmFormsController::get_form_shortcode( array( 'id' => 7, 'title' => false, 'description' => false ) ); } ?>      
-            
-            </form>
+              <?php if(lang() == 'es'){echo FrmFormsController::get_form_shortcode( array( 'id' => 3, 'title' => false, 'description' => false ) );}if(lang() == 'en'){ echo FrmFormsController::get_form_shortcode( array( 'id' => 7, 'title' => false, 'description' => false ) ); } ?> 
           </div>
         </div>
       </div>

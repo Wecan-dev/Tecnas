@@ -523,6 +523,12 @@ ul.share-social li a:hover {
   left: 43%;
 }
 
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.clients-slider .slick-prev {
+		left: 40%;
+	}
+}
+
 .clients-slider .slick-next:before,
 .clients-slider .slick-prev:before {
   font-family: "FontAwesome";
@@ -544,7 +550,7 @@ ul.share-social li a:hover {
 
 .client-item img {
   width: 100%;
-  height: 80px;
+  height: 100px;
   object-fit: contain;
   padding-bottom: 20px;
   border-bottom: solid 1.6px #cbcbcb;
