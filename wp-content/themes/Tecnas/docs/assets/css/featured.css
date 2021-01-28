@@ -557,12 +557,16 @@ ul.share-social li a:hover {
 	margin: 0 2px;
 }
 
+.featured-card:focus {
+	outline: none;
+}
+
 .featured-card-img {
 	height: 250px;
 }
-.page-container.detail .featured-card-img {
+/*.page-container.detail .featured-card-img {
 		height: auto;
-	}
+	}*/
 
 .featured-card-img img {
   width: 100%;
@@ -578,6 +582,7 @@ ul.share-social li a:hover {
   background-color: #fff;
   padding: 55px 35px 35px 35px;
   font-family: "Helvetica";
+	display: block;
 }
 
 .featured-card-info h3 {

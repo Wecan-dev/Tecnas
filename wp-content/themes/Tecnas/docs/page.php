@@ -4,18 +4,7 @@
 
 
 <!--None template -->
-<?php if( get_the_content() != NULL){ ?>
-    <?php
-              // Include the page content template.
-    /*  get_template_part( 'content', 'page' );*/
-    the_content();
-
-              // If comments are open or we have at least one comment, load up the comment template.
-    if ( comments_open() || get_comments_number() ) :
-      comments_template();
-    endif;           
-    ?>  
-<?php } ?>   
+  
  
 
 <?php if(get_field('plantilla') == 'destacados'){ ?>  
@@ -29,33 +18,43 @@
         <?php $args = array( 'post_type' => 'destacados__'); ?>
               <?php $loop = new WP_Query( $args ); ?>
                  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-      <div class="featured-card">
-        <div class="featured-card-img">
-          <img src="<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : 'http://159.89.229.55/Tecnas/wp-content/uploads/2021/01/default_img_tecnas.png' ?>">
-        </div>
-        <div class="featured-card-info">
-          <h3><?php the_title(); ?></h3>
-          <p><?php the_excerpt(); ?></p>
-			
-		<?php $posDestacadoBoton = lang() == "es" ? "Ver Más" : "see more"; ?>
-				<?php if(lang() == 'es'){ ?>
-          <a class="btn btn-custom" href="<?php if(get_field( 'url_producto_espanol' ) != null) : the_field( 'url_producto_espanol' );  else : the_permalink();  endif; ?> "><?php echo $posDestacadoBoton; ?></a>
-			<?php }else { ?>
-	  <a class="btn btn-custom" href="<?php if(get_field( 'url_product_english' ) != null) : the_field( 'url_product_english' );  else : the_permalink();  endif; ?> "><?php echo $posDestacadoBoton; ?></a>
-				<?php } ?>   
-        </div>
-      </div>
+    <?php if(lang() == 'es'){ ?>  
+		<div class="featured-card">
+			<a class="featured-card-img" href="<?php if(get_field( 'url_producto_espanol' ) != null) : the_field( 'url_producto_espanol' );  else : the_permalink();  endif; ?> ">
+			  <img src="<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : 'http://159.89.229.55/Tecnas/wp-content/uploads/2021/01/default_img_tecnas.png' ?>">
+			</a>
+			<div class="featured-card-info">
+				<a href="<?php if(get_field( 'url_producto_espanol' ) != null) : the_field( 'url_producto_espanol' );  else : the_permalink();  endif; ?> ">
+				  <h3><?php the_title(); ?></h3>
+				  <p><?php the_excerpt(); ?></p>
+				</a>
+			  <?php $posDestacadoBoton = lang() == "es" ? "Ver Más" : "see more"; ?>
+			  <a class="btn btn-custom" href="<?php if(get_field( 'url_producto_espanol' ) != null) : the_field( 'url_producto_espanol' );  else : the_permalink();  endif; ?> "><?php echo $posDestacadoBoton; ?></a> 
+			</div>
+      	  </div>
+		<?php }else { ?>
+			<div class="featured-card">
+				<a class="featured-card-img" href="<?php if(get_field( 'url_product_english' ) != null) : the_field( 'url_product_english' );  else : the_permalink();  endif; ?> ">
+				  <img src="<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : 'http://159.89.229.55/Tecnas/wp-content/uploads/2021/01/default_img_tecnas.png' ?>">
+				</a>
+				<div class="featured-card-info">
+					<a href="<?php if(get_field( 'url_product_english' ) != null) : the_field( 'url_product_english' );  else : the_permalink();  endif; ?> ">
+					  <h3><?php the_title(); ?></h3>
+					  <p><?php the_excerpt(); ?></p>
+					</a>
+				<?php $posDestacadoBoton = lang() == "es" ? "Ver Más" : "see more"; ?>
+				<a class="btn btn-custom" href="<?php if(get_field( 'url_product_english' ) != null) : the_field( 'url_product_english' );  else : the_permalink();  endif; ?> "><?php echo $posDestacadoBoton; ?></a>
+			</div>
+      	  </div>
+		<?php } ?>
        <?php  endwhile; ?>  
     </div>
   </section>
    <?php } ?> 
 
    <?php if(get_field('plantilla') == 'productos'){ ?>  
-<div class="main-page">
-    <div class="container">
-     
-      <div class="row">
-		
+<div class="main-page">     
+     <div class="row">
         <?php $args =  array(
           'post_type' => 'producto',
           'post_status' => 'publish',
@@ -73,12 +72,9 @@
               </div>
             </a>
           </div>
-        </div>
-		  
-           <?php  endwhile; ?>  
-		   
-      </div>
-    </div>
+        </div>  
+       <?php  endwhile; ?>
+	</div>
   </div>
  <?php } ?> 
 
@@ -105,7 +101,7 @@
 
 
 <?php if(get_field('plantilla') == 'nuestra empresa'){ ?>  
-<section class="page-container">
+<section class="page-container about">
      <?php if (get_theme_mod('titulo_nuestra_empresa_'.lang().'') != NULL){?>  
     <div class="section-title">
       <h1><?php echo get_theme_mod('titulo_nuestra_empresa_'.lang().'') ?></h1>
@@ -151,7 +147,7 @@
     </div>
     <div class="main-support">
        <?php if (get_theme_mod('titulo_nuestros_pilares_nuestra_empresa_'.lang().'') != NULL){?>  
-      <div class="about-subtitle"><?php echo get_theme_mod('titulo_nuestros_pilares_nuestra_empresa_'.lang().'') ?></div>
+      <div class="about-subtitle mb-0"><?php echo get_theme_mod('titulo_nuestros_pilares_nuestra_empresa_'.lang().'') ?></div>
       <?php }
          ?> 
       <div class="row">
@@ -377,7 +373,7 @@
 <?php }
          ?>
 <?php if(get_field('plantilla') == 'punto de venta'){ ?>  
-         <div class="container main-page">
+         <div class="main-page">
     <div class="section-title left">
 		<?php $posTitle = lang() == "es" ? "Punto de Venta" : "Trading Shops"; ?>
 		<h1><?php echo $posTitle; ?></h1>
@@ -457,9 +453,9 @@
 
           <?php if(get_field('plantilla') == 'otros países'){ ?>  
          
-  <div class="container main-page">
+  <div class="main-page countries">
     <div class="row">
-      <div class="col-lg-5">
+      <div class="col-lg-4">
 		   <?php if (get_theme_mod('paises_continente_titulo_'.lang().'') != NULL) { ?> 
         <div class="section-title left">
           <h1><?php echo get_theme_mod('paises_continente_titulo_'.lang().'') ?></h1>
@@ -494,7 +490,7 @@
 			 <?php endwhile; ?> 
         </div>
       </div>
-      <div class="col-lg-7">
+      <div class="col-lg-8">
 		   <?php if (get_theme_mod('paises__img') != NULL) { ?> 
         <div class="countries-img">
           <img src="<?php echo get_theme_mod('paises__img') ?>">
@@ -506,6 +502,29 @@
   </div>
     
             <?php }
+         ?>
+
+<?php if(get_field('plantilla') == 'Políticas de datos'){ ?>
+ <div class="main-contact">
+    <div class="container">
+		<div class="section-title">
+	      <h1><?php the_title(); ?></h1>
+    </div>
+		<?php if( get_the_content() != NULL){ ?>
+    <?php
+              // Include the page content template.
+    /*  get_template_part( 'content', 'page' );*/
+    the_content();
+
+              // If comments are open or we have at least one comment, load up the comment template.
+    if ( comments_open() || get_comments_number() ) :
+      comments_template();
+    endif;           
+    ?>  
+<?php } ?> 
+	 </div>
+	 </div>
+ <?php }
          ?>
  <?php if(get_field('plantilla') == 'trabaja para nosotros'){ ?>  
          <div class="main-contact">

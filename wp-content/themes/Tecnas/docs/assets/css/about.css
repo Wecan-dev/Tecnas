@@ -355,9 +355,22 @@ footer ul {
   text-decoration: none;
 }
 
-.page-container {
+.page-container.about {
   padding: 100px;
 }
+
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+	.page-container.about {
+	  padding: 50px 20px;
+	}
+}
+
+@media screen and (max-width: 767px) and (min-width: 0) {
+	.page-container.about {
+	  padding: 50px 20px;
+	}
+}
+	
 
 .section-title {
   text-align: center;
@@ -551,7 +564,7 @@ ul.share-social li a:hover {
 }
 
 .support-item img {
-  width: 85%;
+  width: 100%;
   border: 10px solid #fff;
   border-radius: 50%;
 
@@ -563,8 +576,8 @@ ul.share-social li a:hover {
   color: #47546c;
   text-transform: uppercase;
   text-align: center;
-  margin: 55px auto 0 auto;
-	width: 60%;
+  margin: 35px auto 0 auto;
+	width: 55%;
 }
 
 .main-benefits {
@@ -602,9 +615,9 @@ ul.share-social li a:hover {
 	margin: 0 22px;
 }
 
-.main-support {
+/*.main-support {
   padding-left: 12px;
-}
+}*/
 
 .map-mobile {
 	display: none;
@@ -638,7 +651,7 @@ ul.share-social li a:hover {
 	}
 	
 	.support-item h3 {
-		margin: 0px 0 25px 0;
+		margin: 0px auto 25px auto;
 	}
 	
 	.points-of-sale-list {

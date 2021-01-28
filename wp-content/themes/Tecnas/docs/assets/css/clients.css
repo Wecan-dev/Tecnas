@@ -529,6 +529,12 @@ ul.share-social li a:hover {
 	}
 }
 
+@media screen and (min-width: 0px) and (max-width: 767px) {
+	.clients-slider .slick-prev {
+		left: 30%;
+	}
+}
+
 .clients-slider .slick-next:before,
 .clients-slider .slick-prev:before {
   font-family: "FontAwesome";

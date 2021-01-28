@@ -554,6 +554,10 @@ ul.share-social li a:hover {
   position: relative;
 }
 
+.main-slider .main-slider-item:focus {
+	outline: none;
+}
+
 .main-slider .main-slider-item img {
   object-fit: cover;
   object-position: right;
@@ -588,6 +592,10 @@ ul.share-social li a:hover {
   z-index: 1;
   bottom: 20%;
   left: 170px;
+}
+
+.main-slider .main-slider-item .main-slider-btn:focus {
+	outline: none;
 }
 
 .main-slider .main-slider-item .main-slider-btn div {

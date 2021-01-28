@@ -28,8 +28,11 @@
         <h3><?php the_title(); ?></h3>
         <p><?php the_content(); ?></p>
       </div>
+		
+		
+		
     </div>
-    <ul class='share-social'>
+	   <ul class='share-social'>
 		
 		<?php if( get_field('facebook') ): ?>
       <li>
@@ -64,6 +67,7 @@
 		<?php endif; ?>
 		
     </ul>
+   
  <?php
             }
     } ?>

@@ -493,11 +493,16 @@ ul.share-social li a:hover {
 }
 
 .main-page {
-  padding: 100px 0;
+  padding: 100px;
 }
 
-.section-title {
-  margin-bottom: 50px;
+.main-page.countries {
+	padding: 100px 100px 100px 140px;
+}
+
+.main-page.countries .section-title {
+    margin-bottom: 40px;
+    margin-top: 10px;
 }
 
 .card-header {
@@ -575,7 +580,7 @@ ul.share-social li a:hover {
 
 .countries-list li h5 {
   margin-bottom: 20px;
-  color: #48bbef;
+  color: #0071ba;
 }
 
 .countries-list li li {
@@ -598,7 +603,7 @@ ul.share-social li a:hover {
   width: 100%;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  height: 180px;
+  height: 170px;
   object-fit: cover;
 }
 
@@ -613,7 +618,8 @@ ul.share-social li a:hover {
 .portfolio-card h4 {
   font-family: "Aller-Bold";
   color: #033255;
-  font-size: 30px;
+  font-size: 22px;
+  /* font-size: 30px;*/
   text-transform: capitalize;
 }
 
@@ -621,11 +627,16 @@ ul.share-social li a:hover {
   padding-right: 20px;
 }
 
-.portfolio-detail-text p {
+.portfolio-detail-text p, .portfolio-detail-text li, .portfolio-detail-text span {
   font-size: 18px;
   color: #303030;
   font-family: "Helvetica";
   line-height: 28px;
+}
+
+.portfolio-detail-text h1, .portfolio-detail-text h2, .portfolio-detail-text h3, .portfolio-detail-text h4, .portfolio-detail-text h5, .portfolio-detail-text h6 {
+  color: #303030;
+  font-family: "Helvetica";
 }
 
 .portfolio-detail-img img {
@@ -674,11 +685,17 @@ ul.share-social li a:hover {
 }
 
 @media screen and (min-width: 0px) and (max-width: 767px) {
-	.main-page {
+	.main-page, .main-page.countries{
 		padding: 50px 20px;
 	}
 	
 	.countries-info a {
 		font-size: 15px;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.main-page.countries {
+		padding: 80px;
 	}
 }

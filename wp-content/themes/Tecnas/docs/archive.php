@@ -28,4 +28,9 @@
     </div>
   </div>
 <?php get_footer() ?> 
-
+<script>
+	const title = document.querySelector("div.section-title > h1");
+	const titleString = title.innerText;
+	const newTitle = titleString.replace(": ", "");
+	title.innerText = newTitle;
+</script>

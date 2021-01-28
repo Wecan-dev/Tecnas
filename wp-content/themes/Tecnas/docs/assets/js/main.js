@@ -32,7 +32,7 @@ $('.dropdown-toggle').hover(function() {
   }
 })
 
-$('.dropdown-menu').hover(function() {
+$('.dropdown-menu.hoverable').hover(function() {
   // 
 }, function() {
   $(this).css("display", "none")
@@ -108,8 +108,6 @@ $(".clients-slider").slick({
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false,
-        dots: true,
       },
     },
   ],
@@ -132,8 +130,6 @@ $(".certifications-slider").slick({
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false,
-        dots: true,
       },
     },
   ],

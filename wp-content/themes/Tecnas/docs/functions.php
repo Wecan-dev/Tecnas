@@ -1,4 +1,18 @@
 <?php 
+// Delete tax description
+add_filter( 'get_the_archive_title', function ($title) {
+ 
+if ( is_category() ) {
+    $title = single_cat_title( '', false );
+  } elseif ( is_tag() ) {
+    $title = single_tag_title( '', false );
+  } elseif ( is_author() ) {
+    $title = '' . get_the_author() . '' ;
+  }
+
+return $title;
+
+});
 
 function init_template(){
 
@@ -265,7 +279,7 @@ if ( ! function_exists('producto') ) {
         );
         $args = array(
             'label'                 => __( 'producto', 'text_domain' ),
-            'description'           => __( 'producto de trasnsporte', 'text_domain' ),
+            'description'           => __( 'categoria de producto', 'text_domain' ),
             'labels'                => $labels,
             'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
             'taxonomies'            => array( ),
@@ -295,7 +309,7 @@ function categorias_taxonomy() {
 
   $labels = array(
     'name'                       => _x( 'Categoria', 'Taxonomy General Name', 'text_domain' ),
-    'singular_name'              => _x(    'Categoría', 'Taxonomy Singular Name', 'text_domain' ),
+    'singular_name'              => _x(    '', 'Taxonomy Singular Name', 'text_domain' ),
     'menu_name'                  => __( 'categoria de productos', 'text_domain' ),
     'all_items'                  => __( 'All categoria-deproductoss', 'text_domain' ),
     'parent_item'                => __( 'Parent categoria-deproductos', 'text_domain' ),
@@ -323,6 +337,7 @@ function categorias_taxonomy() {
     'show_admin_column'          => true,
     'show_in_nav_menus'          => true,
     'show_tagcloud'              => true,
+	  
   );
   register_taxonomy( 'categoria-de-productos', array( 'producto' ), $args );
 }
@@ -1685,4 +1700,26 @@ $wp_customize->add_section('pagina_nuestra_empresa_contenido', array (
   /*********************************************************************/
 add_action('customize_register','theme_customize_register');
 
+// colocar en el title el nombre de la page 
+function wpdocs_filter_wp_title( $title, $sep ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+    // Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+    // Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+    // Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
+
+	return $title;
+}
+add_filter( 'wp_title', 'wpdocs_filter_wp_title', 10, 2 );
 
