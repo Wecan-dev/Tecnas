@@ -11,8 +11,8 @@
 
   <section class="page-container featured-page-container">
     <div class="section-title">
-	<?php $posDestacadotitle = lang() == "es" ? "Alternativas Tecnas Plant Based" : "Tecnas Plant Based Alternatives"; ?>
-      <h1><?php echo $posDestacadotitle; ?></h1>
+	<!--<?php $posDestacadotitle = lang() == "es" ? "Alternativas Tecnas Plant Based" : "Tecnas Plant Based Alternatives"; ?>
+      <h1><?php echo $posDestacadotitle; ?></h1> -->
     </div>
     <div class="featured-slider">
         <?php $args = array( 'post_type' => 'destacados__'); ?>
@@ -20,28 +20,36 @@
                  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <?php if(lang() == 'es'){ ?>  
 		<div class="featured-card">
-			<a class="featured-card-img" href="<?php if(get_field( 'url_producto_espanol' ) != null) : the_field( 'url_producto_espanol' );  else : the_permalink();  endif; ?> ">
+			<div class="featured-card-img" href="<?php if(get_field( 'url_producto_espanol' ) != null) : the_field( 'url_producto_espanol' );  else : the_permalink();  endif; ?> ">
+				 <?php if( get_field( 'video_destacados' ) ) : ?>
+					<video class="" id="mivideo" autoplay preload loop muted>
+                        <source src="<?php the_field( 'video_destacados' ); ?>" type="video/mp4">
+                    </video>  
+				<?php else : ?>
 			  <img src="<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : 'http://159.89.229.55/Tecnas/wp-content/uploads/2021/01/default_img_tecnas.png' ?>">
-			</a>
+				 <?php endif; ?> 
+			</div>
 			<div class="featured-card-info">
-				<a href="<?php if(get_field( 'url_producto_espanol' ) != null) : the_field( 'url_producto_espanol' );  else : the_permalink();  endif; ?> ">
+				<div href="<?php if(get_field( 'url_producto_espanol' ) != null) : the_field( 'url_producto_espanol' );  else : the_permalink();  endif; ?> ">
 				  <h3><?php the_title(); ?></h3>
-				  <p><?php the_excerpt(); ?></p>
-				</a>
+				  <p><?php the_field( 'descripcion_espanol' ); ?></p>
+				</div>
 			  <?php $posDestacadoBoton = lang() == "es" ? "Ver Más" : "see more"; ?>
 			  <a class="btn btn-custom" href="<?php if(get_field( 'url_producto_espanol' ) != null) : the_field( 'url_producto_espanol' );  else : the_permalink();  endif; ?> "><?php echo $posDestacadoBoton; ?></a> 
 			</div>
       	  </div>
 		<?php }else { ?>
 			<div class="featured-card">
-				<a class="featured-card-img" href="<?php if(get_field( 'url_product_english' ) != null) : the_field( 'url_product_english' );  else : the_permalink();  endif; ?> ">
+				<div class="featured-card-img" href="<?php if(get_field( 'url_product_english' ) != null) : the_field( 'url_product_english' );  else : the_permalink();  endif; ?> ">
 				  <img src="<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : 'http://159.89.229.55/Tecnas/wp-content/uploads/2021/01/default_img_tecnas.png' ?>">
-				</a>
+				</div>
 				<div class="featured-card-info">
-					<a href="<?php if(get_field( 'url_product_english' ) != null) : the_field( 'url_product_english' );  else : the_permalink();  endif; ?> ">
+					<div href="<?php if(get_field( 'url_product_english' ) != null) : the_field( 'url_product_english' );  else : the_permalink();  endif; ?> ">
 					  <h3><?php the_title(); ?></h3>
-					  <p><?php the_excerpt(); ?></p>
-					</a>
+						<p>
+							<?php the_field( 'descripcion_ingles' ); ?>
+						</p>
+					</div>
 				<?php $posDestacadoBoton = lang() == "es" ? "Ver Más" : "see more"; ?>
 				<a class="btn btn-custom" href="<?php if(get_field( 'url_product_english' ) != null) : the_field( 'url_product_english' );  else : the_permalink();  endif; ?> "><?php echo $posDestacadoBoton; ?></a>
 			</div>
@@ -85,18 +93,24 @@
       <h1><?php echo $posOurAlliesTitle; ?></h1>
     </div>
     <div class="clients-slider">
-       <?php $args = array( 'post_type' => 'clientes', 'post_per_page' => 999); ?>
+       <?php $args = array( 'post_type' => 'clientes', 'posts_per_page' => 999 ); ?>
               <?php $loop = new WP_Query( $args ); ?>
                  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-      <div class="client-item">
+		<?php $boton_de_aliados = get_field( 'boton_de_aliados'); ?>
+	<?php if ( $boton_de_aliados ) : ?>
+      <a href="<?php the_field( 'boton_de_aliados' ); ?>" target="_blank" >
+		  <?php endif; ?>
+		<div class="client-item">
+			
+		 
         <img src="   <?php echo get_the_post_thumbnail_url(); ?>">
         <h3><?php the_title(); ?></h3>
-      </div>
+			 </div>
+      </a>
     <?php  endwhile; ?>  
     </div>
   </section>
   <?php } ?> 
-
 
 
 
@@ -111,7 +125,7 @@
     <div class="main-about mb-5">
       <?php if (get_theme_mod('nuestra_empresa_video') != NULL){?>  
       <div class="about-video">
-          <?php  $extension = pathinfo(get_theme_mod('nuestra_empresa_video'))['extension']; ?>
+		  <?php  $extension = pathinfo(get_theme_mod('nuestra_empresa_video'))['extension']; ?>
              <?php if($extension=="jpg" || $extension == "jpeg" || $extension == "png"){ ?>
                    <img src="<?php echo get_theme_mod('nuestra_empresa_video') ?>">
               <?php } else { ?> 
@@ -119,6 +133,8 @@
                         <source src="<?php echo get_theme_mod('nuestra_empresa_video') ?>" type="video/mp4">
                     </video>  
          <?php } ?>
+		  
+          
       </div>
        <?php }
          ?> 
@@ -126,7 +142,7 @@
       <div class="about-text">
         <p><?php echo get_theme_mod('contenido_1_nuestra_empresa_'.lang().'') ?></p>
           <?php if (get_theme_mod('texto_del_boton_nuestra_empresa_'.lang().'') != NULL){?>  
-        <!--<a class="btn btn-custom" href="<?php echo get_theme_mod('url_del_boton_nuestra_empresa_'.lang().'') ?>"><?php echo get_theme_mod('texto_del_boton_nuestra_empresa_'.lang().'') ?></a>-->
+        <a class="btn btn-custom" href="<?php echo get_theme_mod('url_del_boton_nuestra_empresa_'.lang().'') ?>"><?php echo get_theme_mod('texto_del_boton_nuestra_empresa_'.lang().'') ?></a>
          <?php }
          ?> 
       </div>
@@ -375,7 +391,7 @@
 <?php if(get_field('plantilla') == 'punto de venta'){ ?>  
          <div class="main-page">
     <div class="section-title left">
-		<?php $posTitle = lang() == "es" ? "Punto de Venta" : "Trading Shops"; ?>
+		<?php $posTitle = lang() == "es" ? "Tiendas comerciales" : "Commercial stores"; ?>
 		<h1><?php echo $posTitle; ?></h1>
     </div>
     <div class="row">

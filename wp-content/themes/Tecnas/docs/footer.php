@@ -23,7 +23,10 @@
       <ul class='footer-images'>
           <?php if (get_theme_mod('aliados_item_1') != NULL){?> 
         <li>
-          <a class='nav-link' href='<?php echo get_theme_mod('aliados_item_1_url') ?>'>
+			  <?php if (get_theme_mod('aliados_item_1_url') != NULL){?> 
+          <a class='nav-link' target="_blank" href='<?php echo get_theme_mod('aliados_item_1_url') ?>'>
+			     <?php }
+         ?> 
             <img src='<?php echo get_theme_mod('aliados_item_1') ?>'>
           </a>
         </li>
@@ -31,7 +34,7 @@
          ?> 
         <?php if (get_theme_mod('aliados_item_2') != NULL){?> 
         <li>
-          <a class='nav-link' href='<?php echo get_theme_mod('aliados_item_2_url') ?>'>
+          <a class='nav-link' target="_blank" href='<?php echo get_theme_mod('aliados_item_2_url') ?>'>
             <img src='<?php echo get_theme_mod('aliados_item_2') ?>'>
           </a>
         </li>
@@ -39,7 +42,7 @@
          ?> 
         <?php if (get_theme_mod('aliados_item_3') != NULL){?> 
         <li>
-          <a class='nav-link' href='<?php echo get_theme_mod('aliados_item_3_url') ?>'>
+          <a class='nav-link' target="_blank" href='<?php echo get_theme_mod('aliados_item_3_url') ?>'>
             <img src='<?php echo get_theme_mod('aliados_item_3') ?>'>
           </a>
         </li>
@@ -47,7 +50,7 @@
          ?> 
         <?php if (get_theme_mod('aliados_item_4') != NULL){?> 
         <li>
-          <a class='nav-link' href='<?php echo get_theme_mod('aliados_item_4_url') ?>'>
+          <a class='nav-link' target="_blank" href='<?php echo get_theme_mod('aliados_item_4_url') ?>'>
             <img src='<?php echo get_theme_mod('aliados_item_4') ?>'>
           </a>
         </li>

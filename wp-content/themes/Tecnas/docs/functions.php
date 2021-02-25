@@ -1,4 +1,17 @@
 <?php 
+
+// Custom Excerpt 
+function excerpt($limit) {
+$excerpt = explode(' ', get_the_excerpt(), $limit);
+if (count($excerpt)>=$limit) {
+array_pop($excerpt);
+$excerpt = implode(" ",$excerpt).'...';
+} else {
+$excerpt = implode(" ",$excerpt);
+} 
+$excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
+return $excerpt;
+}
 // Delete tax description
 add_filter( 'get_the_archive_title', function ($title) {
  
@@ -220,7 +233,7 @@ if ( ! function_exists('destacados__') ) {
             'description'           => __( 'destacados__ de trasnsporte', 'text_domain' ),
             'labels'                => $labels,
             'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
-            'taxonomies'            => array( 'category', 'post_tag' ),
+            'taxonomies'            => array(''),
             'hierarchical'          => false,
             'public'                => true,
             'show_ui'               => true,
@@ -830,9 +843,15 @@ $wp_customize->add_panel('pagina_nuestra_empresa',
       'section' => 'pagina_nuestra_empresa_titulo',
       'settings' => 'titulo_nuestra_empresa_en'
     ))); 
-
+// texto de red
+    
 
  $wp_customize->add_section('pagina_nuestra_empresa_video', array (
+    'title' => 'Video',
+    'panel' => 'pagina_nuestra_empresa'
+  ));
+		
+	 $wp_customize->add_section('pagina_nuestra_empresa_video', array (
     'title' => 'Video',
     'panel' => 'pagina_nuestra_empresa'
   ));
@@ -845,6 +864,7 @@ $wp_customize->add_panel('pagina_nuestra_empresa',
     'section' => 'pagina_nuestra_empresa_video',
     'settings' => 'nuestra_empresa_video'
   )));
+    
 
 $wp_customize->add_section('pagina_nuestra_empresa_contenido', array (
     'title' => 'Primer párrafo',
@@ -1722,4 +1742,10 @@ function wpdocs_filter_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'wpdocs_filter_wp_title', 10, 2 );
+
+function wpb_custom_new_menu()
+{
+	register_nav_menu('my-custom-menu', __('Main Menu'));
+}
+add_action('init', 'wpb_custom_new_menu');
 

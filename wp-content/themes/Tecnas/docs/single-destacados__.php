@@ -16,7 +16,7 @@
     </nav>
 
     <div class="section-title">
-		<?php $postnewsTitlesecond = lang() == "es" ? "Alternativas Tecnas Plant Based" : "Tecnas Plant Based Alternatives"; ?>
+		
       <h1><?php echo $postnewsTitlesecond ?></h1>
     </div>
    
@@ -27,6 +27,15 @@
       <div class="featured-card-info detail">
         <h3><?php the_title(); ?></h3>
         <p><?php the_content(); ?></p>
+		  <?php if ( get_field( 'documento_pdf_pptx' ) ) : ?>
+		  <p>
+			  <strong>
+			  Documento: 
+			  </strong>
+			  <a href="<?php the_field( 'documento_pdf_pptx' ); ?>">más información</a>
+		  </p>
+			
+		<?php endif; ?>
       </div>
 		
 		

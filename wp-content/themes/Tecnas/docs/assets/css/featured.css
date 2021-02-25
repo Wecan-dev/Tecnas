@@ -567,7 +567,11 @@ ul.share-social li a:hover {
 /*.page-container.detail .featured-card-img {
 		height: auto;
 	}*/
-
+video#mivideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .featured-card-img img {
   width: 100%;
 	height: 100%;
@@ -627,13 +631,15 @@ ul.share-social li a:hover {
   height: 100%;
 }
 
-.featured-card-info p {
+.featured-card-info p , .featured-card-info p a{
   font-size: 18px;
   line-height: 28px;
-  color: #303030;
+  color: #303030 !important;
   font-family: "Helvetica";
 }
-
+.featured-card-info p a{
+	text-decoration: underline;
+}
 .featured-card-info.detail p {
   line-height: 1.56;
 }
