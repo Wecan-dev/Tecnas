@@ -41,7 +41,13 @@
 		<?php }else { ?>
 			<div class="featured-card">
 				<div class="featured-card-img" href="<?php if(get_field( 'url_product_english' ) != null) : the_field( 'url_product_english' );  else : the_permalink();  endif; ?> ">
-				  <img src="<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : 'http://159.89.229.55/Tecnas/wp-content/uploads/2021/01/default_img_tecnas.png' ?>">
+				   <?php if( get_field( 'video_destacados' ) ) : ?>
+					<video class="" id="mivideo" autoplay preload loop muted>
+                        <source src="<?php the_field( 'video_destacados' ); ?>" type="video/mp4">
+                    </video>  
+				<?php else : ?>
+			  <img src="<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : 'http://159.89.229.55/Tecnas/wp-content/uploads/2021/01/default_img_tecnas.png' ?>">
+				 <?php endif; ?> 
 				</div>
 				<div class="featured-card-info">
 					<div href="<?php if(get_field( 'url_product_english' ) != null) : the_field( 'url_product_english' );  else : the_permalink();  endif; ?> ">
@@ -51,13 +57,17 @@
 						</p>
 					</div>
 				<?php $posDestacadoBoton = lang() == "es" ? "Ver Más" : "see more"; ?>
-				<a class="btn btn-custom" href="<?php if(get_field( 'url_product_english' ) != null) : the_field( 'url_product_english' );  else : the_permalink();  endif; ?> "><?php echo $posDestacadoBoton; ?></a>
+				<a  class="btn btn-custom" href="<?php if(get_field( 'url_product_english' ) != null) : the_field( 'url_product_english' );  else : the_permalink();  endif; ?> "><?php echo $posDestacadoBoton; ?></a>
 			</div>
       	  </div>
 		<?php } ?>
        <?php  endwhile; ?>  
     </div>
   </section>
+
+  <a class="boton-subir slider-top" href="#" id="js_up">
+	  <i class=" fa fa-angle-up" ></i>
+  </a>
    <?php } ?> 
 
    <?php if(get_field('plantilla') == 'productos'){ ?>  
@@ -93,7 +103,7 @@
       <h1><?php echo $posOurAlliesTitle; ?></h1>
     </div>
     <div class="clients-slider">
-       <?php $args = array( 'post_type' => 'clientes', 'posts_per_page' => 999 ); ?>
+       <?php $args = array( 'post_type' => 'clientes', 'posts_per_page' => 999, 'order' => 'ASC' ); ?>
               <?php $loop = new WP_Query( $args ); ?>
                  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 		<?php $boton_de_aliados = get_field( 'boton_de_aliados'); ?>
@@ -142,7 +152,7 @@
       <div class="about-text">
         <p><?php echo get_theme_mod('contenido_1_nuestra_empresa_'.lang().'') ?></p>
           <?php if (get_theme_mod('texto_del_boton_nuestra_empresa_'.lang().'') != NULL){?>  
-        <a class="btn btn-custom" href="<?php echo get_theme_mod('url_del_boton_nuestra_empresa_'.lang().'') ?>"><?php echo get_theme_mod('texto_del_boton_nuestra_empresa_'.lang().'') ?></a>
+        <a class="btn btn-custom" target="_blank" href="<?php echo get_theme_mod('url_del_boton_nuestra_empresa_'.lang().'') ?>"><?php echo get_theme_mod('texto_del_boton_nuestra_empresa_'.lang().'') ?></a>
          <?php }
          ?> 
       </div>
@@ -391,7 +401,7 @@
 <?php if(get_field('plantilla') == 'punto de venta'){ ?>  
          <div class="main-page">
     <div class="section-title left">
-		<?php $posTitle = lang() == "es" ? "Tiendas comerciales" : "Commercial stores"; ?>
+		<?php $posTitle = lang() == "es" ? "Puntos de venta" : "Points of sale"; ?>
 		<h1><?php echo $posTitle; ?></h1>
     </div>
     <div class="row">
@@ -437,7 +447,7 @@
   </div>
   <?php }
          ?>
-         <?php if(get_field('plantilla') == 'servicios al cliente'){ ?>  
+         <?php if(get_field('plantilla') == 'servicio al cliente'){ ?>  
          <div class="main-contact">
     <div class="container">
       <div class="row">
@@ -454,6 +464,69 @@
              <?php }
          ?> 
           </div>
+		          <div class="contact-info">
+            <ul class="contact-info-vertical">
+                 <?php if (get_theme_mod('contactanos-direccion_tittulo_'.lang().'') != NULL) { ?> 
+              <li>
+                <img class="main-contact__img" src="<?php echo get_theme_mod('direccion_img'); ?>">
+                <span class="main-contact__text">
+                <?php echo get_theme_mod('contactanos-direccion_tittulo_'.lang().''); ?>
+                  <br>
+                  <a target="_blank" href="<?php echo get_theme_mod('contactanos-direccion_url'); ?>"><?php echo get_theme_mod('contactanos-direccion'); ?></a>
+                </span>
+              </li>
+                <?php }
+         ?> 
+  <?php if (get_theme_mod('contactanos-telefono_tittulo_'.lang().'') != NULL) { ?> 
+              <li>
+                <img class="main-contact__img" src="<?php echo get_theme_mod('telefono_img'); ?>">
+                <span class="main-contact__text">
+                  <?php echo get_theme_mod('contactanos-telefono_tittulo_'.lang().''); ?>
+                  <br>
+                  <a  target="_blank" href="tel:<?php echo get_theme_mod('contactanos-telefono_url'); ?>"><?php echo get_theme_mod('contactanos-telefono'); ?></a>
+                </span>
+              </li>
+                <?php }
+         ?> 
+            <?php if (get_theme_mod('contactanos-correo_tittulo_'.lang().'') != NULL) { ?> 
+              <li>
+                <img class="main-contact__img" src="<?php echo get_theme_mod('correo_img'); ?>">
+                <span class="main-contact__text">
+                   <?php echo get_theme_mod('contactanos-correo_tittulo_'.lang().''); ?>
+                  <br>
+                  <a target="_blank" href="mailto:<?php echo get_theme_mod('contactanos-correo'); ?>"><?php echo get_theme_mod('contactanos-correo'); ?></a>
+                </span>
+              </li>
+                <?php }
+         ?> 
+            </ul>
+            <ul class="contact-info-horizontal">
+               <?php if (get_theme_mod('facebook_img') != NULL) { ?> 
+              <li>
+                <a  target="_blank" href="<?php echo get_theme_mod('contactanos-social-facebook'); ?>">
+                 <img src="<?php echo get_theme_mod('facebook_img'); ?>">
+                </a>
+              </li>
+              <?php }
+         ?> 
+          <?php if (get_theme_mod('instagram_img') != NULL) { ?> 
+              <li>
+             <a target="_blank" href="<?php echo get_theme_mod('contactanos-sociales_instagram'); ?>">
+                  <img src="<?php echo get_theme_mod('instagram_img'); ?>">
+                </a>
+              </li>
+               <?php }
+         ?> 
+               <?php if (get_theme_mod('youtube_img') != NULL) { ?> 
+              <li>
+                <a  target="_blank" href="<?php echo get_theme_mod('contactanos-social-youtube'); ?>">
+                  <img src="<?php echo get_theme_mod('youtube_img'); ?>">
+                </a>
+              </li>
+               <?php }
+         ?> 
+            </ul>
+          </div>
         </div>
         <div class="col-lg-8">
           <div class="customer-service-form">
@@ -464,6 +537,26 @@
       </div>
     </div>
   </div>
+<style>
+	.contact-info {
+		padding: 0;
+		    border: none;
+	}
+	.main-contact__text {
+		font-size: 18px;
+	}
+	.main-contact__text a {
+		font-size: 16px;
+	}
+	.main-contact__img {
+    width: 30px;
+    object-fit: contain;
+}
+	.contact-info-horizontal img{
+		width: 37px;
+	}
+
+</style>
   <?php }
          ?>
 

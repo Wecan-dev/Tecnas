@@ -247,9 +247,6 @@ footer ul {
   font-size: 14px;
 }
 
-.collapse li {
-  position: relative;
-}
 
 .dropdown-toggle::after {
   content: unset;
@@ -493,6 +490,7 @@ ul.share-social li a:hover {
 }
 
 .main-page {
+	    position: relative;
   padding: 100px;
 }
 
@@ -597,16 +595,32 @@ ul.share-social li a:hover {
   border-radius: 8px;
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1);
   margin-bottom: 50px;
+	    transition: .3s;
+	overflow: hidden;
 }
 
+.portfolio-card:hover {
+	box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.17);
+    transform: translateY(-10px);
+    transition: .3s;
+}
+
+.portfolio-card:hover h4{
+	color: #0071ba;
+	transition: .3s;
+}
 .portfolio-card img {
   width: 100%;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   height: 170px;
   object-fit: cover;
-}
+	transition: .3s;
 
+}
+.portfolio-card:hover img{
+
+}
 .portfolio-card .portfolio-text {
   background-color: #fff;
   padding: 20px 10px;
@@ -619,21 +633,30 @@ ul.share-social li a:hover {
   font-family: "Aller-Bold";
   color: #033255;
   font-size: 22px;
+	transition: .3s;
+	
   /* font-size: 30px;*/
-  text-transform: capitalize;
 }
 
 .portfolio-detail-text {
   padding-right: 20px;
 }
 
+.portfolio-detail-text ul{
+	padding-left: 18px;	
+}
 .portfolio-detail-text p, .portfolio-detail-text li, .portfolio-detail-text span {
   font-size: 18px;
   color: #303030;
-  font-family: "Helvetica";
+  font-family: "Helvetica"!important;
   line-height: 28px;
 }
-
+.portfolio-detail-text h4{
+    font-size: 18px;
+ margin-bottom: 0;
+	color: #303030;
+	font-weight: initial;
+}
 .portfolio-detail-text h1, .portfolio-detail-text h2, .portfolio-detail-text h3, .portfolio-detail-text h4, .portfolio-detail-text h5, .portfolio-detail-text h6 {
   color: #303030;
   font-family: "Helvetica";

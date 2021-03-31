@@ -1,0 +1,11 @@
+/*Main Settings Animation and Custom CSS Start*/span.wpmm-mega-menu-label.wpmm_depth_first,
+	 span.wpmm-mega-menu-label.wpmm_depth_last{
+	 	animation-duration:s;
+	 animation-delay:s;
+	 animation-iteration-count:1;
+	 -webkit-animation-duration:s;
+	 -webkit-animation-delay:s;
+	 -webkit-animation-iteration-count:1;
+	}.wp-megamenu-main-wrapper .wpmm-mega-menu-icon{
+	 	font-size:13px;
+	 }/*Custom CSS End*/

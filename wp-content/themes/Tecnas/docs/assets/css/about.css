@@ -246,9 +246,7 @@ footer ul {
   font-size: 14px;
 }
 
-.collapse li {
-  position: relative;
-}
+
 
 .dropdown-toggle::after {
   content: unset;

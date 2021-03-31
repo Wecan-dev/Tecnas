@@ -30,9 +30,12 @@
 		  <?php if ( get_field( 'documento_pdf_pptx' ) ) : ?>
 		  <p>
 			  <strong>
-			  Documento: 
+				  <?php if(lang() == 'es'){echo "Documento:";}if(lang() == 'en'){echo "Document";} ?>
+			  
 			  </strong>
-			  <a href="<?php the_field( 'documento_pdf_pptx' ); ?>">más información</a>
+			  <a download="<?php the_title(); ?>" href="<?php the_field( 'documento_pdf_pptx' ); ?>">
+			  <?php if(lang() == 'es'){echo "más información";}if(lang() == 'en'){echo "more information";} ?>
+			  </a>
 		  </p>
 			
 		<?php endif; ?>

@@ -245,9 +245,7 @@ footer ul {
   font-size: 14px;
 }
 
-.collapse li {
-  position: relative;
-}
+
 
 .dropdown-toggle::after {
   content: unset;
@@ -561,7 +559,7 @@ ul.share-social li a:hover {
   font-family: "Aller-Bold";
   letter-spacing: 0.04px;
   color: #002e55;
-  font-size: 14px;
+    font-size: 17px;
   text-align: center;
   margin: 0 auto;
   padding-top: 15px;

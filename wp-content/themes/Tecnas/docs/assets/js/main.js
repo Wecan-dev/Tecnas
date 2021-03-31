@@ -50,12 +50,35 @@ $(".js-gotop").click(function () {
   $("html, body").animate({ scrollTop: 0 }, 1000);
 });
 
+
+//invocamos al objeto (window) y a su método (scroll), solo se ejecutara si el usuario hace scroll en la página
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 100) { //condición a cumplirse cuando el usuario aya bajado 301px a más.
+    $("#js_up").slideDown(300); //se muestra el botón en 300 mili segundos
+  } else { // si no
+    $("#js_up").slideUp(300); //se oculta el botón en 300 mili segundos
+  }
+});
+
+//creamos una función accediendo a la etiqueta i en su evento click
+$("#js_up i").on('click', function (e) {
+  e.preventDefault(); //evita que se ejecute el tag ancla (<a href="#">valor</a>).
+  $("body,html").animate({ // aplicamos la función animate a los tags body y html
+    scrollTop: 0 //al colocar el valor 0 a scrollTop me volverá a la parte inicial de la página
+  }, 700); //el valor 700 indica que lo ara en 700 mili segundos
+  return false; //rompe el bucle
+});
+
+
+
 $(".main-slider").slick({
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: true,
   dots: false,
+		autoplay: true,
+	autoplaySpeed: 10000,
   prevArrow:
     "<button class='slick-prev slick-arrow' aria-label='Previous' type='button'><img class='slick-prev' src='http://159.89.229.55/Tecnas/wp-content/themes/Tecnas/docs/assets/img/icons/arrow_left.svg'></button>",
   nextArrow:
@@ -66,6 +89,8 @@ $(".featured-slider").slick({
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
+	autoplay: true,
+	autoplaySpeed: 10000,
   arrows: true,
   dots: true,
   prevArrow:
@@ -95,6 +120,8 @@ $(".clients-slider").slick({
   slidesToShow: 4,
   slidesToScroll: 4,
   rows: 2,
+autoplay: true,
+		autoplaySpeed: 10000,
   responsive: [
     {
       breakpoint: 991,
@@ -134,3 +161,31 @@ $(".certifications-slider").slick({
     },
   ],
 });
+
+
+
+
+
+
+
+
+// Menú fixed
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 250) {
+    $('.navbar-sticky').addClass('fixed');
+	  $('.navbar-bottom__opacity1').addClass('navbar-bottom__opacity0');
+	  $(".fixed").slideDown(300);
+   
+  } else {
+        $('.navbar-sticky').removeClass('fixed');
+        $('.navbar-bottom__opacity1').removeClass('navbar-bottom__opacity0');
+	  
+
+  }
+});
+
+
+
+
+
+

@@ -452,9 +452,7 @@ footer ul {
 	}
 }
 
-.collapse li {
-  position: relative;
-}
+
 
 .dropdown-toggle::after {
   content: unset;
@@ -480,6 +478,7 @@ footer ul {
   color: #fff !important;
   font-weight: 500;
   display: inline-block;
+width: 100%;
 }
 
 .multi-level .multi-level-nav-item a:hover {
@@ -510,6 +509,7 @@ footer ul {
 .multi-level .collapse-nav-item a {
   color: #162d50;
   font-size: 12px;
+	    width: 100%;
   padding: 10px;
   display: inline-block;
 }
@@ -583,7 +583,7 @@ footer ul {
   font-family: "Aller-Bold";
   color: #033255;
   font-size: 40px;
-  text-transform: capitalize;
+  text-transform: initial!important;
 }
 /*.section-title h1{
   font-family: "Aller-Bold";
@@ -765,11 +765,14 @@ ul.share-social li a:hover {
 
 .dropdown-menu.one-level li:hover a {
   color: #fff;
+	width:100%;
   text-decoration: none;
 }
 
 .dropdown-menu.one-level li a {
   color: #162d50;
+	width:100%;
+	display: block;
 }
 
 .pse-logo img {
