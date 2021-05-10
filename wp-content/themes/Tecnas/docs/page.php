@@ -65,9 +65,7 @@
     </div>
   </section>
 
-  <a class="boton-subir slider-top" href="#" id="js_up">
-	  <i class=" fa fa-angle-up" ></i>
-  </a>
+ 
    <?php } ?> 
 
    <?php if(get_field('plantilla') == 'productos'){ ?>  
@@ -293,8 +291,11 @@
 <?php if(get_field('plantilla') == 'certificaciones'){ ?>  
    <section class="page-container">
     <div class="section-title">
-      <h1> <?php echo get_theme_mod('certificaciones_titulo_'.lang().'') ?></h1>
-      <p> <?php echo get_theme_mod('certificaciones_descripcion_'.lang().'') ?></p>
+		<?php $certificationtTitle = lang() == "es" ? "Certificaciones" : "Certifications"; ?>
+		<?php $certificationtDesc = lang() == "es" ? "Obtener un certificado de garantía de calidad no es el final de un proceso, es la ratificación de un compromiso con la sociedad y con el medio ambiente." : "Obtaining a quality guarantee certificate is not the end of a process, it is the ratification of a commitment to society and the environment."; ?>
+            
+      <h1> <?php echo $certificationtTitle ?></h1>
+      <p> <?php echo $certificationtDesc ?></p>
     </div>
     <div class="certifications-slider">
 		    <?php $args = array( 'post_type' => 'Certificaciones',); ?>
@@ -424,7 +425,7 @@
                <?php the_content(); ?>
 				<div class="map map-mobile">
 			
-					<iframe allowfullscreen="" aria-hidden="false" frameborder="0" height="310" id="2<?php the_ID();?>" src="<?php the_field( 'url_embed_mapa' ); ?>" style="border:0;" tabindex="0" width="100%"></iframe>
+					<iframe allowfullscreen="" aria-hidden="false" frameborder="0" height="310" id="2<?php the_ID();?>" src="<?php the_field( 'url_embed_mapa' ); ?>" style="border:0;diplay:block;" tabindex="0" width="100%"></iframe>
 					
 			  </div>
               </div>
@@ -615,7 +616,7 @@
 
 <?php if(get_field('plantilla') == 'Políticas de datos'){ ?>
  <div class="main-contact">
-    <div class="container">
+    <div class="container main-content__policy">
 		<div class="section-title">
 	      <h1><?php the_title(); ?></h1>
     </div>

@@ -39,7 +39,75 @@
   <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.png">
    <?php wp_head(); ?>
 </head>
+<style>
+ 
+            .multi-level .collapse-nav-item:hover  .hover-dark{
+            background-color: rgb(3, 50, 85) !important;
+          }
+    .footer-top .footer-images li:nth-child(4) a img {
+    height: 150px !important;
+    width: 150px !important;
+}
+    
+    
+    @media screen and (max-width: 768px) and (min-width: 0px){
+.footer-top .footer-images li:nth-child(4) a img {
+    height: 120px !important;
+    width: 120px !important;
+}
+      
+      .dropdown-toggle > .dropdown-menu-1 {
 
+    overflow-y: scroll !important;
+    max-height: 520px !important;
+}
+    }
+    
+    
+    
+    
+    .multi-level .level-2 {
+  
+    overflow-y: hidden;
+    max-height: 600px !important;
+      transition: 0.3s ease-in-out;
+}
+    .multi-level .level-2:hover {
+        overflow-y: scroll !important; 
+      transition: 0.3s ease-in-out;
+      width: 270px !important;
+    }
+    
+    
+    .multi-level .level-2::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.multi-level .level-2::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0px grey; 
+  border-radius: 2px;
+}
+ 
+/* Handle */
+.multi-level .level-2::-webkit-scrollbar-thumb {
+  background: gray; 
+  border-radius: 2px;
+}
+
+    #ajaxsearchliteres1 > p{
+      display: none !important;
+    }
+    
+.main-page {
+    padding: 40px !important;
+      padding-bottom: 5px !important;
+}
+    
+    
+    
+    
+        </style>
 <body>
   <nav class='navbar navbar-expand-lg navbar-top'>
     <?php 
@@ -63,8 +131,8 @@
       </form>
     </div>
     <div class='pse-logo'>
-		<a target="_blank" href="https://www.mipagoamigo.com/MPA_WebSite/ServicePayments/StartPayment?id=106&searchedCategoryId=&searchedAgreementName=TECNAS"> 
-			<img alt='PSE' src='<?php echo get_template_directory_uri(); ?>/assets/img/logos/logo-pse.png'></a>
+    <a target="_blank" href="https://www.mipagoamigo.com/MPA_WebSite/ServicePayments/StartPayment?id=106&searchedCategoryId=&searchedAgreementName=TECNAS"> 
+      <img alt='PSE' src='<?php echo get_template_directory_uri(); ?>/assets/img/logos/logo-pse.png'></a>
      
     </div>
     <div class='languages'>
@@ -85,441 +153,1561 @@
       </div>
     </div>
   </nav>
-	
-	
-	
-	
+  
+  
+  
+  <?php if(lang() == 'es'):?>
  
-  <nav class='navbar navbar-expand-lg navbar-bottom navbar-bottom__opacity1'>
+  <nav class='navbar navbar-expand-lg navbar-bottom'>
     <button aria-controls='navbar' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#navbar' data-toggle='collapse' type='button'>
       <i class='fa fa-bars'></i>
     </button>
     <div class='collapse navbar-collapse' id='navbar'>
-      <ul class='navbar-nav margin-auto'>
-        <li class='nav-item'>
-          <a class='nav-link' href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "destacado";}else{echo "news";} ?>'><?php if(lang() == 'es'){echo "Destacados";}if(lang() == 'en'){echo "News";} ?></a>
+ <ul class="navbar-nav margin-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="<?php bloginfo('url'); ?>/destacado">Destacados</a>
         </li>
 
 
 
-         <li class='nav-item'>
-          <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='/'><?php if(lang() == 'es'){echo "Portafolio";}if(lang() == 'en'){echo "Portfolio";} ?></a>
-          <ul class='dropdown-menu multi-level'>
-            <li class='multi-level-nav-item'>
-              <a aria-controls='categoriesCollapse' aria-expanded='false' data-toggle='collapse' href='#categoriesCollapse' role='button'><?php if(lang() == 'es'){echo "Categorías";}if(lang() == 'en'){echo "Category ";} ?></a>
+         <li class="nav-item dropdown-toggle dropdown-toggle-no ">
+          <a class="nav-link active dropdown-toggle-a" data-toggle="dropdown" href="">Portafolio</a>
+          <ul class="dropdown-menu-1 multi-level" >
+            <li class="multi-level-nav-item">
+              <a aria-controls="categoriesCollapse" aria-expanded="false" data-toggle="collapse" href="#categoriesCollapse" role="button">Categorías</a>
             </li>
-            <div class='collapse' id='categoriesCollapse'>
-              <ul class='collapse-list'>
-                <?php $wcatTerms = get_terms('categoria-de-productos', array('hide_empty' => 0,'orderby' => 'id', 'exclude' => '552,550,661,665', 'parent' =>0)); 
-                   foreach($wcatTerms as $wcatTerm) : ?>
-          <?php
-            $wsubargs = array(
-                           'hierarchical' => 1,
-                           'show_option_none' => '',
-                           'hide_empty' => 0,
-                           'parent' => $wcatTerm->term_id,
-                           'taxonomy' => 'categoria-de-productos',
-              'orderby' => 'id',
-                        );
-                        $wsubcats = get_categories($wsubargs)
-          ?>
-                <li class='collapse-nav-item'>
-<?php if (empty($wsubcats)) {?>
+            <div class="collapse" id="categoriesCollapse">
+              <ul class="collapse-list">
+
+                <!-- CARNICA -->
+                <li class="collapse-nav-item">        
+                  <a data-toggle="dropdown" style="text-transform: uppercase;" class="new-class" href="<?php bloginfo('url'); ?>/categoria-de-productos/carnica/">Cárnica</a>
+  
+                  <div class="dropdown-menu level-1">
+                    <div class="level-2">
+                    <!-- CARNICA - SABORIZACION -->
+                      <div class="menu-header">
+                        <a class="">Saborización</a> 
+                      </div>
+                
+                    <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/condimentos-para-elaborar-embutidos-2/">Condimentos para elaborar embutidos</a>
+                        </li>
+                      </ul> 
+
+                    <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/adobos-sazonadores-y-marinados/">Adobos, sazonadores y marinados</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/sabores-aromas-para-alimentos/">Sabores/Aromas para alimentos</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/sabores-aromas-naturales-top-note/">Sabores/Aromas naturales top note</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/humos-sabores-parrilla-naturales-2/">Humos, sabores parrilla naturales</a>
+                        </li>
+                      </ul>
+                      
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/potenciadores-naturales-de-sabor-2/">Potenciadores naturales de sabor</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/especias-y-extractos-de-especias-2/">Especias y extractos de especias</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/sabores-plus-2/">Sabores PLUS</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/sabores-naturales-natplus-2/">Sabores naturales NATPLUS</a>
+                        </li>
+                      </ul>  
+                  </div> 
+
+                  <!-- CARNICA - SALUD Y BIENESTAR -->
+                  <div class="level-2">
+                    <div class="menu-header">
+                      <a class="">Salud y Bienestar</a> 
+                    </div>
+                                
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/colorantes-naturales-y-alimentos-colorantes/">Colorantes naturales y alimentos colorantes</a> 
+                        </li>
+                      </ul>
+                                    
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/plant-based-es/">Plant-Based</a> 
+                        </li>
+                      </ul>
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/proteinas-origen-animal/">Proteínas de origen animal</a>
+                        </li>
+                      </ul> 
+                          
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/salmueras-para-marinar-sin-alergenos-adicionados/">Salmueras para marinar sin alérgenos adicionados</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/antioxidante-natural-ultranox/">Antioxidante natural Ultranox®</a>
+                        </li>
+                      </ul>  
+                                    
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/saborizacion-natural-carnica/">Saborización natural cárnica</a> 
+                        </li>
+                      </ul>
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/alternativas-para-apanar-sin-gluten-adicionado/">Alternativas para apanar sin gluten adicionado</a>
+                        </li>
+                      </ul> 
+                                    
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/proteinas/">Proteínas</a> 
+                        </li>
+                      </ul>
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/fibras/">Fibras</a>
+                        </li>
+                      </ul>  
+                                              
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/antimicrobianos-naturales-y-conservantes/">Antimicrobianos naturales y conservantes</a>
+                        </li>
+                      </ul>  
+                                  
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/opciones-para-reduccion-en-sodio/">Opciones para reducción en sodio</a>
+                        </li>
+                      </ul>  
+                    </div> 
+
+                    <!-- CARNICA - FUNCIONALIDAD -->
+                    <div class="level-2">
+                      <div class="menu-header">
+                        <a class="">Funcionalidad</a> 
+                      </div>
           
-             <div class='dropdown-menu level-1'>
-      <?php $args =  array(
-                'post_type' => 'producto',
-                'post_status' => 'publish',
-                'posts_per_page' => 99999,
-                'tax_query' => array(
-                  'relation'=>'AND', // 'AND' 'OR' ...
-                  array(
-                    'taxonomy' => 'categoria-de-productos',
-                    'field'           => 'slug',
-                    'terms'           => array($wcatTerm->slug),
-                    'operator'        => 'IN',
-                    'orderby' => 'id',
-                  )),
-              ); ?>
-               <?php $loop = new WP_Query( $args ); ?>
-               <div class='level-2'>
-                 <ul>
-                 <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                   <li>
-                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>  
-                   </li>
-                 <?php  endwhile; ?>
-                 </ul>
-               </div>
-          </div>
-              <?php } ?> 
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/salmueras-para-carnes/">Salmueras para carnes</a> 
+                        </li>
+                      </ul>
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/sistemas-de-textura-para-carnicos/">Sistemas de textura para cárnicos</a>
+                        </li>
+                      </ul> 
+                                    
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/sistemas-para-apanar/">Sistemas para apanar</a> 
+                        </li>
+                      </ul>
+                                    
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/proteinas/">Proteínas</a> 
+                        </li>
+                      </ul>
+                                    
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/plant-based-es/">Plant-Based</a> 
+                        </li>
+                      </ul>
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/proteinas-origen-animal/">Proteínas de origen animal</a>
+                        </li>
+                      </ul>
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/fibras/">Fibras</a>
+                        </li>
+                      </ul>  
+                              
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/antimicrobianos-naturales-y-conservantes/">Antimicrobianos naturales y conservantes</a>
+                        </li>
+                      </ul>
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/antioxidantes/">Antioxidantes</a>
+                        </li>
+                      </ul>  
+            
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/fosfatos/">Fosfatos</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/almidones/">Almidones</a>
+                      </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                            <a href="<?php bloginfo('url'); ?>/producto/carrageninas/">Carrageninas</a>
+                        </li>
+                      </ul>                
+                  </div>  
+
+                <!-- CARNICA -->
+                </div>
+                </li>
+
+                <!-- LACTEOS -->
+                <li class="collapse-nav-item">
+                    <a data-toggle="dropdown" style="text-transform: uppercase;" 
+                    class="new-class" href="<?php bloginfo('url'); ?>/categoria-de-productos/lacteos/">Lácteos y Helados</a>
+      
+                        <!-- subcategia -->
+                    <div class="dropdown-menu level-1">
+                        <div class="level-2">
+                        <!-- LACTEOS - SABORIZACION -->
+                        <div class="menu-header">
+                          <a class="">Saborización</a> 
+                        </div>
+                    
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/sabores-aromas-para-alimentos/">Sabores/Aromas para alimentos</a>
+                        </li>
+                      </ul>
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/sabores-aromas-naturales-top-note/">Sabores/Aromas naturales top note</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/sazonadores-para-alimentos/">Sazonadores para alimentos</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/salsas-dulces-con-y-sin-azucar-adicionada/">Salsas dulces con y sin azúcar adicionada</a>
+                        </li>
+                      </ul>  
+                    
+                  </div>  
+              
+                  <div class="level-2">
+                    <!-- LACTEOS - SABORIZACION -->
+                    <div class="menu-header">
+                      <a class="">Salud y Bienestar</a> 
+                    </div>
+                            
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/plant-based-es-lacteos/">Plant-Based</a> 
+                        </li>
+                      </ul>
+                                    
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/colorantes-naturales-y-alimentos-colorantes/">Colorantes naturales y alimentos colorantes</a> 
+                        </li>
+                      </ul>
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/helados-soft-saludables/">Helados soft  saludables</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/proteinas-de-soya/">Proteínas de soya</a>
+                        </li>
+                      </ul>
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/antioxidante-natural-ultranox/">Antioxidante natural Ultranox®</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/sabores-aromas-naturales-top-note/">Sabores/Aromas naturales top note</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/bases-para-bebidas-vegetales/">Bases para bebidas vegetales</a>
+                        </li>
+                      </ul>  
+                
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/salsas-dulces-con-y-sin-azucar-adicionada/">Salsas dulces con y sin azúcar adicionada</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/reemplazantes-de-azucar/">Reemplazantes de azúcar</a>
+                        </li>
+                      </ul>
+                                  
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/fibras/">Fibras</a>
+                        </li>
+                      </ul>
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/opciones-para-reduccion-en-sodio/">Opciones para reducción en sodio</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/antioxidante-de-frutas-nativanox/">Antioxidante de frutas Nativanox®</a>
+                        </li>
+                      </ul> 
+                    
+                  </div>  
+              
+                    <div class="level-2">
+                    <!-- LACTEOS - FUNCIONALIDAD -->
+                    <div class="menu-header">
+                      <a class="">Funcionalidad</a> 
+                    </div>
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/helados-soft-saludables/">Helados soft  saludables</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/ingredientes-para-quesos/">Ingredientes para quesos</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/plant-based-es-lacteos/">Plant-Based</a> 
+                        </li>
+                      </ul>
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/bases-para-bebidas-vegetales/">Bases para bebidas vegetales</a>
+                        </li>
+                      </ul> 
+             <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/bases-para-quesos-analogos/">Bases para quesos análogos libre de lactosa</a>
+                        </li>
+                      </ul> 
+
+
+
+
+                      <ul>                  
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/estabilizantes-para-lacteos/">Estabilizantes para lácteos</a>
+                        </li>
+                      </ul>
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/estabilizantes-para-bebidas/">Estabilizantes para bebidas</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/proteinas-de-soya/">Proteínas de soya</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/antioxidantes/">Antioxidantes</a>
+                        </li>
+                      </ul> 
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/fibras/">Fibras</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/carrageninas/">Carrageninas</a>
+                        </li>
+                      </ul> 
+                      
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/fosfatos/">Fosfatos</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/almidones/">Almidones</a>
+                        </li>
+                      </ul>  
+                    
+                  </div>  
+
+                <!-- end LACTEOS  -->
+                </div>
+                </li>
+
+                <!-- PANADERIA REPOSTERIA Y AREPAS  -->
+                <li class="collapse-nav-item">
+                  <a data-toggle="dropdown" style="text-transform: uppercase;" class="new-class" href="<?php bloginfo('url'); ?>/categoria-de-productos/panaderia-reposteria-y-arepas-2/">panadería, repostería y arepas</a>
+          
+                <!-- subcategia -->
+                <div class="dropdown-menu level-1">
+                  <div class="level-2">
+                  <!-- PANADERIA REPOSTERIA Y AREPAS - SABORIZACION -->
+                    <div class="menu-header">
+                      <a class="">Saborización</a> 
+                    </div>
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/salsas-dulces-con-y-sin-azucar-adicionada/">Salsas dulces con y sin azúcar adicionada</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/sabores-aromas-para-alimentos/">Sabores/Aromas para alimentos</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/sabores-aromas-naturales-top-note/">Sabores/Aromas naturales top note</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/sazonadores-para-alimentos/">Sazonadores para alimentos</a>
+                        </li>
+                      </ul> 
+                      
+                  </div>  
+              
+                  <div class="level-2">
+                    <!-- PANADERIA REPOSTERIA Y AREPAS - SALUD Y BIENESTAR  -->
+                    <div class="menu-header">
+                      <a class="">Salud y Bienestar</a> 
+                    </div>
+                      
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/concentrados-para-panes-tradicionales-y-especiales/">Concentrados para panes tradicionales y especiales</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/soluciones-tecnologicas-para-panaderia/">Soluciones tecnológicas para panadería</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/colorantes-naturales-y-alimentos-colorantes/">Colorantes naturales y alimentos colorantes</a> 
+                        </li>
+                      </ul>
+                                    
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/plant-based-es-panaderia-reposteria-y-arepas-2">Plant-Based</a> 
+                        </li>
+                      </ul>
+                      
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/proteinas-de-soya/">Proteínas de soya</a>
+                        </li>
+                      </ul>  
+                                  
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/sabores-aromas-naturales-top-note/">Sabores/Aromas naturales top note</a>
+                        </li>
+                      </ul>
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/antioxidante-natural-ultranox/">Antioxidante natural Ultranox®</a>
+                        </li>
+                      </ul> 
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/fibras/">Fibras</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/reemplazantes-de-azucar/">Reemplazantes de azúcar</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/antimicrobianos-naturales-y-conservantes/">Antimicrobianos naturales y conservantes</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/salsas-dulces-con-y-sin-azucar-adicionada/">Salsas dulces con y sin azúcar adicionada</a>
+                        </li>
+                      </ul>
+
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/opciones-para-reduccion-en-sodio/">Opciones para reducción en sodio</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/premezclas-para-reposteria-con-y-sin-azucar-adicionada/">Premezclas para repostería con y sin azúcar adicionada</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>                    
+                          <a href="<?php bloginfo('url'); ?>/producto/premezclas-para-pan-y-productos-a-base-de-queso/">Premezclas para pan y productos a base de queso</a>
+                        </li>
+                      </ul>  
+                  </div>  
+              
+                  <div class="level-2">
+                    <!-- PANADERIA REPOSTERIA Y AREPAS - FUNCIONALIDAD  -->
+                    <div class="menu-header">
+                      <a class="">Funcionalidad</a> 
+                    </div>                
+                                
+                      <ul>
+                        <Li>
+                          <a href="<?php bloginfo('url'); ?>/producto/mejoradores-para-panaderia-y-reposteria/">Mejoradores para panadería y repostería</a>
+                        </li>
+                      </ul> 
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/premezclas-para-pan-y-productos-a-base-de-queso/">Premezclas para pan y productos a base de queso</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/concentrados-para-panes-tradicionales-y-especiales/">Concentrados para panes tradicionales y especiales</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/premezclas-para-reposteria-con-y-sin-azucar-adicionada/">Premezclas para repostería con y sin azúcar adicionada</a>
+                        </li>
+                      </ul>  
+
+                      <ul>                  
+                        <li>                    
+                          <a href="<?php bloginfo('url'); ?>/producto/proteinas-de-soya/">Proteínas de soya</a>
+                          </li>
+                      </ul>
+
+
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/plant-based-es-panaderia-reposteria-y-arepas-2/">Plant-Based</a> 
+                        </li>
+                      </ul>
+
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/fibras/">Fibras</a>
+                        </li>
+                      </ul> 
+                      
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/antimicrobianos-naturales-y-conservantes/">Antimicrobianos naturales y conservantes</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                      
+                      <li>
+                      
+                        <a href="<?php bloginfo('url'); ?>/producto/antioxidantes/">Antioxidantes</a>
+                      </li>
+                      </ul>
+
+
+                      <ul>                  
+                        <li>                    
+                          <a href="<?php bloginfo('url'); ?>/producto/almidones/">Almidones</a>
+                          </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                    
+                          <a href="<?php bloginfo('url'); ?>/producto/carrageninas/">Carrageninas</a>
+                          </li>
+                      </ul>  
+                    
+                  </div>  
+            
+                <!-- end PANADERIA REPOSTERIA Y AREPAS -->
+                </div>
+                </li>
+
+                <!-- BEBIDAS Y VENDING  -->
+                <li class="collapse-nav-item">
+
+                  <a data-toggle="dropdown" style="text-transform: uppercase;" class="new-class" href="<?php bloginfo('url'); ?>/categoria-de-productos/bebidas-y-vending/">Bebidas y Vending</a>
+      
+                  <!-- subcategia -->
+                    <div class="dropdown-menu level-1">
+                      <div class="level-2">
+                        <!-- BEBIDAS Y VENDING  - SABORIZACION  -->
+                      <div class="menu-header">
+                        <a class="">Saborización</a> 
+                      </div>
+                    
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/sabores-aromas-para-alimentos/">Sabores/Aromas para alimentos</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/sabores-aromas-naturales-top-note/">Sabores/Aromas naturales top note</a>
+                        </li>
+                      </ul>  
+                    
+                  </div>  
+              
+                  <div class="level-2">
+                    <!-- BEBIDAS Y VENDING  - SALUD Y BIENESTAR  -->
+                      <div class="menu-header">
+                        <a class="">Salud y Bienestar</a> 
+                      </div>                  
+                                
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/colorantes-naturales-y-alimentos-colorantes/">Colorantes naturales y alimentos colorantes</a> 
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/antioxidante-de-frutas-nativanox/">Antioxidante de frutas Nativanox®</a>
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/bases-vending/">Bases vending</a>
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/bases-para-bebidas-vegetales/">Bases para bebidas vegetales</a>
+                        </li>
+                      </ul>
+
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/plant-based-es-bebidas-y-vending/">Plant-Based</a> 
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/bases-para-bebidas-nutritivas-y-refrescantes/">Bases para bebidas nutritivas y refrescantes</a>
+                        </li>
+                      </ul>
+                          
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/proteinas-de-soya/">Proteínas de soya</a>
+                        </li>
+                      </ul>
+                      
+                      <ul>                  
+                        <li>                    
+                          <a href="<?php bloginfo('url'); ?>/producto/sabores-aromas-naturales-top-note/">Sabores/Aromas naturales top note</a>
+                        </li>
+                      </ul>
+                          
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/reemplazantes-de-azucar/">Reemplazantes de azúcar</a>
+                        </li>
+                      </ul>                
+                        
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/fibras/">Fibras</a>
+                        </li>
+                      </ul>  
+                    
+                  </div>  
+              
+                  <div class="level-2">
+                  <!-- BEBIDAS Y VENDING  - FUNCIONALIDAD  -->
+                    <div class="menu-header">
+                      <a class="">Funcionalidad</a> 
+                    </div>
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/bases-vending/">Bases vending</a>
+                        </li>
+                      </ul>  
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/bases-para-bebidas-vegetales/">Bases para bebidas vegetales</a>
+                        </li>
+                      </ul>  
+
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/plant-based-es-bebidas-y-vending/">Plant-Based</a> 
+                        </li>
+                      </ul>
+                      
+
+                      <ul>                  
+                        <li>                                                
+                          <a href="<?php bloginfo('url'); ?>/producto/estabilizantes-para-bebidas/">Estabilizantes para bebidas</a>
+                        </li>
+                      </ul>  
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/proteinas-de-soya/">Proteínas de soya</a>
+                        </li>
+                      </ul>  
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/fibras/">Fibras</a>
+                        </li>
+                      </ul>  
+                    
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/carrageninas/">Carrageninas</a>
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/almidones/">Almidones</a>
+                        </li>
+                      </ul>  
+                  </div>  
+              
+                <!-- end BEBIDAS Y VENDING -->
+                  </div>
+                </li>
+
+                <!-- GALLETAS Y SNACKS -->
+                <li class="collapse-nav-item">
+            
+                  <a data-toggle="dropdown" style="text-transform: uppercase;" class="new-class" href="<?php bloginfo('url'); ?>/categoria-de-productos/galletas-y-snacks/">Galletas y Snacks</a>
+                  <!-- subcategia -->
+                  <div class="dropdown-menu level-1">
+                    <div class="level-2">
+                      <!-- GALLETAS Y SNACKS - SABORIZACION -->                
+                      <div class="menu-header">
+                        <a class="">Saborización</a> 
+                      </div>
+                
+                                  
+                      <ul>
+                        <li>     
+                          <a href="<?php bloginfo('url'); ?>/producto/sabores-aromas-para-alimentos/">Sabores/Aromas para alimentos</a>
+                        </li>
+                      </ul>  
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/sabores-aromas-naturales-top-note/">Sabores/Aromas naturales top note</a>
+                        </li>
+                      </ul> 
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/opciones-para-reduccion-en-sodio/">Opciones para reducción en sodio</a>
+                        </li>
+                      </ul>   
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/sazonadores-para-alimentos/">Sazonadores para alimentos</a>
+                        </li>
+                      </ul>  
+
+                    
+                    
+                  </div>  
+              
+                  <div class="level-2">
+                  <!-- GALLETAS Y SNACKS - SALUD Y BIENESTAR -->  
+                    <div class="menu-header">
+                      <a class="">Salud y Bienestar</a> 
+                    </div>
+                                
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/colorantes-naturales-y-alimentos-colorantes/">Colorantes naturales y alimentos colorantes</a> 
+                        </li>
+                      </ul>
+                                      
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/plant-based-es-galletas-y-snacks/">Plant-Based</a> 
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/proteinas-de-soya/">Proteínas de soya</a>
+                        </li>
+                      </ul> 
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/antioxidante-natural-ultranox/">Antioxidante natural Ultranox®</a>
+                        </li>                  
+                      </ul> 
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/fibras/">Fibras</a>
+                        </li>
+                      </ul>  
+                    
+                      
+                      <ul>                  
+                        <li>
+                          <a href="<?php bloginfo('url'); ?>/producto/sabores-aromas-naturales-top-note/">Sabores/Aromas naturales top note</a>
+                          </li>
+                      </ul> 
+
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/antimicrobianos-naturales-y-conservantes/">Antimicrobianos naturales y conservantes</a>
+                        </li>                  
+                      </ul> 
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/antioxidante-de-frutas-nativanox/">Antioxidante de frutas Nativanox®</a>
+                        </li>                  
+                      </ul> 
+
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/soluciones-tecnologicas-para-panaderia/">Soluciones tecnológicas para panadería</a>
+                        </li>                  
+                      </ul> 
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/reemplazantes-de-azucar/">Reemplazantes de azúcar</a>
+                        </li>
+                      
+                      </ul> 
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/opciones-para-reduccion-en-sodio/">Opciones para reducción en sodio</a>
+                        </li>
+                      </ul> 
+
+                      
+                  </div>  
+              
+                  <div class="level-2">
+                  <!-- GALLETAS Y SNACKS - FUNCIONALIDAD -->  
+                    <div class="menu-header">
+                      <a class="">Funcionalidad</a> 
+                    </div>
+                            
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/plant-based-es-galletas-y-snacks/">Plant-Based</a> 
+                        </li>
+                      </ul>
         
-          <a data-toggle="dropdown" href="<?php echo get_term_link(  $wcatTerm->slug,  $wcatTerm->taxonomy );?>"><?php echo $wcatTerm->name; ?></a>
-  
-  <!--   <a data-toggle="<?php echo !empty($wsubcats) ? 'dropdown' : null ?>" href="<?php echo get_term_link(  $wcatTerm->slug,  $wcatTerm->taxonomy );?>"><?php echo $wcatTerm->name; ?></a> -->
-                  
-                    <!-- subcategia -->
-                    <div class='dropdown-menu level-1'>
-                       <?php
-                        /*$wsubargs = array(
-                           'hierarchical' => 1,
-                           'show_option_none' => '',
-                           'hide_empty' => 0,
-                           'parent' => $wcatTerm->term_id,
-                           'taxonomy' => 'categoria-de-productos',
-                        );
-                        $wsubcats = get_categories($wsubargs);*/
-              
-                        foreach ($wsubcats as $wsc):
-                        ?>
-              <div class='level-2'>
-              <div class='menu-header'>
-                <a class=""><?php echo  $wsc->name;?></a> 
-              </div>
-                
-            <?php
-                
-                        $wsubargsh = array(
-                           'hierarchical' => 1,
-                           'show_option_none' => '',
-                           'hide_empty' => 0,
-                           'parent' => $wsc->term_id,
-                           'taxonomy' => 'categoria-de-productos',
-              'orderby' => 'id',
-                        );
-                        $wsubcatsh = get_categories($wsubargsh);
-                        foreach ($wsubcatsh as $wsch):
-                
-                        ?>
-                
-                <ul>
-                   <li>
-                    <a class="" href="<?php echo get_term_link( $wsch->slug, $wsch->taxonomy );?>"><?php echo $wsch->name;?></a> 
-                   </li>
-                </ul>
-                 <?php
-            endforeach; ?> 
-                  <?php  $args =  array(
-                'post_type' => 'producto',
-                'post_status' => 'publish',
-                'posts_per_page' => 99999,
-                'tax_query' => array(
-                  'relation'=>'AND', // 'AND' 'OR' ...
-                  array(
-                    'taxonomy' => 'categoria-de-productos',
-                    'field'           => 'slug',
-                    'terms'           => array($wsc->slug),
-                    'operator'        => 'IN',
-                    'orderby' => 'id',
-					  //No imprime los productos hijos de la categoria del tercer nivel
-					'include_children' => false,
+                      <ul>
+                        <li>                    
+                          <a href="<?php bloginfo('url'); ?>/producto/mejoradores-para-panaderia-y-reposteria/">Mejoradores para panadería y repostería</a>
+                        </li>
+                      </ul>
+
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/fibras/">Fibras</a>
+                        </li>
+                      </ul> 
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/antimicrobianos-naturales-y-conservantes/">Antimicrobianos naturales y conservantes</a>
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/antioxidantes/">Antioxidantes</a>
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/proteinas-de-soya/">Proteínas de soya</a>
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/almidones/">Almidones</a>
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/carrageninas/">Carrageninas</a>
+                        </li>
+                      </ul>
+
+                  </div>  
+
+                <!-- end GALLETAS Y SNACKS -->
+                  </div>
+                </li>
+
+                <!-- HORECA -->
+                <li class="collapse-nav-item">
+
+                  <a data-toggle="dropdown" style="text-transform: uppercase;" class="new-class" href="<?php bloginfo('url'); ?>/categoria-de-productos/horeca/">Horeca</a>
+                  <!-- subcategia -->
+                  <div class="dropdown-menu level-1">
+                    <div class="level-2">
+                      <!-- HORECA - SABORIZACION -->
+                      <div class="menu-header">
+                        <a class="">Saborización</a> 
+                      </div>
                     
+                                
+                    <ul>
+                      <li>
+                        <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/salsas-y-aderezo/">Salsas y Aderezos</a> 
+                      </li>
+                    </ul>
+
+                    <ul>                  
+                      <li>                  
+                        <a href="<?php bloginfo('url'); ?>/producto/bases-para-arroces-caldos-sopas-y-cremas/">Bases para arroces, caldos, sopas y cremas</a>
+                      </li>
+                    </ul>  
+
+                    <ul>                  
+                      <li>                  
+                        <a href="<?php bloginfo('url'); ?>/producto/sazonadores-para-alimentos/">Sazonadores para alimentos</a>
+                      </li>
+                    </ul>  
+                                  
+                    <ul>
+                      <li>
+                        <a href="<?php bloginfo('url'); ?>/producto/condimentos-para-elaborar-embutidos-2/">Condimentos para elaborar embutidos</a>
+                      </li>
+                    </ul>  
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/adobos-sazonadores-y-marinados/">Adobos, sazonadores y marinados</a>
+                        </li>
+                      </ul>  
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/humos-sabores-parrilla-naturales-2/">Humos, sabores parrilla naturales</a>
+                        </li>
+                      </ul>  
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/potenciadores-naturales-de-sabor-2/">Potenciadores naturales de sabor</a>
+                        </li>
+                      </ul>  
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/especias-y-extractos-de-especias-2/">Especias y extractos de especias</a>
+                        </li>
+                      </ul>  
                     
-                  ),
-           
-                ),
-  
-              ); ?>  
-                              
-              <?php $loop = new WP_Query( $args ); ?>
-               <?php while ( $loop->have_posts() ) : $loop->the_post(); 
+                  </div>  
               
-                ?>
-                 <ul>
-                  
-                  <li>
-                  
-                    <a href='<?php the_permalink(); ?>'><?php the_title(); ?></a>
-                   </li>
-                  </ul>  
-               <?php  endwhile; ?>  
-               </div>  
-          
-                        <?php
-            endforeach; ?> 
-           
-            <!-- end subcategoria -->
-              <?php endforeach; ?>  
-         
-                 </li>
+                  <div class="level-2">
+                  <!-- HORECA - SALUD Y BIENESTAR -->
+                    <div class="menu-header">
+                      <a class="">Salud y Bienestar</a> 
+                    </div>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/alternativas-para-apanar-sin-gluten-adicionado/">Alternativas para apanar sin gluten adicionado</a>
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/bases-para-elaborar-sustitutos-carnicos/">Bases para elaborar sustitutos cárnicos</a>
+                        </li>
+                      </ul> 
+
+                        
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/salmueras-para-marinar-sin-alergenos-adicionados/">Salmueras para marinar sin alérgenos adicionados</a>
+                        </li>
+                      </ul>   
+                                
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/colorantes-naturales-y-alimentos-colorantes/">Colorantes naturales y alimentos colorantes</a> 
+                        </li>
+                      </ul>
+                                      
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/plant-based-es-horeca/">Plant-Based</a> 
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/bases-para-bebidas-vegetales/">Bases para bebidas vegetales</a>
+                        </li>
+                      </ul> 
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/bases-para-bebidas-nutritivas-y-refrescantes/">Bases para bebidas nutritivas y refrescantes</a>
+                        </li>
+                      </ul> 
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/salsas-dulces-con-y-sin-azucar-adicionada/">Salsas dulces con y sin azúcar adicionada</a>
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/reemplazantes-de-azucar/">Reemplazantes de azúcar</a>
+                        </li>
+                      </ul>  
+
+                      
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/concentrados-para-panes-tradicionales-y-especiales/">Concentrados para panes tradicionales y especiales</a>
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/soluciones-tecnologicas-para-panaderia/">Soluciones tecnológicas para panadería</a>
+                        </li>
+                      </ul>  
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/antioxidante-natural-ultranox/">Antioxidante natural Ultranox®</a>
+                        </li>
+                      </ul>    
+                                      
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/saborizacion-natural-carnica/">Saborización natural cárnica</a> 
+                        </li>
+                      </ul>
+                    
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/opciones-para-reduccion-en-sodio/">Opciones para reducción en sodio</a>
+                        </li>
+                      </ul>  
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/premezclas-para-reposteria-con-y-sin-azucar-adicionada/">Premezclas para repostería con y sin azúcar adicionada</a>
+                        </li>
+                      </ul>  
+                    
+                  </div>  
+              
+                    <div class="level-2">
+
+                    <!-- HORECA - FUNCIONALIDAD -->
+                      <div class="menu-header">
+                        <a class="">Funcionalidad</a> 
+                      </div>                    
+                                
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/sistema-para-apanar/">Sistema para apanar</a> 
+                        </li>
+                      </ul>
+                                      
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/plant-based-es-horeca/">Plant-Based</a> 
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/bases-para-elaborar-sustitutos-carnicos/">Bases para elaborar sustitutos cárnicos</a>
+                        </li>
+                      </ul>  
+                                      
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/salmueras-para-carnes/">Salmueras para carnes</a> 
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/sistemas-de-textura-para-carnicos/">Sistemas de textura para cárnicos</a>
+                        </li>
+                      </ul>
+                                      
+                      <ul>
+                        <li>
+                          <a class="" href="<?php bloginfo('url'); ?>/categoria-de-productos/proteinas/">Proteínas</a> 
+                        </li>
+                      </ul>
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/bases-para-bebidas-vegetales/">Bases para bebidas vegetales</a>
+                        </li>
+                      </ul>  
+                
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/mejoradores-para-panaderia-y-reposteria/">Mejoradores para panadería y repostería</a>
+                          </li>
+                      </ul> 
+
+                      
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/premezclas-para-pan-y-productos-a-base-de-queso/">Premezclas para pan y productos a base de queso</a>
+                        </li>
+                      </ul>  
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/concentrados-para-panes-tradicionales-y-especiales/">Concentrados para panes tradicionales y especiales</a>
+                        </li>
+                      </ul>  
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/premezclas-para-reposteria-con-y-sin-azucar-adicionada/">Premezclas para repostería con y sin azúcar adicionada</a>
+                        </li>
+                      </ul>  
+
+                      <ul>                  
+                        <li>                  
+                          <a href="<?php bloginfo('url'); ?>/producto/antioxidantes/">Antioxidantes</a>
+                        </li>
+                      </ul>  
+                    
+                  </div>  
+                <!-- end HORECA -->
+                  </div>
+                </li>
+
               </ul>
-           </div>      
-        <li class='collapse-nav-item multi-level-nav-item'>
-                      <a style="text-transform: uppercase;"  data-toggle='dropdown' href='#'><?php if(lang() == 'es'){echo "Productos";}if(lang() == 'en'){echo "Products";} ?></a>
-                 <div class='dropdown-menu level-1'>
-					
-               <div class='level-2'>
-                 <ul>
+           </div>    
+
+      
+        
+        
+        <!-- PRODUCTOS --> 
+        <li class="collapse-nav-item multi-level-nav-item">
+          <a class="hover-dark" style="text-transform: uppercase; " data-toggle="dropdown" href="#">Productos</a>
+            <div class="dropdown-menu level-1">
+            <div class="level-2">
+              <ul>
                          
-       
-					  <?php if( lang() == 'es'){ ?>
-      <?php
-                  $wsubargs = array(
-                           'hierarchical' => 1,
-                           'show_option_none' => '',
-                           'hide_empty' => 0,
-                           'parent' => '661',
-							'orderby' => 'id',
-                           'taxonomy' => 'categoria-de-productos',
-                        );
-												?>
-			<?php } ?>
-					  <?php if( lang() == 'en'){ ?>
-      <?php
-                  $wsubargs = array(
-                           'hierarchical' => 1,
-                           'show_option_none' => '',
-                           'hide_empty' => 0,
-                           'parent' => '665',
-							'orderby' => 'id',
-                           'taxonomy' => 'categoria-de-productos',
-                        );
-												?>
-			<?php } ?>
-					 <?php
-          
-                        $wsubcats = get_categories($wsubargs);
-					 $i=1;
-                        foreach ($wsubcats as $wsc):
-					
-                        ?>
-				
-
-
-					<ul>
-						<li>
-							<?php switch($i): 
-							case 1: ?>
-						  <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 2: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 3: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 4: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 5: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 6: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 7: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 8: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php endswitch; ?>
-						</li>
-						 
-					 </ul>
-                     <?php   
-                                            $i++;
-                                              endforeach; 
-                                              ?>
-				
-                 </ul>
-               </div>
-					   <div class='level-2'>
-                 <ul>
-							  <?php if( lang() == 'es'){ ?>
-      <?php
-                  $wsubargs = array(
-                           'hierarchical' => 1,
-                           'show_option_none' => '',
-                           'hide_empty' => 0,
-                           'parent' => '661',
-							'orderby' => 'id',
-                           'taxonomy' => 'categoria-de-productos',
-                        );
-												?>
-			<?php } ?>
-					  <?php if( lang() == 'en'){ ?>
-      <?php
-                  $wsubargs = array(
-                           'hierarchical' => 1,
-                           'show_option_none' => '',
-                           'hide_empty' => 0,
-                           'parent' => '665',
-							'orderby' => 'id',
-                           'taxonomy' => 'categoria-de-productos',
-                        );
-												?>
-			<?php } ?>
-					 <?php
-                        $wsubcats = get_categories($wsubargs);
-					 $i=1;
-                        foreach ($wsubcats as $wsc):
-                        ?>
-					<ul>
-						<li>
-							<?php switch($i): 
-							case 9: ?>
-						  <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 10: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 11: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 12: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 13: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 14: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 15: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 16: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 17: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 18: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 19: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 20: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php endswitch; ?>
-						</li>
-						 
-					 </ul>
-                     <?php   
-                                            $i++;
-                                              endforeach; 
-                                              ?>
-					 	             
-                  <?php  $args =  array(
-                'post_type' => 'producto',
-                'post_status' => 'publish',
-                'posts_per_page' => 99999,
-                'tax_query' => array(
-                  'relation'=>'AND', // 'AND' 'OR' ...
-                  array(
-                    'taxonomy' => 'categoria-de-productos',
-                    'field'           => 'slug',
-                    'terms'           => 'productos',
-                    'operator'        => 'IN',
-                    'orderby' => 'id',
-					  //No imprime los productos hijos de la categoria del segundo nivel
-					'include_children' => false,
-                    
-                    
-                  ),
-           
-                ),
-  
-              ); ?>  
-                              
-              <?php $loop = new WP_Query( $args ); ?>
-               <?php while ( $loop->have_posts() ) : $loop->the_post(); 
-              
-                ?>
-                 <ul>
-                  
+                <ul>
                   <li>
-                  
-                    <a style="color: #162d50 !important;" href='<?php the_permalink(); ?>'><?php the_title(); ?></a>
-                   </li>
-                  </ul>  
-               <?php  endwhile; ?>     
-					  </ul>
-               </div>
-					 
-          </div>
-            
-        </li>
-           
-<li class='collapse-nav-item multi-level-nav-item'>
-                     <a style="text-transform: uppercase;" data-toggle='dropdown' href='#'><?php if(lang() == 'es'){echo "Productos para limpieza, desinfección e inocuidad";}if(lang() == 'en'){echo "
-Products for cleaning, disinfection and safety";} ?></a>
-                 <div class='dropdown-menu level-1'>
-<?php $loop = new WP_Query( 'post_type=producto&categoria-de-productos=productos-para-limpieza-desinfeccion-e-inocuidad&posts_per_page=-1' ); ?>
-               <div class='level-2'>
-                 <ul>  
-                  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                   <li>
-                     <a  style="color: #162d50 !important;" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>  
-                   </li>
-                 <?php  endwhile; ?>
-                 </ul>
-               </div>
-          </div>
-            
-        </li>
-          </ul>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "cliente";}else{echo "customers";} ?>'><?php if(lang() == 'es'){echo "Representaciones";}if(lang() == 'en'){echo "
-Our Allies";} ?></a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link dropdown-toggle' href='#'><?php if(lang() == 'es'){echo "Quiénes somos";}if(lang() == 'en'){echo "
-About us";} ?></a>
-          <ul class='dropdown-menu hoverable one-level'>
-            <li>
-              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "nuestra-empresa";}else{echo "about";} ?>'><?php if(lang() == 'es'){echo "Nuestra empresa";}if(lang() == 'en'){echo "
+                    <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/categoria-de-productos/sabores-carnicos/">Sabores Cárnicos</a>  
+                  </li>                  
+                </ul>
+                            
+                <ul>
+                  <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/categoria-de-productos/salmueras-para-carnes/">Salmueras para carnes</a>  
+                  </li>                  
+                </ul>
+                            
+                <ul>
+                  <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/categoria-de-productos/sistemas-de-texturas/">Sistema de textura</a>  
+                  </li>             
+                </ul>
+                            
+                <ul>
+                  <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/categoria-de-productos/sistema-para-apanar/">Sistemas para apanar</a>  
+                  </li>             
+                </ul>
+                            
+                <ul>
+                  <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/categoria-de-productos/plant-based-productos/">Plant-Based</a>  
+                  </li>
+                </ul>
+                          
+                <ul>
+                  <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/categoria-de-productos/proteinas/">Proteínas</a>  
+                  </li>             
+                </ul>
+                            
+                <ul>
+                  <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/categoria-de-productos/fibras-es-productos/">Fibras</a>  
+                  </li>             
+                </ul>
+                            
+                <ul>
+                  <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/categoria-de-productos/salsas-y-aderezos/">Salsas y aderezos</a>  
+                  </li>             
+                </ul>
+                            
+                <ul>
+                  <li>
+                  </li>                  
+                </ul>
+                            
+                <ul>
+                  <li>
+                  </li>             
+                </ul>
+                                  
+                <ul>
+                  <li>
+                  </li>                  
+                </ul>                          
 
-Our company";} ?></a>
+                <ul>
+                  <li>
+                  </li>             
+                </ul>                                
+
+                <ul>
+                  <li>
+                  </li>             
+                </ul>
+                                  
+                <ul>
+                  <li>
+                  </li>             
+                </ul>                                
+
+                <ul>
+                  <li>
+                  </li>             
+                </ul>
+                            
+              </ul>
+            </div>
+             <div class="level-2">
+                <ul>
+                  <ul>
+                    <li>
+                  </li>             
+                  </ul>
+
+                  <ul>
+                    <li>
+                    </li>             
+                  </ul>
+
+                  <ul>
+                    <li>
+                    </li>             
+                  </ul>
+
+                  <ul>
+                    <li>
+                    </li>             
+                  </ul>
+
+                  <ul>
+                    <li>
+                    </li>             
+                  </ul>
+
+                  <ul>
+                    <li>
+                    </li>             
+                  </ul>
+
+                  <ul>
+                    <li>
+                    </li>             
+                  </ul>
+
+                  <ul>
+                    <li>
+                    </li>             
+                  </ul>
+                
+                  <ul>
+                    <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/categoria-de-productos/sabores-otras-aplicaciones/">Sabores otras aplicaciones</a>  
+                    </li>             
+                  </ul>
+
+                  <ul>
+                    <li>
+                        <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/categoria-de-productos/colorantes-naturales-y-alimentos-colorantes/">Colorantes naturales y alimentos colorantes</a>  
+                    </li>                        
+                  </ul>
+                  <ul>
+                    <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/categoria-de-productos/conservantes-y-antioxidantes/">Conservantes y antioxidantes</a>  
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                        <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/categoria-de-productos/panaderia-reposteria-y-arepas/">Panadería, repostería y arepas</a>  
+                    </li>
+                    
+                  </ul>
+                  <ul>
+                      <li>
+                          <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/categoria-de-productos/productos-para-lacteos-y-helados/">Productos para lácteos y helados</a>  
+                      </li>
+                    
+                  </ul>
+                  <ul>
+                    <li>
+                        <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/categoria-de-productos/opciones-para-bebidas-y-vending/">Opciones para bebidas y vending</a>  
+                    </li>
+                    
+                  </ul>
+                  <ul>
+                    <li>
+                        <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/categoria-de-productos/bases-para-arroces-caldos-sopas-y-cremas/">Bases para arroces, caldos, sopas y cremas</a>  
+                    </li>
+                    
+                  </ul>           
+                </ul>
+               </div>           
+          </div>
+            
+        </li>
+        
+        <!-- PRODUCTOS PARA LIMPIEZA --> 
+        <li class="collapse-nav-item multi-level-nav-item">
+          <a class="hover-dark" style="text-transform: uppercase;" data-toggle="dropdown" href="#">Productos para limpieza, desinfección e inocuidad</a>
+            <div class="dropdown-menu level-1">
+               <div class="level-2">
+                 <ul>  
+                     <li>
+                     <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/producto/detergentes-desengrasantes-neutros-biodegradables/">Detergentes desengrasantes neutros biodegradables</a>  
+                    </li>
+                    <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/producto/detergentes-desengrasantes-alcalinos-biodegradables/">Detergentes desengrasantes alcalinos biodegradables</a>  
+                    </li>
+                    <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/producto/detergentes-acidos-desincrustantes-biodegradables/">Detergentes ácidos desincrustantes biodegradables</a>  
+                    </li>
+                    <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/producto/soluciones-especializadas/">Soluciones especializadas</a>  
+                    </li>
+                    <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/producto/desinfectantes/">Desinfectantes</a>  
+                    </li>
+                    <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/producto/desinfectantes-especializados/">Desinfectantes especializados</a>  
+                    </li>
+                    <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/producto/desinfectantes-de-contacto-directo-con-alimentos/">Desinfectantes de contacto directo con alimentos</a>  
+                    </li>
+                    <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/producto/sanitizacion-de-manos/">Sanitización de manos</a>  
+                    </li>
+                    <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/producto/especialidades-para-plantas-de-beneficio/">Especialidades para plantas de beneficio</a>  
+                    </li>
+                    <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/producto/productos-de-lavanderia-biodegradables/">Productos  de lavandería biodegradables</a>  
+                    </li>
+                    <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/producto/cepillos-y-accesorios/">Cepillos y accesorios</a>  
+                    </li>
+                    <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/producto/kit-de-testeo-quimico/">Kit de testeo químico</a>  
+                    </li>
+                    <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/producto/panos-de-limpieza/">Paños de limpieza</a>  
+                    </li>
+                    <li>
+                      <a style="color: #162d50 !important;" href="<?php bloginfo('url'); ?>/producto/indumentaria-sanitaria/">Indumentaria sanitaria</a>  
+                    </li>
+                  </ul>
+               </div>
+          </div> 
+        </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php bloginfo('url'); ?>/cliente">Representaciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link dropdown-toggle" href="#">Quiénes somos</a>
+          <ul class="dropdown-menu hoverable one-level">
+            <li>
+              <a href="<?php bloginfo('url'); ?>/nuestra-empresa">Nuestra empresa</a>
             </li>
             <li>
-              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "servicio";}else{echo "service";} ?>'><?php if(lang() == 'es'){echo "Servicios";}if(lang() == 'en'){echo "Services";} ?></a>
+              <a href="<?php bloginfo('url'); ?>/servicio">Servicios</a>
             </li>
             <li>
-               <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "certificacion";}else{echo "certification";} ?>'><?php if(lang() == 'es'){echo "Certificaciones";}if(lang() == 'en'){echo "Certifications";} ?></a>
+               <a href="<?php bloginfo('url'); ?>/certificacion">Certificaciones</a>
             </li>
           </ul>
         </li>
-        <li class='nav-item'>
-          <a class='nav-link dropdown-toggle' href='#'><?php if(lang() == 'es'){echo "contáctenos";}if(lang() == 'en'){echo "
-Contact Us";} ?></a>
-          <ul class='dropdown-menu hoverable one-level'>
+        <li class="nav-item">
+          <a class="nav-link dropdown-toggle" href="#">contáctenos</a>
+          <ul class="dropdown-menu hoverable one-level">
             <li>
-              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "punto-de-venta";}else{echo "trading-shops";} ?>'><?php if(lang() == 'es'){echo "Punto de venta";}if(lang() == 'en'){echo "
-Trading shops";} ?></a>
+              <a href="<?php bloginfo('url'); ?>/servicios-al-cliente">Servicio al cliente</a>
             </li>
             <li>
-              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "servicios-al-cliente";}else{echo "customer-service";} ?>'><?php if(lang() == 'es'){echo "Servicio al cliente";}if(lang() == 'en'){echo "
-Customer service";} ?></a>
+              <a href="<?php bloginfo('url'); ?>/punto-de-venta">Puntos de venta</a>
             </li>
             <li>
-              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "otros-paises";}else{echo "other-countries";} ?>'><?php if(lang() == 'es'){echo "Otros países";}if(lang() == 'en'){echo "Other countries";} ?></a>
+              <a href="<?php bloginfo('url'); ?>/otros-paises">Otros países</a>
             </li>
             <li>
-              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "trabaje-para-nosotros";}else{echo "work-with-us";} ?>'><?php if(lang() == 'es'){echo "Trabaje para nosotros";}if(lang() == 'en'){echo "Work with us";} ?></a>
+              <a href="<?php bloginfo('url'); ?>/trabaje-para-nosotros">Trabaje para nosotros</a>
             </li>
           </ul>
         </li>
       
       
-      <li class='nav-item'>
+      <li class="nav-item">
       
-          <a class='nav-link dropdown-toggle' href='#'><?php if(lang() == 'es'){echo "Redes Sociales";}if(lang() == 'en'){echo "Social Media";} ?></a>
-          <ul class='dropdown-menu hoverable one-level'>
+          <a class="nav-link dropdown-toggle" href="#">Redes Sociales</a>
+          <ul class="dropdown-menu hoverable one-level">
             <li>
-              <a target="_blank" href='<?php echo get_theme_mod('contactanos-social-facebook'); ?>'>
+              <a target="_blank" href="https://www.facebook.com/Tecnas/">
           
         <i class="fa fa-facebook"></i>
           Facebook
         </a>
             </li>
+        
+        <li>
+              <a target="_blank" href="https://instagram.com/tecnas.sa?igshid=1nngn1ie1k5rx">
+        <i class="fa fa-instagram"></i>
+          Instagram
+        </a>
+            </li>
       
         <li>
-              <a target="_blank" href='<?php echo get_theme_mod('contactanos-social-youtube'); ?>'>
+              <a target="_blank" href="https://www.youtube.com/channel/UCqRC7Tl8zOd-TDhmWETO2wA">
         <i class="fa fa-youtube-play"></i>
           YouTube
         </a>
@@ -529,468 +1717,1864 @@ Customer service";} ?></a>
         </li>
       
       
-      <li class='nav-item'>
+      <li class="nav-item">
     
         </li>
       </ul>
     </div>
   </nav>  
+<?php else:?>
 
-	
-	  <nav class='navbar navbar-expand-lg navbar-bottom navbar-sticky'>
-    <button aria-controls='navbar' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#navbar' data-toggle='collapse' type='button'>
-      <i class='fa fa-bars'></i>
+
+<nav class="navbar navbar-expand-lg navbar-bottom navbar-bottom__opacity1">
+    <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
+      <i class="fa fa-bars"></i>
     </button>
-    <div class='collapse navbar-collapse' id='navbar'>
-      <ul class='navbar-nav margin-auto'>
-        <li class='nav-item'>
-          <a class='nav-link' href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "destacado";}else{echo "news";} ?>'><?php if(lang() == 'es'){echo "Destacados";}if(lang() == 'en'){echo "News";} ?></a>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav margin-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="<?php bloginfo('url');?>/news">News</a>
         </li>
 
 
 
-         <li class='nav-item'>
-          <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='/'><?php if(lang() == 'es'){echo "Portafolio";}if(lang() == 'en'){echo "Portfolio";} ?></a>
-          <ul class='dropdown-menu multi-level'>
-            <li class='multi-level-nav-item'>
-              <a aria-controls='categoriesCollapse' aria-expanded='false' data-toggle='collapse' href='#categoriesCollapse' role='button'><?php if(lang() == 'es'){echo "Categorías";}if(lang() == 'en'){echo "Category ";} ?></a>
+         <li class="nav-item dropdown-toggle dropdown-toggle-no" >
+          <a class="nav-link active dropdown-toggle-a " data-toggle="dropdown" href="">Portfolio</a>
+          <ul class="dropdown-menu-1 multi-level" >
+            <li class="multi-level-nav-item">
+              <a aria-controls="categoriesCollapse" aria-expanded="true" data-toggle="collapse" href="#categoriesCollapse" role="button" class="">Category </a>
             </li>
-            <div class='collapse' id='categoriesCollapse'>
-              <ul class='collapse-list'>
-                <?php $wcatTerms = get_terms('categoria-de-productos', array('hide_empty' => 0,'orderby' => 'id', 'exclude' => '552,550,661,665', 'parent' =>0)); 
-                   foreach($wcatTerms as $wcatTerm) : ?>
-          <?php
-            $wsubargs = array(
-                           'hierarchical' => 1,
-                           'show_option_none' => '',
-                           'hide_empty' => 0,
-                           'parent' => $wcatTerm->term_id,
-                           'taxonomy' => 'categoria-de-productos',
-              'orderby' => 'id',
-                        );
-                        $wsubcats = get_categories($wsubargs)
-          ?>
-                <li class='collapse-nav-item'>
-<?php if (empty($wsubcats)) {?>
-          
-             <div class='dropdown-menu level-1'>
-      <?php $args =  array(
-                'post_type' => 'producto',
-                'post_status' => 'publish',
-                'posts_per_page' => 99999,
-                'tax_query' => array(
-                  'relation'=>'AND', // 'AND' 'OR' ...
-                  array(
-                    'taxonomy' => 'categoria-de-productos',
-                    'field'           => 'slug',
-                    'terms'           => array($wcatTerm->slug),
-                    'operator'        => 'IN',
-                    'orderby' => 'id',
-                  )),
-              ); ?>
-               <?php $loop = new WP_Query( $args ); ?>
-               <div class='level-2'>
-                 <ul>
-                 <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                   <li>
-                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>  
-                   </li>
-                 <?php  endwhile; ?>
-                 </ul>
-               </div>
-          </div>
-              <?php } ?> 
+            <div class="collapse" id="categoriesCollapse" style="">
+              <ul class="collapse-list">
+                <li class="collapse-nav-item active-bg " style="background-color: white;">
+ 
         
-          <a data-toggle="dropdown" href="<?php echo get_term_link(  $wcatTerm->slug,  $wcatTerm->taxonomy );?>"><?php echo $wcatTerm->name; ?></a>
-  
-  <!--   <a data-toggle="<?php echo !empty($wsubcats) ? 'dropdown' : null ?>" href="<?php echo get_term_link(  $wcatTerm->slug,  $wcatTerm->taxonomy );?>"><?php echo $wcatTerm->name; ?></a> -->
-                  
+                  <a data-toggle="dropdown" style="text-transform: uppercase;" class="new-class" href="<?php bloginfo('url');?>/categoria-de-productos/meat/" aria-expanded="true">Meat</a>
+            
                     <!-- subcategia -->
-                    <div class='dropdown-menu level-1'>
-                       <?php
-                        /*$wsubargs = array(
-                           'hierarchical' => 1,
-                           'show_option_none' => '',
-                           'hide_empty' => 0,
-                           'parent' => $wcatTerm->term_id,
-                           'taxonomy' => 'categoria-de-productos',
-                        );
-                        $wsubcats = get_categories($wsubargs);*/
-              
-                        foreach ($wsubcats as $wsc):
-                        ?>
-              <div class='level-2'>
-              <div class='menu-header'>
-                <a class="" href="<?php echo get_term_link( $wsc->slug, $wsc->taxonomy );?>"><?php echo  $wsc->name;?></a> 
-              </div>
+                    <div class="dropdown-menu level-1 ">
+                      <div class="level-2">
+                      <div class="menu-header">
+                        <a class="">natural meat flavoring</a> 
+                      </div>
                 
-            <?php
-                
-                        $wsubargsh = array(
-                           'hierarchical' => 1,
-                           'show_option_none' => '',
-                           'hide_empty' => 0,
-                           'parent' => $wsc->term_id,
-                           'taxonomy' => 'categoria-de-productos',
-              'orderby' => 'id',
-                        );
-                        $wsubcatsh = get_categories($wsubargsh);
-                        foreach ($wsubcatsh as $wsch):
-                
-                        ?>
-                
-                <ul>
-                   <li>
-                    <a class="" href="<?php echo get_term_link( $wsch->slug, $wsch->taxonomy );?>"><?php echo $wsch->name;?></a> 
-                   </li>
-                </ul>
-                 <?php
-            endforeach; ?> 
-                  <?php  $args =  array(
-                'post_type' => 'producto',
-                'post_status' => 'publish',
-                'posts_per_page' => 99999,
-                'tax_query' => array(
-                  'relation'=>'AND', // 'AND' 'OR' ...
-                  array(
-                    'taxonomy' => 'categoria-de-productos',
-                    'field'           => 'slug',
-                    'terms'           => array($wsc->slug),
-                    'operator'        => 'IN',
-                    'orderby' => 'id',
-					  //No imprime los productos hijos de la categoria del tercer nivel
-					'include_children' => false,
+             
                     
-                    
-                  ),
-           
-                ),
-  
-              ); ?>  
                               
-              <?php $loop = new WP_Query( $args ); ?>
-               <?php while ( $loop->have_posts() ) : $loop->the_post(); 
-              
-                ?>
-                 <ul>
+                        <ul>
+                          <li>                    
+                            <a href="<?php bloginfo('url');?>/producto/seasonings-for-making-sausages/">Seasonings for making sausages</a>
+                          </li>
+                        </ul>  
+                        
+                        <ul>
+                          <li>                                  
+                            <a href="<?php bloginfo('url');?>/producto/adobos-seasonings-and-marinades/">Adobos, seasonings and marinades</a>
+                          </li>
+                          </ul>  
+                        <ul>
                   
                   <li>
                   
-                    <a href='<?php the_permalink(); ?>'><?php the_title(); ?></a>
+                    <a href="<?php bloginfo('url');?>/producto/flavors-and-smells-for-food/">Flavors and smells for food</a>
                    </li>
                   </ul>  
-               <?php  endwhile; ?>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/flavors-natural-aromas-top-note/">Flavors/natural aromas top note</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/smoke-natural-grill-flavors-2/">Smoke, natural grill flavors</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/natural-flavor-enhancers-2/">Natural flavor enhancers</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/spices-and-spice-extracts-2/">Spices and spice extracts</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/flavors-plus-2/">Flavors PLUS</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/natural-flavors-natplus-2/">Natural flavors NATPLUS</a>
+                   </li>
+                  </ul>  
+                 
                </div>  
           
-                        <?php
-            endforeach; ?> 
-           
-            <!-- end subcategoria -->
-              <?php endforeach; ?>  
-         
-                 </li>
-              </ul>
-           </div>      
-        <li class='collapse-nav-item multi-level-nav-item'>
-                      <a style="text-transform: uppercase;"  data-toggle='dropdown' href='#'><?php if(lang() == 'es'){echo "Productos";}if(lang() == 'en'){echo "Products";} ?></a>
-                 <div class='dropdown-menu level-1'>
-					
-               <div class='level-2'>
-                 <ul>
-                         
-       
-					  <?php if( lang() == 'es'){ ?>
-      <?php
-                  $wsubargs = array(
-                           'hierarchical' => 1,
-                           'show_option_none' => '',
-                           'hide_empty' => 0,
-                           'parent' => '661',
-							'orderby' => 'id',
-                           'taxonomy' => 'categoria-de-productos',
-                        );
-												?>
-			<?php } ?>
-					  <?php if( lang() == 'en'){ ?>
-      <?php
-                  $wsubargs = array(
-                           'hierarchical' => 1,
-                           'show_option_none' => '',
-                           'hide_empty' => 0,
-                           'parent' => '665',
-							'orderby' => 'id',
-                           'taxonomy' => 'categoria-de-productos',
-                        );
-												?>
-			<?php } ?>
-					 <?php
-          
-                        $wsubcats = get_categories($wsubargs);
-					 $i=1;
-                        foreach ($wsubcats as $wsc):
-					
-                        ?>
-				
-
-
-					<ul>
-						<li>
-							<?php switch($i): 
-							case 1: ?>
-						  <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 2: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 3: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 4: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 5: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 6: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 7: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 8: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php endswitch; ?>
-						</li>
-						 
-					 </ul>
-                     <?php   
-                                            $i++;
-                                              endforeach; 
-                                              ?>
-				
-                 </ul>
-               </div>
-					   <div class='level-2'>
-                 <ul>
-							  <?php if( lang() == 'es'){ ?>
-      <?php
-                  $wsubargs = array(
-                           'hierarchical' => 1,
-                           'show_option_none' => '',
-                           'hide_empty' => 0,
-                           'parent' => '661',
-							'orderby' => 'id',
-                           'taxonomy' => 'categoria-de-productos',
-                        );
-												?>
-			<?php } ?>
-					  <?php if( lang() == 'en'){ ?>
-      <?php
-                  $wsubargs = array(
-                           'hierarchical' => 1,
-                           'show_option_none' => '',
-                           'hide_empty' => 0,
-                           'parent' => '665',
-							'orderby' => 'id',
-                           'taxonomy' => 'categoria-de-productos',
-                        );
-												?>
-			<?php } ?>
-					 <?php
-                        $wsubcats = get_categories($wsubargs);
-					 $i=1;
-                        foreach ($wsubcats as $wsc):
-                        ?>
-					<ul>
-						<li>
-							<?php switch($i): 
-							case 9: ?>
-						  <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 10: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 11: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 12: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 13: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 14: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 15: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 16: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 17: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 18: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 19: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php case 20: ?>
-							 <a  style="color: #162d50 !important;" href="<?php echo get_term_link(  $wsc->slug,  $wsc->taxonomy );?>"><?php echo $wsc->name; ?></a>  
-							<?php break; ?>
-							<?php endswitch; ?>
-						</li>
-						 
-					 </ul>
-                     <?php   
-                                            $i++;
-                                              endforeach; 
-                                              ?>
-					 	             
-                  <?php  $args =  array(
-                'post_type' => 'producto',
-                'post_status' => 'publish',
-                'posts_per_page' => 99999,
-                'tax_query' => array(
-                  'relation'=>'AND', // 'AND' 'OR' ...
-                  array(
-                    'taxonomy' => 'categoria-de-productos',
-                    'field'           => 'slug',
-                    'terms'           => 'productos',
-                    'operator'        => 'IN',
-                    'orderby' => 'id',
-					  //No imprime los productos hijos de la categoria del segundo nivel
-					'include_children' => false,
-                    
-                    
-                  ),
-           
-                ),
-  
-              ); ?>  
-                              
-              <?php $loop = new WP_Query( $args ); ?>
-               <?php while ( $loop->have_posts() ) : $loop->the_post(); 
-              
-                ?>
-                 <ul>
+                                      <div class="level-2">
+              <div class="menu-header">
+                <a class="">Health &amp; Wellness</a> 
+              </div>
+                
+                            
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/natural-coloring-and-food-coloring/">Natural coloring and food coloring</a> 
+                   </li>
+                </ul>
+                                 
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/plant-based-en/">Plant-Based</a> 
+                   </li>
+                </ul>
+                   <ul>
                   
                   <li>
                   
-                    <a style="color: #162d50 !important;" href='<?php the_permalink(); ?>'><?php the_title(); ?></a>
+                    <a href="<?php bloginfo('url');?>/producto/animal-originated-proteins-2/">Animal originated proteins</a>
                    </li>
                   </ul>  
-               <?php  endwhile; ?>     
-					  </ul>
-               </div>
-					 
-          </div>
-            
-        </li>
-           
-<li class='collapse-nav-item multi-level-nav-item'>
-                     <a style="text-transform: uppercase;" data-toggle='dropdown' href='#'><?php if(lang() == 'es'){echo "Productos para limpieza, desinfección e inocuidad";}if(lang() == 'en'){echo "
-Products for cleaning, disinfection and safety";} ?></a>
-                 <div class='dropdown-menu level-1'>
-<?php $loop = new WP_Query( 'post_type=producto&categoria-de-productos=productos-para-limpieza-desinfeccion-e-inocuidad&posts_per_page=-1' ); ?>
-               <div class='level-2'>
-                 <ul>  
-                  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                   <li>
-                     <a  style="color: #162d50 !important;" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>  
+                   <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/brines-to-marinate-without-additional-allergens/">Brines to marinate without additional allergens</a>
                    </li>
-                 <?php  endwhile; ?>
-                 </ul>
-               </div>
-          </div>
-            
-        </li>
-          </ul>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "cliente";}else{echo "customers";} ?>'><?php if(lang() == 'es'){echo "Representaciones";}if(lang() == 'en'){echo "
-Our Allies";} ?></a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link dropdown-toggle' href='#'><?php if(lang() == 'es'){echo "Quiénes somos";}if(lang() == 'en'){echo "
-About us";} ?></a>
-          <ul class='dropdown-menu hoverable one-level'>
-            <li>
-              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "nuestra-empresa";}else{echo "about";} ?>'><?php if(lang() == 'es'){echo "Nuestra empresa";}if(lang() == 'en'){echo "
+                  </ul>    
+                    <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/natural-antioxidant-ultranox/">Natural antioxidant Ultranox®</a>
+                   </li>
+                  </ul>  
+                   <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/natural-meat-flavor/">Natural meat flavor</a> 
+                   </li>
+                </ul>
 
-Our company";} ?></a>
-            </li>
-            <li>
-              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "servicio";}else{echo "service";} ?>'><?php if(lang() == 'es'){echo "Servicios";}if(lang() == 'en'){echo "Services";} ?></a>
-            </li>
-            <li>
-               <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "certificacion";}else{echo "certification";} ?>'><?php if(lang() == 'es'){echo "Certificaciones";}if(lang() == 'en'){echo "Certifications";} ?></a>
-            </li>
-          </ul>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link dropdown-toggle' href='#'><?php if(lang() == 'es'){echo "contáctenos";}if(lang() == 'en'){echo "
-Contact Us";} ?></a>
-          <ul class='dropdown-menu hoverable one-level'>
-            <li>
-              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "punto-de-venta";}else{echo "trading-shops";} ?>'><?php if(lang() == 'es'){echo "Punto de venta";}if(lang() == 'en'){echo "
-Trading shops";} ?></a>
-            </li>
-            <li>
-              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "servicios-al-cliente";}else{echo "customer-service";} ?>'><?php if(lang() == 'es'){echo "Servicio al cliente";}if(lang() == 'en'){echo "
-Customer service";} ?></a>
-            </li>
-            <li>
-              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "otros-paises";}else{echo "other-countries";} ?>'><?php if(lang() == 'es'){echo "Otros países";}if(lang() == 'en'){echo "Other countries";} ?></a>
-            </li>
-            <li>
-              <a href='<?php echo get_home_url() ?>/<?php if(lang() == 'es'){echo "trabaje-para-nosotros";}else{echo "work-with-us";} ?>'><?php if(lang() == 'es'){echo "Trabaje para nosotros";}if(lang() == 'en'){echo "Work with us";} ?></a>
-            </li>
-          </ul>
-        </li>
-      
-      
-      <li class='nav-item'>
-      
-          <a class='nav-link dropdown-toggle' href='#'><?php if(lang() == 'es'){echo "Redes Sociales";}if(lang() == 'en'){echo "Social Media";} ?></a>
-          <ul class='dropdown-menu hoverable one-level'>
-            <li>
-              <a target="_blank" href='<?php echo get_theme_mod('contactanos-social-facebook'); ?>'>
+                        
+               
+                           <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/alternatives-to-bread-without-added-gluten/">Alternatives to bread without added gluten</a>
+                   </li>
+                  </ul>              
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/protein/">Protein</a> 
+                   </li>
+                </ul>
+                          <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/fibers-2/">Fibers</a>
+                   </li>
+                  </ul> 
+                    
+                              
+                                
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/natural-antimicrobials-and-preservatives/">Natural antimicrobials and preservatives</a>
+                   </li>
+                  </ul>  
+                      
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/reduced-sodium-options/">Reduced sodium options</a>
+                   </li>
+                  </ul>  
+                    
+                      
+                         
+                 
+               </div>  
           
-        <i class="fa fa-facebook"></i>
-          Facebook
-        </a>
-            </li>
-      
-        <li>
-              <a target="_blank" href='<?php echo get_theme_mod('contactanos-social-youtube'); ?>'>
-        <i class="fa fa-youtube-play"></i>
-          YouTube
-        </a>
-            </li>
-            
-          </ul>
-        </li>
-      
-      
-      <li class='nav-item'>
-    
-        </li>
-      </ul>
-    </div>
-  </nav>  
-   
+                                      <div class="level-2">
+              <div class="menu-header">
+                <a class="">functionality</a> 
+              </div>
+                
+                            
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/salmueras-para-carnes-en/">Pickles for meat</a> 
+                   </li>
+                </ul>
+                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/texture-systems-for-meat/">Texture systems for meat</a>
+                   </li>
+                  </ul>  
+                           <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/brewing-systems/">Brewing systems</a> 
+                   </li>
+                </ul>
+                               
+                   <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/protein/">Protein</a> 
+                   </li>
+                </ul>
+                  <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/plant-based-en/">Plant-Based</a> 
+                   </li>
+                </ul>
+              <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/animal-originated-proteins-2/">Animal originated proteins</a>
+                   </li>
+                  </ul> 
+                             <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/fibers-2/">Fibers</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/natural-antimicrobials-and-preservatives/">Natural antimicrobials and preservatives</a>
+                   </li>
+                     </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/antioxidants/">Antioxidants</a>
+                   </li>
+                  </ul>  
+                   <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/phosphates/">Phosphates</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/starches/">Starches</a>
+                   </li>
+                  </ul>  
+                               <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/carrageenan/">Carrageenan</a>
+                   </li>
+                  </ul>  
+                 
+               </div>  
+          
+                         
+           
+            <!-- end subcategoria -->
+                                        </div></li><li class="collapse-nav-item">
  
+        
+          <a data-toggle="dropdown" style="text-transform: uppercase;" class="new-class" href="<?php bloginfo('url');?>/categoria-de-productos/dairy-products/">Dairy products</a>
+  
+  <!--   <a data-toggle="dropdown" href="<?php bloginfo('url');?>/categoria-de-productos/dairy-products/">Dairy products</a> -->
+                  
+                    <!-- subcategia -->
+                    <div class="dropdown-menu level-1">
+                                     <div class="level-2">
+              <div class="menu-header">
+                <a class="">Flavoring</a> 
+              </div>
+                
+             
+                    
+                              
+                                              <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/flavors-and-smells-for-food/">Flavors and smells for food</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/flavors-natural-aromas-top-note/">Flavors/natural aromas top note</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/food-seasonings/">Food seasonings</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/sweet-sauces-with-and-without-added-sugar/">Sweet sauces with and without added sugar</a>
+                   </li>
+                  </ul>  
+                 
+               </div>  
+          
+                                      <div class="level-2">
+              <div class="menu-header">
+                <a class="">Health &amp; Wellness</a> 
+              </div>
+                
+                            
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/plant-based-en-dairy-products/">Plant-Based</a> 
+                   </li>
+                </ul>
+                                 
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/natural-coloring-and-food-coloring/">Natural coloring and food coloring</a> 
+                   </li>
+                </ul>
+                  <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/healthy-soft-serve-ice-creams/">Healthy soft serve ice creams</a>
+                   </li>
+                  </ul> 
+                      <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/soy-protein/">Soy protein</a>
+                   </li>
+                  </ul>  
+                    
+
+                                       <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/natural-antioxidant-ultranox/">Natural antioxidant Ultranox®</a>
+                   </li>
+                  </ul>        
+                     <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/flavors-natural-aromas-top-note/">Flavors/natural aromas top note</a>
+                   </li>
+                  </ul>  
+                                  <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/vegetable-bases-for-drinks/">Vegetable bases for drinks</a>
+                   </li>
+                  </ul> 
+                          <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/bases-for-cheese-analogues/">Bases for cheese analogues</a>
+                   </li>
+                  </ul> 
+                                                  <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/sweet-sauces-with-and-without-added-sugar/">Sweet sauces with and without added sugar</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/sugar-substitutes/">Sugar substitutes</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/fibers-2/">Fibers</a>
+                   </li>
+                  </ul>  
+                  
+                      
+               
+                 
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/reduced-sodium-options/">Reduced sodium options</a>
+                   </li>
+                  </ul>  
+
+                  
+                 
+                      <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/antioxidant-nativanox/">Antioxidant from fruits Nativanox®</a>
+                   </li>
+                  </ul>
+                 
+               </div>  
+          
+                                      <div class="level-2">
+              <div class="menu-header">
+                <a class="">Functionality</a> 
+              </div>
+                
+                                 <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/healthy-soft-serve-ice-creams/">Healthy soft serve ice creams</a>
+                   </li>
+                  </ul>   
+                               <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/ingredients-for-cheeses/">Ingredients for cheeses</a>
+                   </li>
+                  </ul>       
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/plant-based-en-dairy-products/">Plant-Based</a> 
+                   </li>
+                </ul>
+                          <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/vegetable-bases-for-drinks/">Vegetable bases for drinks</a>
+                   </li>
+                  </ul>  
+
+                       <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/dairy-stabilizers/">Dairy stabilizers</a>
+                   </li>
+                  </ul>  
+                              <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/stabilizers-for-drinks/">Stabilizers for drinks</a>
+                   </li>
+                  </ul> 
+                              <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/soy-protein/">Soy protein</a>
+                   </li>
+                  </ul>
+
+                     
+                      
+                    
+                    
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/antioxidants/">Antioxidants</a>
+                   </li>
+                  </ul> 
+                              <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/fibers-2/">Fibers</a>
+                   </li>
+                  </ul>   
+                                 <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/carrageenan/">Carrageenan</a>
+                   </li>
+                  </ul> 
+                      
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/phosphates/">Phosphates</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/starches/">Starches</a>
+                   </li>
+                  </ul>  
+                  
+                    
+                 
+               </div>  
+          
+                         
+           
+            <!-- end subcategoria -->
+                                        </div></li><li class="collapse-nav-item">
+ 
+        
+          <a data-toggle="dropdown" style="text-transform: uppercase;" class="new-class" href="<?php bloginfo('url');?>/categoria-de-productos/bakery-pastry-and-arepas-2/">Bakery pastry and arepas</a>
+  
+  <!--   <a data-toggle="dropdown" href="<?php bloginfo('url');?>/categoria-de-productos/bakery-pastry-and-arepas-2/">Bakery pastry and arepas</a> -->
+                  
+                    <!-- subcategia -->
+                    <div class="dropdown-menu level-1">
+                                     <div class="level-2">
+              <div class="menu-header">
+                <a class="">Flavoring</a> 
+              </div>
+                            <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/sweet-sauces-with-and-without-added-sugar/">Sweet sauces with and without added sugar</a>
+                   </li>
+                  </ul> 
+                
+             
+                    
+                              
+                                              <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/flavors-and-smells-for-food/">Flavors and smells for food</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/flavors-natural-aromas-top-note/">Flavors/natural aromas top note</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/food-seasonings/">Food seasonings</a>
+                   </li>
+                  </ul>  
+                   
+                 
+               </div>  
+          
+                                      <div class="level-2">
+              <div class="menu-header">
+                <a class="">Health &amp; Wellness</a> 
+              </div>
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/concentrates-for-traditional-and-special-breads/">Concentrates for traditional and special breads</a>
+                   </li>
+                  </ul> 
+                                     <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/technical-solutions-at-the-bakery/">Technical solutions at the bakery</a>
+                   </li>
+                  </ul>
+
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/natural-coloring-and-food-coloring/">Natural coloring and food coloring</a> 
+                   </li>
+                </ul>
+                                 
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/plant-based-en-bakery-pastry-and-arepas-2/">Plant-Based</a> 
+                   </li>
+                </ul>
+                              <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/soy-protein/">Soy protein</a>
+                   </li>
+                  </ul> 
+                  
+                    
+                              
+                                              <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/flavors-natural-aromas-top-note/">Flavors/natural aromas top note</a>
+                   </li>
+                  </ul>  
+                            <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/natural-antioxidant-ultranox/">Natural antioxidant Ultranox®</a>
+                   </li>
+                  </ul> 
+
+                  <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/fibers-2/">Fibers</a>
+                   </li>
+                  </ul>
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/sugar-substitutes/">Sugar substitutes</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/natural-antimicrobials-and-preservatives/">Natural antimicrobials and preservatives</a>
+                   </li>
+                  </ul>  
+                              <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/sweet-sauces-with-and-without-added-sugar/">Sweet sauces with and without added sugar</a>
+                   </li>
+                  </ul>
+                            <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/reduced-sodium-options/">Reduced sodium options</a>
+                   </li>
+                  </ul> 
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/premixes-for-pastry-shops-without-added-sugar/">Premixes for pastry shops without added sugar</a>
+                   </li>
+                  </ul> 
+
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/premixes-for-bread-and-cheese-products/">Premixes for bread and cheese products</a>
+                   </li>
+                  </ul>  
+                  
+               </div>  
+          
+                                      <div class="level-2">
+              <div class="menu-header">
+                <a class="">Functionality</a> 
+              </div>
+                
+                                          <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/improvers-for-bakeries-and-pastry-shops/">Improvers for bakeries and pastry shops</a>
+                   </li>
+                  </ul> 
+                   <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/premixes-for-bread-and-cheese-products/">Premixes for bread and cheese products</a>
+                   </li>
+                  </ul> 
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/concentrates-for-traditional-and-special-breads/">Concentrates for traditional and special breads</a>
+                   </li>
+                  </ul> 
+
+                  <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/premixes-for-pastry-shops-without-added-sugar/">Premixes for pastry shops without added sugar</a>
+                   </li>
+                  </ul> 
+                                   <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/soy-protein/">Soy protein</a>
+                   </li>
+                  </ul> 
+                            
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/plant-based-en-bakery-pastry-and-arepas-2/">Plant-Based</a> 
+                   </li>
+                </ul>
+
+                  <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/fibers-2/">Fibers</a>
+                   </li>
+                  </ul>
+          
+                    <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/natural-antimicrobials-and-preservatives/">Natural antimicrobials and preservatives</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/antioxidants/">Antioxidants</a>
+                   </li>
+                  </ul>  
+                 
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/starches/">Starches</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/carrageenan/">Carrageenan</a>
+                   </li>
+                  </ul>  
+                 
+               </div>  
+          
+                         
+           
+            <!-- end subcategoria -->
+                                        </div></li><li class="collapse-nav-item">
+ 
+        
+          <a data-toggle="dropdown" style="text-transform: uppercase;" class="new-class" href="<?php bloginfo('url');?>/categoria-de-productos/drinks-and-vending/">Drinks and Vending</a>
+  
+  <!--   <a data-toggle="dropdown" href="<?php bloginfo('url');?>/categoria-de-productos/drinks-and-vending/">Drinks and Vending</a> -->
+                  
+                    <!-- subcategia -->
+                    <div class="dropdown-menu level-1">
+                                     <div class="level-2">
+              <div class="menu-header">
+                <a class="">Flavoring</a> 
+              </div>
+                
+             
+                    
+                              
+                                              <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/flavors-and-smells-for-food/">Flavors and smells for food</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/flavors-natural-aromas-top-note/">Flavors/natural aromas top note</a>
+                   </li>
+                  </ul>  
+                 
+               </div>  
+          
+                                      <div class="level-2">
+              <div class="menu-header">
+                <a class="">Health &amp; Wellness</a> 
+              </div>
+                
+                            
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/natural-coloring-and-food-coloring/">Natural coloring and food coloring</a> 
+                   </li>
+                </ul>
+                    <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/antioxidant-nativanox/">Antioxidant from fruits Nativanox®</a>
+                   </li>
+                  </ul> 
+                               <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/vending-bases/">Vending bases</a>
+                   </li>
+                  </ul>  
+                                  <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/vegetable-bases-for-drinks/">Vegetable bases for drinks</a>
+                   </li>
+                  </ul>  
+                                 
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/plant-based-en-drinks-and-vending/">Plant-Based</a> 
+                   </li>
+                </ul>
+                                   <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/bases-for-nutritious-and-refreshing-drinks/">Bases for nutritious and refreshing drinks</a>
+                   </li>
+                  </ul> 
+                             <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/soy-protein/">Soy protein</a>
+                   </li>
+                  </ul>  
+                    
+                              
+                                              <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/flavors-natural-aromas-top-note/">Flavors/natural aromas top note</a>
+                   </li>
+                  </ul>  
+                    
+                
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/sugar-substitutes/">Sugar substitutes</a>
+                   </li>
+                  </ul>  
+                
+                       
+                     
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/fibers-2/">Fibers</a>
+                   </li>
+                  </ul>  
+                 
+               </div>  
+          
+                                      <div class="level-2">
+              <div class="menu-header">
+                <a class="">Functionality</a> 
+              </div>
+                         <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/vending-bases/">Vending bases</a>
+                   </li>
+                  </ul>  
+                             <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/vegetable-bases-for-drinks/">Vegetable bases for drinks</a>
+                   </li>
+                  </ul> 
+                            
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/plant-based-en-drinks-and-vending/">Plant-Based</a> 
+                   </li>
+                </ul>
+                  
+                    
+                              
+                                              <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/stabilizers-for-drinks/">Stabilizers for drinks</a>
+                   </li>
+                  </ul>  
+                       
+                      
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/soy-protein/">Soy protein</a>
+                   </li>
+                  </ul>
+                            <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/fibers-2/">Fibers</a>
+                   </li>
+                  </ul>   
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/carrageenan/">Carrageenan</a>
+                   </li>
+                  </ul>
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/starches/">Starches</a>
+                   </li>
+                  </ul>  
+                    
+                      
+                 
+               </div>  
+          
+                         
+           
+            <!-- end subcategoria -->
+                                        </div></li><li class="collapse-nav-item">
+ 
+        
+          <a data-toggle="dropdown" style="text-transform: uppercase;" class="new-class" href="<?php bloginfo('url');?>/categoria-de-productos/cookies-and-snacks/">Cookies and Snacks</a>
+  
+  <!--   <a data-toggle="dropdown" href="<?php bloginfo('url');?>/categoria-de-productos/cookies-and-snacks/">Cookies and Snacks</a> -->
+                  
+                    <!-- subcategia -->
+                    <div class="dropdown-menu level-1">
+                                     <div class="level-2">
+              <div class="menu-header">
+                <a class="">Flavoring</a> 
+              </div>
+                
+             
+                    
+                              
+                                              <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/flavors-and-smells-for-food/">Flavors and smells for food</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/flavors-natural-aromas-top-note/">Flavors/natural aromas top note</a>
+                   </li>
+                  </ul>  
+                               <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/reduced-sodium-options/">Reduced sodium options</a>
+                   </li>
+                  </ul> 
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/food-seasonings/">Food seasonings</a>
+                   </li>
+                  </ul>  
+                    
+                 
+               </div>  
+          
+                                      <div class="level-2">
+              <div class="menu-header">
+                <a class="">Health &amp; Wellness</a> 
+              </div>
+                
+                            
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/natural-coloring-and-food-coloring/">Natural coloring and food coloring</a> 
+                   </li>
+                </ul>
+                                 
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/plant-based-en-cookies-and-snacks/">Plant-Based</a> 
+                   </li>
+                </ul>
+                                    <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/soy-protein/">Soy protein</a>
+                   </li>
+                  </ul>  
+                            <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/natural-antioxidant-ultranox/">Natural antioxidant Ultranox®</a>
+                   </li>
+                  </ul>  
+                                 <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/fibers-2/">Fibers</a>
+                   </li>
+                  </ul> 
+                  
+                    
+                              
+                                              <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/flavors-natural-aromas-top-note/">Flavors/natural aromas top note</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/natural-antimicrobials-and-preservatives/">Natural antimicrobials and preservatives</a>
+                   </li>
+                  </ul>
+
+                               <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/antioxidant-nativanox/">Antioxidant from fruits Nativanox®</a>
+                   </li>
+                  </ul> 
+                               <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/technical-solutions-at-the-bakery/">Technical solutions at the bakery</a>
+                   </li>
+                  </ul> 
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/sugar-substitutes/">Sugar substitutes</a>
+                   </li>
+                  </ul>  
+                    
+                    
+                    
+                      
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/reduced-sodium-options/">Reduced sodium options</a>
+                   </li>
+                  </ul>  
+            
+                  
+                 
+               </div>  
+          
+                                      <div class="level-2">
+              <div class="menu-header">
+                <a class="">Functionality</a> 
+              </div>
+                
+                            
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/plant-based-en-cookies-and-snacks/">Plant-Based</a> 
+                   </li>
+                </ul>
+                  
+                    
+                              
+                                              <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/improvers-for-bakeries-and-pastry-shops/">Improvers for bakeries and pastry shops</a>
+                   </li>
+                  </ul>  
+                                   <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/fibers-2/">Fibers</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/natural-antimicrobials-and-preservatives/">Natural antimicrobials and preservatives</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/antioxidants/">Antioxidants</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/soy-protein/">Soy protein</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/starches/">Starches</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/carrageenan/">Carrageenan</a>
+                   </li>
+                  </ul>  
+               
+                 
+               </div>  
+          
+                         
+           
+            <!-- end subcategoria -->
+                                        </div></li><li class="collapse-nav-item">
+ 
+        
+          <a data-toggle="dropdown" style="text-transform: uppercase;" class="new-class" href="<?php bloginfo('url');?>/categoria-de-productos/horeca-en/">Horeca</a>
+  
+  <!--   <a data-toggle="dropdown" href="<?php bloginfo('url');?>/categoria-de-productos/horeca-en/">Horeca</a> -->
+                  
+                    <!-- subcategia -->
+                    <div class="dropdown-menu level-1">
+                                     <div class="level-2">
+              <div class="menu-header">
+                <a class="">Flavoring</a> 
+              </div>
+                
+                            
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/sauces-and-dressing/">Sauces and Dressing</a> 
+                   </li>
+                </ul>
+                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/bases-for-rices-broths-soups-and-creams/">Bases for rices, broths, soups, and creams</a>
+                   </li>
+                  </ul> 
+                  <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/food-seasonings/">Food seasonings</a>
+                   </li>
+                  </ul> 
+
+                   <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/seasonings-for-making-sausages/">Seasonings for making sausages</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/adobos-seasonings-and-marinades/">Adobos, seasonings and marinades</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/smoke-natural-grill-flavors-2/">Smoke, natural grill flavors</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/natural-flavor-enhancers-2/">Natural flavor enhancers</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/spices-and-spice-extracts-2/">Spices and spice extracts</a>
+                   </li>
+                  </ul>  
+                 
+                    
+                 
+               </div>  
+          
+                                      <div class="level-2">
+              <div class="menu-header">
+                <a class="">Health &amp; Wellness</a> 
+              </div>
+                             <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/alternatives-to-bread-without-added-gluten/">Alternatives to bread without added gluten</a>
+                   </li>
+                  </ul> 
+                                  <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/bases-for-preparing-meat-substitutes/">Bases for preparing meat substitutes</a>
+                   </li>
+                  </ul> 
+                                            <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/brines-to-marinate-without-additional-allergens/">Brines to marinate without additional allergens</a>
+                   </li>
+                  </ul> 
+                            
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/natural-coloring-and-food-coloring/">Natural coloring and food coloring</a> 
+                   </li>
+                </ul>
+                                 
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/plant-based-en-horeca-en/">Plant-Based</a> 
+                   </li>
+                </ul>
+                               <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/vegetable-bases-for-drinks/">Vegetable bases for drinks</a>
+                   </li>
+                  </ul>  
+                     <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/bases-for-nutritious-and-refreshing-drinks/">Bases for nutritious and refreshing drinks</a>
+                   </li>
+                  </ul>   
+                              <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/sweet-sauces-with-and-without-added-sugar/">Sweet sauces with and without added sugar</a>
+                   </li>
+                  </ul>    
+                
+                                  <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/sugar-substitutes/">Sugar substitutes</a>
+                   </li>
+                  </ul> 
+                                 <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/concentrates-for-traditional-and-special-breads/">Concentrates for traditional and special breads</a>
+                   </li>
+                  </ul> 
+                                  <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/technical-solutions-at-the-bakery/">Technical solutions at the bakery</a>
+                   </li>
+                  </ul> 
+                            <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/natural-antioxidant-ultranox/">Natural antioxidant Ultranox®</a>
+                   </li>
+                  </ul> 
 
 
                       
- 
-                            
-          
-                              
+                      <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/natural-meat-flavor-health-wellness-horeca-en/">Natural meat flavor</a> 
+                   </li>
+                </ul>
 
-                                
+                                  <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/reduced-sodium-options/">Reduced sodium options</a>
+                   </li>
+                  </ul> 
+                  
+                  
+                 
+                   
+                  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/premixes-for-pastry-shops-without-added-sugar/">Premixes for pastry shops without added sugar</a>
+                   </li>
+                  </ul>  
+                 
+                       
+               
                     
+                  
+                   
+                 
+               </div>  
+          
+                                      <div class="level-2">
+              <div class="menu-header">
+                <a class="">Functionality</a> 
+              </div>
+                
+                            
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/panning-system/">Panning system</a> 
+                   </li>
+                </ul>
+                                 
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/plant-based-en-horeca-en/">Plant-Based</a> 
+                   </li>
+                </ul>
+                 <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/bases-for-preparing-meat-substitutes/">Bases for preparing meat substitutes</a>
+                   </li>
+                  </ul> 
+                                 
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/salmueras-para-carnes-en/">Pickles for meat</a> 
+                   </li>
+                </ul>
+                   <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/texture-systems-for-meat/">Texture systems for meat</a>
+                   </li>
+                  </ul>  
+                                 
+                <ul>
+                   <li>
+                    <a class="" href="<?php bloginfo('url');?>/categoria-de-productos/protein/">Protein</a> 
+                   </li>
+                </ul>
+               <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/vegetable-bases-for-drinks/">Vegetable bases for drinks</a>
+                   </li>
+                  </ul> 
+
+                  <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/improvers-for-bakeries-and-pastry-shops/">Improvers for bakeries and pastry shops</a>
+                   </li>
+                  </ul>  
+                  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/premixes-for-bread-and-cheese-products/">Premixes for bread and cheese products</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/concentrates-for-traditional-and-special-breads/">Concentrates for traditional and special breads</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/premixes-for-pastry-shops-without-added-sugar/">Premixes for pastry shops without added sugar</a>
+                   </li>
+                  </ul>  
+                                <ul>
+                  
+                  <li>
+                  
+                    <a href="<?php bloginfo('url');?>/producto/antioxidants/">Antioxidants</a>
+                   </li>
+                  </ul>  
+                    
+                 
+                 
+               </div>  
+          
+                         
+           
+            <!-- end subcategoria -->
+                
+         
+                 </div></li>
+              </ul>
+           </div>      
+        <li class="collapse-nav-item multi-level-nav-item">
+                      <a class="hover-dark" style="text-transform: uppercase;" data-toggle="dropdown" href="#">Products</a>
+                 <div class="dropdown-menu level-1">
+          
+               <div class="level-2">
+                 <ul>
+                         
+       
+                                                      
+
+
+          <ul>
+            <li>
+                            <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/categoria-de-productos/meat-flavors/">Meat flavors</a>  
+                          </li>
+             
+           </ul>
+                            
+
+
+          <ul>
+            <li>
+                             <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/categoria-de-productos/salmueras-para-carnes-en/">Pickles for meat</a>  
+                          </li>
+             
+           </ul>
+                            
+
+
+          <ul>
+            <li>
+                             <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/categoria-de-productos/texture-systems/">Texture systems</a>  
+                          </li>
+             
+           </ul>
+                            
+
+
+          <ul>
+            <li>
+                             <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/categoria-de-productos/brewing-systems-products/">Brewing systems</a>  
+                          </li>
+             
+           </ul>
+                            
+
+
+          <ul>
+            <li>
+                             <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/categoria-de-productos/plant-based-en-products/">Plant-Based</a>  
+                          </li>
+             
+           </ul>
+                            
+
+
+          <ul>
+            <li>
+                             <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/categoria-de-productos/protein/">Protein</a>  
+                          </li>
+             
+           </ul>
+                            
+
+
+          <ul>
+            <li>
+                             <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/categoria-de-productos/fibers-products/">Fibers</a>  
+                          </li>
+             
+           </ul>
+                            
+
+
+          <ul>
+            <li>
+                             <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/categoria-de-productos/sauces-and-dressings/">Sauces and dressings</a>  
+                          </li>
+             
+           </ul>
+                            
+
+
+          <ul>
+            <li>
+                          </li>
+             
+           </ul>
+                            
+
+
+          <ul>
+            <li>
+                          </li>
+             
+           </ul>
+                            
+
+
+          <ul>
+            <li>
+                          </li>
+             
+           </ul>
+                            
+
+
+          <ul>
+            <li>
+                          </li>
+             
+           </ul>
+                            
+
+
+          <ul>
+            <li>
+                          </li>
+             
+           </ul>
+                            
+
+
+          <ul>
+            <li>
+                          </li>
+             
+           </ul>
+                            
+
+
+          <ul>
+            <li>
+                          </li>
+             
+           </ul>
+                            
+                 </ul>
+               </div>
+             <div class="level-2">
+                 <ul>
+                                                            <ul>
+            <li>
+                          </li>
+             
+           </ul>
+                              <ul>
+            <li>
+                          </li>
+             
+           </ul>
+                              <ul>
+            <li>
+                          </li>
+             
+           </ul>
+                              <ul>
+            <li>
+                          </li>
+             
+           </ul>
+                              <ul>
+            <li>
+                          </li>
+             
+           </ul>
+                              <ul>
+            <li>
+                          </li>
+             
+           </ul>
+                              <ul>
+            <li>
+                          </li>
+             
+           </ul>
+                              <ul>
+            <li>
+                          </li>
+             
+           </ul>
+                              <ul>
+            <li>
+                            <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/categoria-de-productos/flavors-other-applications/">Flavors other applications</a>  
+                          </li>
+             
+           </ul>
+                              <ul>
+            <li>
+                             <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/categoria-de-productos/natural-coloring-and-food-coloring/">Natural coloring and food coloring</a>  
+                          </li>
+             
+           </ul>
+                              <ul>
+            <li>
+                             <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/categoria-de-productos/preservatives-and-antioxidants/">Preservatives and antioxidants</a>  
+                          </li>
+             
+           </ul>
+                              <ul>
+            <li>
+                             <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/categoria-de-productos/bakery-pastry-and-arepas/">Bakery pastry and arepas</a>  
+                          </li>
+             
+           </ul>
+                              <ul>
+            <li>
+                             <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/categoria-de-productos/dairy-and-ice-cream-products/">Dairy and ice cream products</a>  
+                          </li>
+             
+           </ul>
+                              <ul>
+            <li>
+                             <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/categoria-de-productos/options-for-drinks-and-vending/">Options for drinks and vending</a>  
+                          </li>
+             
+           </ul>
+                              <ul>
+            <li>
+                             <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/categoria-de-productos/bases-for-rice-broths-soups-and-creams/">Bases for rice, broths, soups and creams</a>  
+                          </li>
+             
+           </ul>
+                                             
+                    
+                              
+                                  
+            </ul>
+               </div>
+           
+          </div>
+            
+        </li>
+           
+<li class="collapse-nav-item multi-level-nav-item">
+                     <a class="hover-dark" style="text-transform: uppercase;" data-toggle="dropdown" href="#">
+Products for cleaning, disinfection and safety</a>
+                 <div class="dropdown-menu level-1">
+               <div class="level-2">
+                 <ul>  
+                                     <li>
+                     <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/producto/biodegradable-neutral-degreasing-detergents/">Biodegradable neutral degreasing detergents</a>  
+                   </li>
+                                    <li>
+                     <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/producto/biodegradable-descaling-alkaline-detergent/">Biodegradable descaling alkaline detergent</a>  
+                   </li>
+                                    <li>
+                     <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/producto/biodegradable-descaling-acid-detergents/">Biodegradable descaling acid detergents</a>  
+                   </li>
+                                    <li>
+                     <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/producto/specialized-solutions/">Specialized solutions</a>  
+                   </li>
+                                    <li>
+                     <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/producto/disinfectants/">Disinfectants</a>  
+                   </li>
+                                    <li>
+                     <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/producto/specialized-disinfectants/">Specialized disinfectants</a>  
+                   </li>
+                                    <li>
+                     <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/producto/disinfectants-for-direct-contact-with-food/">Disinfectants for direct contact with food</a>  
+                   </li>
+                                    <li>
+                     <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/producto/hand-sanitization/">Hand sanitization</a>  
+                   </li>
+                                    <li>
+                     <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/producto/specialties-for-beneficial-plants/">Specialties for beneficial plants</a>  
+                   </li>
+                                    <li>
+                     <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/producto/biodegradable-cleaning-products/">Biodegradable cleaning products</a>  
+                   </li>
+                                    <li>
+                     <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/producto/brushes-and-accessories/">Brushes and accessories</a>  
+                   </li>
+                                    <li>
+                     <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/producto/chemical-testing-kits/">Chemical testing kits</a>  
+                   </li>
+                                    <li>
+                     <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/producto/cleaning-cloths-2/">Cleaning cloths</a>  
+                   </li>
+                                    <li>
+                     <a style="color: #162d50 !important;" href="<?php bloginfo('url');?>/producto/cleaning-cloths/">Sanitary clothing</a>  
+                   </li>
+                                  </ul>
+               </div>
+          </div>
+            
+        </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php bloginfo('url');?>/customers">
+Our Allies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link dropdown-toggle" href="#">
+About us</a>
+          <ul class="dropdown-menu hoverable one-level">
+            <li>
+              <a href="<?php bloginfo('url');?>/about">
+
+Our company</a>
+            </li>
+            <li>
+              <a href="<?php bloginfo('url');?>/service">Services</a>
+            </li>
+            <li>
+               <a href="<?php bloginfo('url');?>/certification">Certifications</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link dropdown-toggle" href="#">
+Contact Us</a>
+          <ul class="dropdown-menu hoverable one-level">
+            <li>
+              <a href="<?php bloginfo('url');?>/customer-service">
+Customer service</a>
+            </li>
+            <li>
+              <a href="<?php bloginfo('url');?>/trading-shops">
+Trading shops</a>
+            </li>
+            <li>
+              <a href="<?php bloginfo('url');?>/other-countries">Other countries</a>
+            </li>
+            <li>
+              <a href="<?php bloginfo('url');?>/work-with-us">Work with us</a>
+            </li>
+          </ul>
+        </li>
+      
+      
+      <li class="nav-item">
+      
+          <a class="nav-link dropdown-toggle" href="#">Social Media</a>
+          <ul class="dropdown-menu hoverable one-level">
+            <li>
+              <a target="_blank" href="https://www.facebook.com/Tecnas/">
+          
+        <i class="fa fa-facebook"></i>
+          Facebook
+        </a>
+            </li>
+         <li>
+              <a target="_blank" href="https://instagram.com/tecnas.sa?igshid=1nngn1ie1k5rx">
+        <i class="fa fa-instagram"></i>
+          Instagram
+        </a>
+            </li>
+      
+        <li>
+              <a target="_blank" href="https://www.youtube.com/channel/UCqRC7Tl8zOd-TDhmWETO2wA">
+        <i class="fa fa-youtube-play"></i>
+          YouTube
+        </a>
+            </li>
+            
+          </ul>
+        </li>
+      
+      
+      <li class="nav-item">
+    
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+<?php endif; ?>

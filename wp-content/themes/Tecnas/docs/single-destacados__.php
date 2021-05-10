@@ -11,6 +11,7 @@
 		<?php $postnewsTitle = lang() == "es" ? "destacado" : "news"; ?>
           <a href='<?php echo get_home_url() ?>/<?php echo $postnewsTitle ?>'> <?php echo $postnewsTitle ?></a>
         </li>
+		 
         <li aria-current='page' class='breadcrumb-item active'><?php the_title(); ?></li>
       </ol>
     </nav>
@@ -33,9 +34,16 @@
 				  <?php if(lang() == 'es'){echo "Documento:";}if(lang() == 'en'){echo "Document";} ?>
 			  
 			  </strong>
+			  
+			   <?php if(lang() == 'en'): ?>
 			  <a download="<?php the_title(); ?>" href="<?php the_field( 'documento_pdf_pptx' ); ?>">
 			  <?php if(lang() == 'es'){echo "más información";}if(lang() == 'en'){echo "more information";} ?>
 			  </a>
+			  <?php else: ?>
+			   <a download="<?php the_title(); ?>" href="<?php the_field( 'documento_es_pfd_ppt' ); ?>">
+			  <?php if(lang() == 'es'){echo "más información";}if(lang() == 'en'){echo "more information";} ?>
+			  </a>
+			  <?php endif;?>
 		  </p>
 			
 		<?php endif; ?>

@@ -289,10 +289,7 @@ footer ul {
   transition: all ease-in-out 0.2s;
 }
 
-.multi-level .collapse-nav-item:hover {
-  background-color: rgba(22, 45, 80, 0.13);
-  transition: all ease-in-out 0.2s;
-}
+
 
 .multi-level .collapse-nav-item:hover a {
   text-decoration: none;

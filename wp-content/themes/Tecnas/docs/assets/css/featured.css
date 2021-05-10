@@ -291,10 +291,7 @@ footer ul {
   transition: all ease-in-out 0.2s;
 }
 
-.multi-level .collapse-nav-item:hover {
-  background-color: rgba(22, 45, 80, 0.13);
-  transition: all ease-in-out 0.2s;
-}
+
 
 .multi-level .collapse-nav-item:hover a {
   text-decoration: none;
@@ -629,8 +626,8 @@ video#mivideo {
   height: 100%;
 }
 
-.featured-card-info p , .featured-card-info p a{
-  font-size: 18px;
+.featured-card-info p , .featured-card-info p a, .featured-card-info p ul li, .featured-card-info ul li{
+  font-size: 18px !important;
   line-height: 28px;
   color: #303030 !important;
   font-family: "Helvetica";

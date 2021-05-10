@@ -146,8 +146,17 @@ li.lang-item.lang-item-5.lang-item-es a{
   background-color: #fff;
   padding: 15px 100px;
   justify-content: space-between;
+	transition: .3s ease-in-out;
+	display:flex;
 }
 
+.navbar-top.hidden-top {
+	display: none;
+	transition: .3s ease-in-out;
+}
+.navbar-bottom {
+	transition: .3s ease-in-out;
+}
 .navbar-top .navbar-brand img {
   width: 170px;
 }
@@ -165,12 +174,11 @@ li.lang-item.lang-item-5.lang-item-es a{
 }
 
 .fixed {
-	    transition: .1s linear;
-	background-color: #0071ba!important;
-     transition: .3s ease-in-out!important;
-	height: auto;
-	opacity: 1;
-	visibility: visible;
+	position: sticky;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+	transition: .3s ease-in-out;
 }
 .navbar-bottom__opacity1{
 	opacity: 1;
@@ -374,6 +382,13 @@ footer ul {
   content: unset;
 }
 
+
+.dropdown-toggle-a::after {
+  content: unset;
+}
+
+
+
 .multi-level {
   width: 130%;
   padding: 0;
@@ -405,9 +420,13 @@ footer ul {
 }
 
 .multi-level-nav-item:nth-child(1) a:hover::after{
-	margin-bottom: 18px;
 		transition: .3s;
+	    transform: translateY(3px);
+	    margin-left: 8px!important;
 	
+}
+.multi-level-nav-item:nth-child(1) a:hover {
+	background-color: rgb(3, 50, 85)!important;
 }
 li.multi-level-nav-item a:first-child::after {
     content: "\f105";
@@ -415,6 +434,7 @@ li.multi-level-nav-item a:first-child::after {
 		transition: .3s;
 	    font: normal normal normal 14px/1 FontAwesome;
 }
+
 
 .multi-level-nav-item a:hover::after {
 	    margin-left: 16px!important;
@@ -426,6 +446,11 @@ li.multi-level-nav-item a:first-child::after {
 	    margin-left: 8px;
 		transition: .3s;
 	    font: normal normal normal 14px/1 FontAwesome;
+
+}
+.collapse-list a:hover::after {
+    margin-left: 16px!important;
+	transition: .3s;
 }
 
 .level-2 a::after{
@@ -434,6 +459,7 @@ li.multi-level-nav-item a:first-child::after {
 .multi-level .multi-level-nav-item a:hover {
   text-decoration: none;
 }
+
 
 .multi-level .collapse {
   background-color: #fff;
@@ -447,10 +473,7 @@ li.multi-level-nav-item a:first-child::after {
   transition: all ease-in-out 0.2s;
 }
 
-.multi-level .collapse-nav-item:hover {
-  background-color: rgba(22, 45, 80, 0.13);
-  transition: all ease-in-out 0.2s;
-}
+
 
 .multi-level .collapse-nav-item:hover a {
   text-decoration: none;
@@ -467,8 +490,16 @@ li.multi-level-nav-item a:first-child::after {
 .main_link__upper{
 	text-transform: uppercase;
 }
+.collapse-nav-item:hover {
+	
+
+    background-color: rgba(22, 45, 80, 0.40)!important;
+}
 .multi-level .collapse-list {
   padding-left: 0;
+}
+.collapse-nav-item:focus{
+	background-color: rgba(22, 45, 80, 0.40)!important;
 }
 
 .multi-level .level-1 {
@@ -477,6 +508,9 @@ li.multi-level-nav-item a:first-child::after {
   padding: 0;
   border: none;
   min-width: 650px;
+}
+.multi-level-nav-item:hover {
+	    background-color: rgb(3, 50, 85)!important;
 }
 
 .multi-level .level-1.show {
@@ -728,12 +762,17 @@ ul.share-social li a:hover {
   left: 25px;
 }
 
-
 @media screen and (min-width: 0) and (max-width: 767px) {
 	.main-slider .main-slider-item {
 		height: 80vw;
 	}
 	
+	 .navbar-bottom   {opacity: 1!important;
+    visibility: visible!important;
+	}
+	.navbar-sticky {
+		display: none!important;
+	}
 	.main-slider .main-slider-item img {
 		height: 70%;
 	}
@@ -879,11 +918,11 @@ ul.share-social li a:hover {
 }
 
 .portfolio-arrow {
-	position: absolute;	
+	position: fixed;	
 	  z-index: 999999999;
 	width: 36px;
     height: 36px;
-    background: #0071ba;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -897,6 +936,10 @@ ul.share-social li a:hover {
 	    right: 35px;
 }
 
+.portfolio-arrow img {
+	width: 100%;
+}
+.portfolio-arrow .slick-next, .portfolio-arrow .slick-next, 
 .portfolio-arrow  i {
 	font-size: 20px;
     color: #fff;
@@ -910,7 +953,7 @@ ul.share-social li a:hover {
 	    background: #0071ba;
 	color: #fff;
 	text-align: center;
-	    padding: 2px 14px;
+	    padding: 10px 25px;
     border-radius: 8px;
     font-weight: 600;
 	
@@ -918,16 +961,116 @@ ul.share-social li a:hover {
 html {
 	  scroll-behavior: smooth;
 }
-
+  .footer-top .footer-images li:nth-child(4) a img {
+    height: 160px !important;
+    width: 165px !important;
+}
+    
 @media screen and (min-width: 0px) and (max-width: 768px) {
+
+	 .footer-top .footer-images li:nth-child(4) a img {
+    height: 120px !important;
+    width: 120px !important;
+}
+	
 	.portfolio-arrow__left {
-    left: 0;
+    left: 15px;
 }
 	.portfolio-arrow__right {
-    right: 0;
+    right: 15px;
 }
+	.portfolio-arrow {
+		width:20px;
+		height:20px;
+	}
 	video#mivideo {
 		object-fit: contain!important;
 	}
+	.dropdown-toggle::after {
+		content: "\f105"!important;
+border: none!important;
+		    font: normal normal normal 14px/1 FontAwesome;
+    margin-left: 8px;
+    vertical-align: initial;
+	}
+	.dropdown-toggle-a::after {
+		content: "\f105"!important;
+border: none!important;
+		    font: normal normal normal 14px/1 FontAwesome;
+    margin-left: 8px;
+    vertical-align: initial;
+	}
+	.dropdown-toggle-no::after{
+		display:none;
+	}
 	
+	.not-found .not-found-text {
+
+    width: 100% !important;
+}
+	.not-found .not-found-text p {
+    font-size: 18px !important;
+  
+}
+	.not-found h1 {
+    width: 100% !important;
+    font-size: 20px !important;
+ 
+}
+	.not-found{
+		    padding-left: 20px !important;
+	}
+	
+}
+
+
+
+.collapse-nav-item:hover, .collapse-nav-item:active, .collapse-nav-item:focus, .collapse-nav-item:visited {
+    background-color: rgba(22, 45, 80, 0.40)!important;
+}
+.collapse-nav-item.show{
+	    background-color: rgba(22, 45, 80, 0.40)!important;
+}
+.footer-top .footer-images li:nth-child(4) a img{
+	    height: 160px ;
+}
+.collapse.show .card-body .map.map-mobile iframe, .collapse .card-body .map.map-mobile iframe{
+	display: block !important;
+}
+.main-content__policy p{
+	font-size: 18px;
+}
+.dropdown-toggle > .dropdown-menu-1 {
+	opacity:0;
+	pointer-events: none;
+	transition: 0.3s;
+	position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: unset;
+    float: left;
+    min-width: 10rem;
+
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+
+}
+
+.dropdown-toggle:hover > .dropdown-menu-1 {
+	transition: 0.8s;
+	opacity:1;
+	pointer-events: initial;
+}
+
+.main-breadcrumds ,.main-breadcrumds a{
+	font-family: "Aller-Bold";
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #033255!important;
 }

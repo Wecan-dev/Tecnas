@@ -20,17 +20,6 @@ function addActiveNavLink() {
 
 addActiveNavLink();
 
-$('.dropdown-toggle').hover(function() {
-  if ($(this).siblings().hasClass("dropdown-menu")) {
-    $(this).siblings().css("display", "block")
-  }
-}, function() {
-  if ($(this).siblings().hasClass("dropdown-menu")) {
-    if (!$(this).siblings().is(":hover")) {
-      $(this).siblings().css("display", "none")
-    }
-  }
-})
 
 $('.dropdown-menu.hoverable').hover(function() {
   // 
@@ -53,7 +42,7 @@ $(".js-gotop").click(function () {
 
 //invocamos al objeto (window) y a su método (scroll), solo se ejecutara si el usuario hace scroll en la página
 $(window).scroll(function () {
-  if ($(this).scrollTop() > 100) { //condición a cumplirse cuando el usuario aya bajado 301px a más.
+  if ($(this).scrollTop() > 70) { //condición a cumplirse cuando el usuario aya bajado 301px a más.
     $("#js_up").slideDown(300); //se muestra el botón en 300 mili segundos
   } else { // si no
     $("#js_up").slideUp(300); //se oculta el botón en 300 mili segundos
@@ -165,27 +154,41 @@ $(".certifications-slider").slick({
 
 
 
+var sticky = document.querySelector('.navbar-bottom');
+
+if (sticky.style.position !== 'navbar-bottom') {
+  var stickyTop = sticky.offsetTop;
+
+  document.addEventListener('scroll', function () {
+    window.scrollY >= stickyTop ?
+      sticky.classList.add('fixed') :
+      sticky.classList.remove('fixed');
+  });
+}
 
 
 
-
-// Menú fixed
-$(window).scroll(function () {
-  if ($(document).scrollTop() > 250) {
-    $('.navbar-sticky').addClass('fixed');
-	  $('.navbar-bottom__opacity1').addClass('navbar-bottom__opacity0');
-	  $(".fixed").slideDown(300);
-   
-  } else {
-        $('.navbar-sticky').removeClass('fixed');
-        $('.navbar-bottom__opacity1').removeClass('navbar-bottom__opacity0');
-	  
-
+$('.dropdown-toggle').hover(function() {
+  if ($(this).siblings().hasClass("dropdown-menu")) {
+    $(this).siblings().css("display", "block")
   }
+}, function() {
+  if ($(this).siblings().hasClass("dropdown-menu")) {
+    if (!$(this).siblings().is(":hover")) {
+      $(this).siblings().css("display", "none")
+    }
+  }
+})
+
+
+
+
+$('.collapse-nav-item').click(function(){	
+
+	$('.collapse-nav-item').removeClass('show');
+	$('.dropdown-menu.level-1 ').removeClass('show');
+
+
+	$(this).toggleClass('show');
 });
-
-
-
-
-
 

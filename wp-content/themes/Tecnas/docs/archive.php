@@ -11,7 +11,8 @@
             while(have_posts()){
                 the_post();
             ?>
-        <div class="col-lg-4 col-md-6">
+ 		<div class="col-lg-4 col-md-6" >
+			
           <div class="portfolio-card">
             <a href="<?php the_permalink(); ?>">
               <img alt="<?php the_title(); ?>" src="<?php echo get_the_post_thumbnail_url(); ?>">
@@ -20,13 +21,20 @@
               </div>
             </a>
           </div>
-        </div>
+		  </div>
+
           <?php
             }
     } ?>
       </div>
     </div>
   </div>
+<style>
+	.container-grid {
+		display: flex;
+		
+	}
+</style>
 <?php get_footer() ?> 
 <script>
 	const title = document.querySelector("div.section-title > h1");

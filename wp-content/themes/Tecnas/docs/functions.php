@@ -1,7 +1,6 @@
 <?php 
 
 
-
 // Custom Excerpt 
 function excerpt($limit) {
 $excerpt = explode(' ', get_the_excerpt(), $limit);

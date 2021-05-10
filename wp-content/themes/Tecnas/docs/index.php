@@ -19,7 +19,7 @@
 			<a class="main-slider-btn" href="<?php echo esc_url( $boton_del_banner_espanol['url'] ); ?>" target="<?php echo esc_attr( $boton_del_banner_espanol['target'] ); ?>">
 				<?php the_title(); ?>
 				<br>
-				<div>	<?php echo esc_html( $boton_del_banner_espanol['title'] ); ?> »</div>
+				<div>		VER MÁS »</div>
 		</a>
 		<?php endif; ?>
 
@@ -29,7 +29,7 @@
 		<a class="main-slider-btn" href="<?php echo esc_url( $boton_del_banner_ingles['url'] ); ?>" target="<?php echo esc_attr( $boton_del_banner_ingles['target'] ); ?>">
 			<?php the_title(); ?>
 				<br>
-			<div>	<?php echo esc_html( $boton_del_banner_ingles['title'] ); ?> »</div>
+			<div>		SEE MORE » </div>
 		
 		</a>
 	<?php endif; ?>

@@ -290,10 +290,7 @@ footer ul {
   transition: all ease-in-out 0.2s;
 }
 
-.multi-level .collapse-nav-item:hover {
-  background-color: rgba(22, 45, 80, 0.13);
-  transition: all ease-in-out 0.2s;
-}
+
 
 .multi-level .collapse-nav-item:hover a {
   text-decoration: none;
@@ -597,6 +594,7 @@ ul.share-social li a:hover {
   margin-bottom: 50px;
 	    transition: .3s;
 	overflow: hidden;
+	height: 300px;
 }
 
 .portfolio-card:hover {
@@ -650,6 +648,7 @@ ul.share-social li a:hover {
   color: #303030;
   font-family: "Helvetica"!important;
   line-height: 28px;
+	text-align:justify;
 }
 .portfolio-detail-text h4{
     font-size: 18px;

@@ -58,6 +58,9 @@
          ?> 
       </ul>
     </div>
+	  <a class="boton-subir slider-top" href="#" id="js_up">
+	  <i class=" fa fa-angle-up" ></i>
+  </a>
     <div class='footer-bottom'>
       <span>Powered by Sigma 2020</span>
     </div>
