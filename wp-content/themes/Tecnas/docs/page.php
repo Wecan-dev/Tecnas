@@ -15,16 +15,14 @@
       <h1><?php echo $posDestacadotitle; ?></h1> -->
     </div>
     <div class="featured-slider">
-        <?php $args = array( 'post_type' => 'destacados__'); ?>
+        <?php $args = array( 'post_type' => 'destacados__', 'posts_per_page' => -1); ?>
               <?php $loop = new WP_Query( $args ); ?>
                  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <?php if(lang() == 'es'){ ?>  
 		<div class="featured-card">
 			<div class="featured-card-img" href="<?php if(get_field( 'url_producto_espanol' ) != null) : the_field( 'url_producto_espanol' );  else : the_permalink();  endif; ?> ">
 				 <?php if( get_field( 'video_destacados' ) ) : ?>
-					<video class="" id="mivideo" autoplay preload loop muted>
-                        <source src="<?php the_field( 'video_destacados' ); ?>" type="video/mp4">
-                    </video>  
+					<video autoplay controls  src="<?php the_field( 'video_destacados' ); ?>" class="" id="mivideo" ></video>  
 				<?php else : ?>
 			  <img src="<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : 'http://159.89.229.55/Tecnas/wp-content/uploads/2021/01/default_img_tecnas.png' ?>">
 				 <?php endif; ?> 
@@ -42,8 +40,8 @@
 			<div class="featured-card">
 				<div class="featured-card-img" href="<?php if(get_field( 'url_product_english' ) != null) : the_field( 'url_product_english' );  else : the_permalink();  endif; ?> ">
 				   <?php if( get_field( 'video_destacados' ) ) : ?>
-					<video class="" id="mivideo" autoplay preload loop muted>
-                        <source src="<?php the_field( 'video_destacados' ); ?>" type="video/mp4">
+					<video autoplay controls src="<?php the_field( 'video_destacados' ); ?>" class="" id="mivideo-en">
+                        
                     </video>  
 				<?php else : ?>
 			  <img src="<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : 'http://159.89.229.55/Tecnas/wp-content/uploads/2021/01/default_img_tecnas.png' ?>">

@@ -73,6 +73,24 @@
   <script src='<?php echo get_template_directory_uri(); ?>/assets/js/slick.min.js'></script>
   <script src='<?php echo get_template_directory_uri(); ?>/assets/js/main.js'></script>
  <script>
+	 	$('.hide-mobile-s').click(function(){	
+
+		$('.test-class').addClass('hide-mobile-none');
+		$('.toggle-none-mobile').addClass('hide-mobile-j');
+		$('.toggle-none-mobile').removeClass('hide-mobile-s');
+		console.log('funciona 2');
+
+	});
+	 
+	$('.hide-mobile-j').click(function(){	
+
+		$('.test-class').removeClass('hide-mobile-none');
+		$('.toggle-none-mobile').addClass('hide-mobile-s');
+		$('.toggle-none-mobile').removeClass('hide-mobile-j');
+		console.log('funciona');
+
+	});
+	 
     $('#accordion').on('shown.bs.collapse', function() {
       $("iframe").css("display", "none");
 

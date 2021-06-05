@@ -321,7 +321,7 @@ footer ul {
   color: #717471;
   font-weight: bold;
   padding: 0;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .footer-top img {
@@ -416,7 +416,7 @@ footer ul {
 	}
 	
 	.navbar.navbar-bottom .nav-link {
-		font-size: 18px;
+		font-size: 15px;
 		padding-right: 5px;
 		padding-left: 5px;
 	}
@@ -448,7 +448,7 @@ footer ul {
 	}
 	
 	.navbar.navbar-bottom .nav-link {
-		font-size: 18px;
+		font-size: 15px;
 	}
 }
 
@@ -579,7 +579,7 @@ width: 100%;
 .section-title h1 {
   font-family: "Aller-Bold";
   color: #033255;
-  font-size: 40px;
+  font-size: 26px;
   text-transform: initial!important;
 }
 /*.section-title h1{
@@ -592,7 +592,7 @@ width: 100%;
 .section-title p {
   width: 60%;
   margin: 0 auto;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.56;
   font-family: "Helvetica";
   color: #303030;
@@ -789,7 +789,7 @@ ul.share-social li a:hover {
 label {
   font-family: "Aller-Bold";
   color: #303030;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .input-group {
@@ -885,7 +885,7 @@ label {
 
 .contact-info-vertical div a {
   color: #303030;
-  font-size: 18px;
+  font-size: 15px;
 	font-family: "Aller-Bold";
 	margin-left: 25px;
 }
@@ -967,7 +967,7 @@ select {
 }
 .main-contact__text a {
     color: #303030;
-  font-size: 18px;
+  font-size: 15px;
 	font-family: "Aller-Bold";
 }
 

@@ -500,7 +500,7 @@ ul.share-social li a:hover {
 }
 
 .section-title {
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
 
 .main-about {
@@ -532,7 +532,7 @@ ul.share-social li a:hover {
 
 .about-text p {
   color: #303030;
-  font-size: 18.4px;
+  font-size: 15px;
   font-family: "Helvetica";
   line-height: 28px;
   text-align: justify;
@@ -540,15 +540,15 @@ ul.share-social li a:hover {
 }
 
 .about-text a.btn {
-	width: 190px;
-    font-size: 18px;
+	width: 150px;
+    font-size: 13px;
     padding: 15px 50px;
     border-radius: 30px;
 }
 
 .about-subtitle {
   font-family: "Aller-Bold";
-  font-size: 30px;
+  font-size: 18px;
   color: #033255;
   margin-bottom: 25px;
   padding: 0 12px;
@@ -566,7 +566,7 @@ ul.share-social li a:hover {
 }
 
 .support-item h3 {
-  font-size: 20px;
+  font-size: 15px;
   font-family: "Aller-Bold";
   color: #47546c;
   text-transform: uppercase;
@@ -591,7 +591,7 @@ ul.share-social li a:hover {
 
 .main-benefits .benefit-item h4 {
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Aller-Bold";
   letter-spacing: 0.64px;
   text-transform: uppercase;
